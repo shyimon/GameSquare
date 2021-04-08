@@ -74,6 +74,6 @@ CREATE TABLE elementolista (
     FOREIGN KEY (IdGioco)
         REFERENCES gioco (id)
         ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY (Utente, IdelementolistaGioco)
+    PRIMARY KEY (Utente, IdGioco)
 );
 
