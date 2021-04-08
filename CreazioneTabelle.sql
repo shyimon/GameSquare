@@ -7,8 +7,8 @@ CREATE TABLE utente (
   username VARCHAR(50) NOT NULL,
   email VARCHAR(45) NOT NULL UNIQUE,
   password VARCHAR(50) NOT NULL,
-  punteggio INT DEFAULT 0,
-  tipo varchar(15) DEFAULT 'user',
+  punteggio INT NOT NULL DEFAULT 0,
+  tipo varchar(15) NOT NULL DEFAULT 'user',
   PRIMARY KEY (username)
   );
   
