@@ -7,19 +7,19 @@ CREATE TABLE utente (
   username VARCHAR(50) NOT NULL,
   email VARCHAR(45) NOT NULL UNIQUE,
   password VARCHAR(50) NOT NULL,
-  punteggio INT NOT NULL DEFAULT 0,
-  tipo varchar(15) NOT NULL DEFAULT 'user',
+  punteggio INT DEFAULT 0,
+  tipo varchar(15) DEFAULT 'user',
   PRIMARY KEY (username)
   );
   
 CREATE TABLE gioco (
 	id INT NOT NULL AUTO_INCREMENT,
-    nome varchar(50) not null,
-    descrizione text not null,
-    publisher varchar(50) not null,
+    nome varchar(50) NOT NULL,
+    descrizione text NOT NULL,
+    publisher varchar(50) NOT NULL,
     imgpath varchar(50) DEFAULT NULL,
-    punteggio int not null,
-    media_voti int not null default 0,
+    punteggio int NOT NULL,
+    media_voti int DEFAULT 0,
     PRIMARY KEY (id)
     );
     
