@@ -1,3 +1,4 @@
+use gamesquare;
 INSERT INTO utente values('AkiraHW', 'akirahoward01@gmail.com', 'password1', default, default);
 INSERT INTO utente values('DarioTW', 'dariomocciatwitch@gmail.com', 'password2', default, default);
 INSERT INTO utente values('DeadOrAlive', 'spinmeround@yahoo.it', 'password3', default, default);
