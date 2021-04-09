@@ -40,6 +40,7 @@ CREATE TABLE voto(
 
 CREATE TABLE thread (
     idThread INT AUTO_INCREMENT NOT NULL,
+	tipoThread VARCHAR(50) NOT NULL,
     Titolo VARCHAR(50) NOT NULL,
     Testo TEXT NOT NULL,
     utente VARCHAR(50) NOT NULL,
