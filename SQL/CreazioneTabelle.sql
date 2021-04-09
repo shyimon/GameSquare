@@ -17,6 +17,8 @@ CREATE TABLE gioco (
     nome varchar(50) NOT NULL,
     descrizione text NOT NULL,
     publisher varchar(50) NOT NULL,
+    anno varchar(4) NOT NULL,
+    genere varchar(30) NOT NULL,
     imgpath varchar(50) DEFAULT NULL,
     punteggio int NOT NULL,
     media_voti int DEFAULT 0,
