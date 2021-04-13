@@ -20,6 +20,8 @@
 <header class="index-header">
 			<%@ include file="./fragment/header.jsp" %>
 	</header>
+<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><b>--Torna alla pagina del gioco--</b></a>
+<br>
 <h2>Discussione [<%=bean.getTipoThread()%>]</h2>
 <h1><%=bean.getTitolo()%></h1>
 <h5>Avviata da <%=bean.getUsernameUtente()%></h5>
@@ -28,6 +30,8 @@
 <p><%=bean.getTesto()%></p>
 
 <br>
+
+
 
 <div class="container spacerDescrizioneProd">
 			<div class="row">
