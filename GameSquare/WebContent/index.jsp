@@ -49,7 +49,7 @@
 				<div class="objectItem col-md-3">
 			
 					<div class="row justify-content-center">
-						<a href="#"><p><b><%=bean.getNome()%></b></p></a>
+						<a href="#"><p><b><%=bean.toString()%></b></p></a>
 					</div>
 				</div>
 			
