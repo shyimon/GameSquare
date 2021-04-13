@@ -68,5 +68,10 @@ public class Utente {
 		this.punteggio = punteggio;
 	}
 
+	@Override
+	public String toString() 
+	{
+		return "email=" + email + ", username=" + username + ", tipo="+ tipo + ", punteggio=" + punteggio ;
+	}
 
 }

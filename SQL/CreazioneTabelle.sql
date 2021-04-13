@@ -21,7 +21,7 @@ CREATE TABLE gioco (
     genere varchar(30) NOT NULL,
     imgpath varchar(50) DEFAULT NULL,
     punteggio int NOT NULL,
-    media_voti int DEFAULT 0,
+    media_voti FLOAT DEFAULT 0,
     PRIMARY KEY (id)
     );
     
