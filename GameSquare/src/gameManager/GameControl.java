@@ -40,8 +40,8 @@ public class GameControl extends HttpServlet {
 					{
 							request.removeAttribute("game");
 			
-							String gameName = request.getParameter("name");
-							ArrayList<Gioco> app=gameModel.viewGame("nome", gameName);
+							String gameID = request.getParameter("id");
+							ArrayList<Gioco> app=gameModel.viewGame("id", gameID);
 							request.setAttribute("game", app.get(0));
 					}
 			}

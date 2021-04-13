@@ -88,7 +88,7 @@
 		<div>
 			<%
 			ThreadDAO model_thread=new ThreadDAO();
-			ArrayList<GameThread> array = model_thread.getThread(bean.getIdGioco());
+			ArrayList<GameThread> array = model_thread.viewThread("Idgioco", ""+bean.getIdGioco());
          
 			
 			if(array.size()!=0)
@@ -102,7 +102,7 @@
 					if (tbean.getTipoThread().equals("Spoiler")){%>
 							
 							<div class="row justify-content-center">
-						<a href="#"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
+						<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
 					</div>
 				</div>
 				<br>
@@ -114,7 +114,7 @@
 			
 				
 					<div class="row justify-content-center">
-						<a href="#"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
+						<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
 					</div>
 				</div>
 				<br>

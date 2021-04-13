@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"
+    import="java.util.*"
+    import="gameManager.*"
+    import="threadManager.*"%>
+    
+      <%	
+	GameThread bean = (GameThread) request.getAttribute("thread");
+	ThreadDAO threadModel = new ThreadDAO();
+%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>GameSquare - <%=bean.getTitolo()%></title>
+</head>
+<body>
+
+<header class="index-header">
+			<%@ include file="./fragment/header.jsp" %>
+	</header>
+<h2>Discussione [<%=bean.getTipoThread()%>]</h2>
+<h1><%=bean.getTitolo()%></h1>
+<h5>Avviata da <%=bean.getUsernameUtente()%></h5>
+
+
+<p><%=bean.getTesto()%></p>
+
+<br>
+
+<div class="container spacerDescrizioneProd">
+			<div class="row">
+				<div class="col-md-3">
+					<h2 id="titlePPS">ALTRE DISCUSSIONI</h2>
+				</div>
+				<div class="descstyle col-md-9">
+					<hr>
+				</div> 
+
+<div>
+		<div>
+			<%
+			ArrayList<GameThread> array = threadModel.viewThread("Idgioco", ""+bean.getIdGioco());
+         
+			
+			if(array.size()!=1)
+			{
+			
+								
+				Iterator<?> it2 = array.iterator();
+				while (it2.hasNext()) 
+				{
+					GameThread tbean = (GameThread) it2.next();	
+					if(tbean.getIdThread()!=bean.getIdThread()){
+					if (tbean.getTipoThread().equals("Spoiler")){%>
+							
+							<div class="row justify-content-center">
+						<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
+					</div>
+				</div>
+				<br>
+					
+					<%}
+					else{
+			%>
+			
+			
+				
+					<div class="row justify-content-center">
+						<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
+					</div>
+				</div>
+				<br>
+			
+			
+			<% 	}
+			}
+				}
+				} else { %>
+					<div class="col-md-12"><h4>Nessun'altra discussione su questo gioco.</h4><a href="#">Creane una!</a></div>
+			<% } %>
+			</div>
+		</div>
+
+</body>
+</html>

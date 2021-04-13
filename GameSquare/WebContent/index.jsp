@@ -36,7 +36,7 @@
 					while(I<array.size())
 					{
 						Gioco g = array.get(I);
-						if(arrayFeatured.size() < 6)
+						if(arrayFeatured.size() < 9)
 							arrayFeatured.add(g);
 						I++;
 					}
@@ -50,9 +50,9 @@
 				
 				
 					<div class="objectItem col-md-3">
-						<a href="Game?action=gioco&name=<%=bean.getNome()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
+						<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
 						<div class="row justify-content-center">
-							<a href="Game?action=gioco&name=<%=bean.getNome()%>"><p><b><%=bean.getNome()%></b></p></a>
+							<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><p><b><%=bean.getNome()%></b></p></a>
 						</div>
 					</div>
 				

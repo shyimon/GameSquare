@@ -69,41 +69,5 @@ public class ThreadDAO {
 		return threads;
 	}
 	
-	public ArrayList<GameThread> getThread(int gameId) throws SQLException{
-		String query = "SELECT * FROM thread WHERE IdGioco ="+gameId;
-		ArrayList<GameThread> threads=new ArrayList<GameThread>();
-		
-		try 
-		{
-			con=ConnectionPool.getConnection();
-			statement=con.prepareStatement(query);
-		
-			set=statement.executeQuery();
-			while(set.next())
-			{
-				GameThread disc=new GameThread();
-				disc.setIdThread(set.getInt(1));
-				disc.setTipoThread(set.getString(2));
-				disc.setTitolo(set.getString(3));
-				disc.setTesto(set.getString(4));
-				disc.setUsernameUtente(set.getString(5));
-				disc.setIdGioco(set.getInt(6));
-				threads.add(disc);
-			}
-		}
-		finally
-		{
-			try
-			{
-				if(statement!=null)
-					statement.close();
-			}
-			finally
-			{
-				ConnectionPool.rilasciaConnessione(con);
-			}
-		}
-		return threads;
-	}
-	
+
 }
