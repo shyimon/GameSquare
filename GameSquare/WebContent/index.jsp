@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<header class="index-header">
-			<%@ include file="./header.jsp" %>
+			<%@ include file="./fragment/header.jsp" %>
 		</header>
 	
 	
