@@ -15,6 +15,9 @@
 <title>GameSquare - <%=bean.getNome()%></title>
 </head>
 <body>
+	<header class="index-header">
+			<%@ include file="./header.jsp" %>
+	</header>
 
 <!-- sezione con le info del gioco, immagine ecc -->
 
