@@ -96,6 +96,16 @@
 				while (it2.hasNext()) 
 				{
 					GameThread tbean = (GameThread) it2.next();	
+					if (tbean.getTipoThread().equals("Spoiler")){%>
+							
+							<div class="row justify-content-center">
+						<a href="#"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
+					</div>
+				</div>
+				<br>
+					
+					<%}
+					else{
 			%>
 			
 			
@@ -108,6 +118,7 @@
 			
 			
 			<% 	}
+			}
 				} else { %>
 					<div class="col-md-12"><h4>Nessuna Discussione.</h4><a href="#">Sii il primo a crearla!</a></div>
 			<% } %>
