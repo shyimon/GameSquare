@@ -1,4 +1,4 @@
-package gameManager;
+package util;
 
 public class Utilities {
 	public static boolean fieldOk(String[] table)

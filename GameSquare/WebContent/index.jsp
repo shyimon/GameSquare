@@ -47,9 +47,9 @@
 			
 			
 				<div class="objectItem col-md-3">
-					<a href="#"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
+					<a href="Game?action=gioco&name=<%=bean.getNome()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
 					<div class="row justify-content-center">
-						<a href="#"><p><b><%=bean.getNome()%></b></p></a>
+						<a href="Game?action=gioco&name=<%=bean.getNome()%>"><p><b><%=bean.getNome()%></b></p></a>
 					</div>
 				</div>
 			
