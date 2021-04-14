@@ -25,7 +25,7 @@ static UtenteDAO model_utente = new UtenteDAO();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String action = request.getParameter("action");
+	/*	String action = request.getParameter("action");
 		String username = request.getParameter("username");
 		
 		try
@@ -48,7 +48,7 @@ static UtenteDAO model_utente = new UtenteDAO();
 			else
 				dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
 		
-			dispatcher.forward(request, response);
+			dispatcher.forward(request, response);*/
 		
 	}
 
