@@ -61,14 +61,15 @@
 						<a class="service-button" href="/GameSquare/Catalogo">Aggiungi Gioco</a>
 				
 						<%
-							if(request.getSession(false) == null || request.getSession(false).getAttribute("utenteLoggato") == null) {
+							if(utenteLoggato!=null) {
 						%>
-							<a class="service-button" href="login-page.jsp">LOGIN</a>
+							<a class="service-button" href="/GameSquare/Logout">LOGOUT</a>
 						<%
 						 	  }
 							  else {
 						%>
-							<a class="service-button" href="logout.jsp">LOGOUT</a>
+							
+							<a class="service-button" href="login-page.jsp">LOGIN</a>
 						<%
 							}
 						%>
