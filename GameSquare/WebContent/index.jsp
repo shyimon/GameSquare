@@ -8,6 +8,8 @@
 		<meta charset="ISO-8859-1">
 		<title>GameSquare - Home</title>
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
+			 <script type="text/javascript">
+    </script>
 	</head>
 	<body>
 		<header class="index-header">
