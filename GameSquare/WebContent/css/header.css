@@ -7,7 +7,7 @@
 		height: 100%;
 		display: grid;
 		background-image: url("https://wallpapercave.com/wp/4hgiRFC.jpg");
-		grid-template-columns: 20% 50% 30%;
+		grid-template-columns: 30% 40% 30%;
 		grid-template-rows: 75% 25%;
 		align-items: center;
 	}
@@ -15,7 +15,7 @@
 	.logo-item {
 		grid-column: 1 / 1;
 		grid-row: 1 / 1;
-		text-align: left;
+		text-align: center;
 	}
 	
 	.logo-image {
@@ -27,7 +27,8 @@
 		grid-column: 2 / 2;
 		grid-row: 2;
 		align-self: center;
-		width: 80%;;
+		width: 90%;
+		padding-left: 5%;
 	 	top: auto;
 	 	left: 50%;
 	  	text-align: center;
@@ -65,5 +66,16 @@
 	  font-size: 20px;
 	  border-bottom-right-radius: .35em;
 	  border-top-right-radius: .35em;
+	}
+	
+	/*NAVBAR*/
+	.nav-items-left {
+		grid-column: 1;
+		grid-row: 2;
+	}
+	
+	.nav-items-right {
+		grid-column: 3;
+		grid-row: 2;
 	}
 }
