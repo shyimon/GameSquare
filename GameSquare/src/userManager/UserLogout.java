@@ -20,7 +20,7 @@ public class UserLogout extends HttpServlet
 		request.getSession(false).removeAttribute("utenteLoggato");
 		request.getSession(false).removeAttribute("email");
 		request.getSession(false).invalidate();
-		response.sendRedirect(request.getContextPath() + "/index.jsp");
+		response.sendRedirect(request.getContextPath() + "/logout.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

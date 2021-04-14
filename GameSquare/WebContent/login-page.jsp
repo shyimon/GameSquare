@@ -41,7 +41,8 @@
 								</fieldset>
 						    </form>
 					    </div>
-
+<br>
+<a href="index.jsp">Torna alla home</a>
 
 </body>
 </html>
