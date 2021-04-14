@@ -15,15 +15,20 @@
 <h1>Rudimentale pagina di login, da aggiustare</h1>
 <br>
 
-<% 	Boolean login = (Boolean) request.getAttribute("login");	
-												if(login!=null) 
-												{
-													if(!login) %>
-													<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;"> Email e/o password errati!</h4>
-							<%					}
-											
-										
-							%>
+
+	<% 	Boolean correctEmail = (Boolean) request.getAttribute("correctEmail");	
+					if(correctEmail!=null) 
+					{
+					if(!correctEmail) %>
+					<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;"> Indirizzo e-mail errato.</h4>
+					<%			}
+	 	Boolean correctPassword = (Boolean) request.getAttribute("correctPassword");	
+					if(correctPassword!=null) 
+					{
+					if(!correctPassword) %>
+					<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;"> Password errata.</h4>
+					<%	}
+	%>
 
 <div id="loginbox" class="loginbox">
 							<form action="UserLogin" method="POST" name="login" id="login-form">

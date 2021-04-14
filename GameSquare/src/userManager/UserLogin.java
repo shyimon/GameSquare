@@ -40,18 +40,29 @@ public class UserLogin extends HttpServlet {
 			try 
 			{
 				Utente utenteLoggato = model_utente.checkLogin(user_email, user_password);
+				boolean correctEmail = model_utente.checkEmail(user_email);
+				boolean correctPass = model_utente.checkPassword(user_password);
 				
-				if(utenteLoggato!= null)
-				{				
+				if(correctEmail && correctPass) {
 					session.setAttribute("utenteLoggato", utenteLoggato);
 					session.setAttribute("email", user_email);
-					request.setAttribute("login", true);
-					redirectedPage = "/index.jsp";
 					
+					redirectedPage = "/index.jsp";
+				}
+				else if (!correctEmail)
+				{
+					request.setAttribute("correctEmail", false);
+					redirectedPage = "/login-page.jsp";
+				}
+				else if (!correctPass)
+				{
+					request.setAttribute("correctPassword", false);
+					redirectedPage = "/login-page.jsp";
 				}
 				else
 				{
-					request.setAttribute("login", false);
+					request.setAttribute("correctEmail", false);
+					request.setAttribute("correctPassword", false);
 					redirectedPage = "/login-page.jsp";
 				}
 			}

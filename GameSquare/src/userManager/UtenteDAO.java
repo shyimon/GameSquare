@@ -18,6 +18,7 @@ public class UtenteDAO {
 	private static ResultSet set;
 	private static String addUtente;
 	private static String checkEmail;
+	private static String checkPassword;
 	private static String showAccount;
 	private static String showAllUsers;
 	private static String checkLogin;
@@ -25,7 +26,8 @@ public class UtenteDAO {
 	static
 	{
 		addUtente="INSERT INTO utente(username,email,password) values(?,?,?)";
-		checkEmail="SELECT nome FROM utente where email=?";
+		checkEmail="SELECT username FROM utente where email=?";
+		checkPassword="SELECT username FROM utente where password=?";
 		showAccount="SELECT * FROM utente where email=?";
 		showAllUsers="SELECT * FROM utente WHERE Tipo='user'";
 		checkLogin="SELECT username,email,password,punteggio,tipo FROM utente where email=? AND password=?";
@@ -74,6 +76,59 @@ public class UtenteDAO {
 		{
 			session.invalidate();
 		}
+	}
+	
+	
+	public boolean checkEmail(String Email) throws SQLException {	//check dell'email
+		boolean flag=false;
+
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(checkEmail);
+			statement.setString(1,Email);
+			set=statement.executeQuery();
+			flag=set.next();
+		} 		
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return flag;	
+	}
+	
+	public boolean checkPassword(String Pass) throws SQLException {	//check della password
+		boolean flag=false;
+
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(checkPassword);
+			statement.setString(1,Pass);
+			set=statement.executeQuery();
+			flag=set.next();
+		} 		
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return flag;	
 	}
 	
 }
