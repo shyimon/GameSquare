@@ -7,11 +7,11 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>GameSquare - Home</title>
-		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
 			 <script type="text/javascript">
     </script>
 	</head>
-	<body>
+	<body style="margin:0">
 		<header class="index-header">
 			<%@ include file="./fragment/header.jsp" %>
 		</header>
@@ -54,7 +54,7 @@
 					<div class="objectItem col-md-3">
 						<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
 						<div class="row justify-content-center">
-							<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><p><b><%=bean.getNome()%></b></p></a>
+							<a class="game-name" href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><p><b><%=bean.getNome()%></b></p></a>
 						</div>
 					</div>
 				

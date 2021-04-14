@@ -15,7 +15,7 @@
 <meta charset="ISO-8859-1">
 <title>GameSquare - <%=bean.getTitolo()%></title>
 </head>
-<body>
+<body style="margin:0">
 
 <header class="index-header">
 			<%@ include file="./fragment/header.jsp" %>

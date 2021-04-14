@@ -72,10 +72,31 @@
 	.nav-items-left {
 		grid-column: 1;
 		grid-row: 2;
+		margin-left: 5%;
+		display: flex;
+		justify-content: space-between;
 	}
 	
 	.nav-items-right {
 		grid-column: 3;
 		grid-row: 2;
+		margin-right: 5%;
+		display: flex;
+		justify-content: space-between;
 	}
+	
+	.nav-button {
+		padding: 1% 2% 1% 2%;
+		background: black;
+	}
+	
+	.nav-button:hover {
+		background: grey;
+	}
+	
+	a.nav-button {
+		color: white;
+		text-decoration: none;
+	}
+	
 }

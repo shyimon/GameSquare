@@ -50,25 +50,25 @@
 							}
 							if(utenteLoggato!=null) {
 								if((utenteLoggato.getTipo()).equals("user")){ %>
-									<a class="service-button" href="area-utente.jsp"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getUsername()%> </a>
+									<a class="nav-button" href="area-utente.jsp"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getUsername()%> </a>
 						<%} else{ %>
-									<a class="service-button" href="area-utente.jsp" style = "font-size:15px"><span class="glyphicon glyphicon-user men"></span>Admin:<%=" "+utenteLoggato.getUsername()%></a>											
+									<a class="nav-button" href="area-utente.jsp" style = "font-size:15px"><span class="glyphicon glyphicon-user men"></span>Admin:<%=" "+utenteLoggato.getUsername()%></a>											
 						<%} %>
 						<%} else {%>
-									<a class="service-button" href="login-page.jsp"><span class="glyphicon glyphicon-user men"></span>Area Utente</a>
+									<a class="nav-button" href="login-page.jsp"><span class="glyphicon glyphicon-user men"></span>Area Utente</a>
 						<%} %>
 						
-						<a class="service-button" href="/GameSquare/Catalogo">Aggiungi Gioco</a>
+						<a class="nav-button" href="/GameSquare/Catalogo">Aggiungi Gioco</a>
 				
 						<%
 							if(request.getSession(false) == null || request.getSession(false).getAttribute("utenteLoggato") == null) {
 						%>
-							<a class="service-button" href="login-page.jsp">LOGIN</a>
+							<a class="nav-button" href="login-page.jsp">LOGIN</a>
 						<%
 						 	  }
 							  else {
 						%>
-							<a class="service-button" href="logout.jsp">LOGOUT</a>
+							<a class="nav-button" href="logout.jsp">LOGOUT</a>
 						<%
 							}
 						%>

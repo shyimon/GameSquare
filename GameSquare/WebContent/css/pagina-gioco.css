@@ -1,0 +1,8 @@
+@charset "ISO-8859-1";
+
+@media screen {
+	.gameinfo-section {
+		display: block;
+		margin: 1%;
+	}
+}

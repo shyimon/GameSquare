@@ -11,7 +11,7 @@
         window.onunload = function () { null };
     </script>
 </head>
-<body>
+<body style="margin:0">
 <h1>Rudimentale pagina di login, da aggiustare</h1>
 <br>
 

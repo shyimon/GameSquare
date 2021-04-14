@@ -11,10 +11,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>GameSquare - <%=bean.getNome()%></title>
+	<meta charset="ISO-8859-1">
+	<title>GameSquare - <%=bean.getNome()%></title>
+	 	<link rel="stylesheet" type="text/css" href="css/pagina-gioco.css">
 </head>
-<body>
+
+<body style="margin:0">
 	<header class="index-header">
 			<%@ include file="./fragment/header.jsp" %>
 	</header>

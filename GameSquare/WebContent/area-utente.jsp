@@ -8,12 +8,14 @@
 	
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>GameSquare - Area Utente</title>
-   
+	<meta charset="ISO-8859-1">
+	<title>GameSquare - Area Utente</title>
+ 	<link rel="stylesheet" type="text/css" href="css/area-utente.css">  
 </head>
-<body>
+
+<body style="margin:0">
 
 
    <%@ include file="fragment/header.jsp" %>

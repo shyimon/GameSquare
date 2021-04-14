@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+@media screen {
+	.utente-section {
+		display: block;
+		margin: 1%;
+	}
+	
+}
