@@ -31,9 +31,11 @@ public class ThreadDAO {
 				if(i!=strings.length-2)
 					viewThread+=strings[i]+"=? AND ";
 				else
-					viewThread+=strings[i]+"=?;";
+					viewThread+=strings[i]+"=?";
 			}
 		}
+		viewThread+=" ORDER BY idThread DESC; ";
+		
 		try 
 		{
 			con=ConnectionPool.getConnection();
