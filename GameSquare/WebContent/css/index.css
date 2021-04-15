@@ -6,8 +6,68 @@
 		display: block;
 		margin: 1%;
 	}
+	
+	.headerCatalogo {
+		text-align: center;
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	.games-list {
+        display: grid;
+        grid-template-columns: repeat(4, 25%)
+	}
+    
+    .game-object {
+    	display: grid;
+    	grid-template-rows: 85% 15%;
+    	margin: 3%;
+    	margin-top: 5%;
+    	border-radius: 0.2em;
+    }
+
+
+
+    .imageContainer {
+    	background: #696969;
+    	grid-row: 1 / 1;
+		text-align: center;
+		border-left: 3px solid;
+		border-right: 3px solid;
+		border-top: 3px solid;
+    }
+    
+    .imgItem {
+    	height: 95%;
+    	width: auto;
+    	border-radius: 0.3em;
+    }
+    
+    .nameContainer {
+    	width: 80%;
+    	height: 90%;
+		background: #696969;
+		grid-row: 2 / 2;
+		justify-self: center;
+		border-left: 3px solid;
+		border-right: 3px solid;
+		border-bottom: 3px solid;
+    }
+	
 	.game-name {
+	    height: 90%;
+		width: 80%;
 		color: black;
 		text-decoration: none;
+		justify-self: center;
+		text-align: center;
+	}
+	
+	.imageContainer:hover ~ .nameContainer, .imageContainer:hover {
+		cursor: pointer;
+		background: #383838;
+		transition: background 0.3s ease-in-out;
 	}
 }

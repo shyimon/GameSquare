@@ -42,27 +42,30 @@
 							arrayFeatured.add(g);
 						I++;
 					}
-				
-									
+				%>
+				<ul class="games-list">
+				<%				
 					Iterator<?> it2 = arrayFeatured.iterator();
 					while (it2.hasNext()) 
 					{
 						Gioco bean = (Gioco) it2.next();	
 				%>
 				
-				
-					<div class="objectItem col-md-3">
-						<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
-						<div class="row justify-content-center">
-							<a class="game-name" href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><p><b><%=bean.getNome()%></b></p></a>
-						</div>
-					</div>
+					<li class="game-object">
+							<div class="imageContainer col-md-3">
+								<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
+							</div>
+								<div class="nameContainer">
+									<a class="game-name" href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><p><b><%=bean.getNome()%></b></p></a>
+							</div>
+					</li>
 				
 				
 				<% 	}
 					} else { %>
 						<div class="col-md-12"><h4>Nessun gioco disponibile</h4></div>
 				<% } %>
+				</ul>
 				</div>
 			</div>
 				</div>
