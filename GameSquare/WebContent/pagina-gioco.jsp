@@ -89,10 +89,10 @@
 			</div>
 		</div>
 		
-		<div class="container spacerDescrizioneProd">
+		<div id="ThreadArea" class="container spacerDescrizioneProd">
 			<div class="row">
 				<div class="col-md-3">
-					<h2 id="titlePPS">Discussioni più recenti</h2>
+					<h2 >Discussioni più recenti</h2>
 				</div>
 				<div class="descstyle col-md-9">
 					<hr>

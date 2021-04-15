@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 import util.*;
 
 public class ThreadDAO {
@@ -14,6 +15,7 @@ public class ThreadDAO {
 	private static PreparedStatement statement=null;
 	private static ResultSet set=null;
 	private static String viewThread;
+	private static String addThread;
 
 	
 	public ArrayList<GameThread> viewThread(String ...strings) throws SQLException
@@ -70,6 +72,40 @@ public class ThreadDAO {
 		}
 		return threads;
 	}
+	
+
+	public static boolean addThread(GameThread thread) throws SQLException 
+	{
+		addThread= "INSERT INTO thread(tipoThread,Titolo,Testo,utente,Idgioco) values(?,?,?,?,?)";
+		boolean flag=false;
+
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(addThread);
+			statement.setString(1,thread.getTipoThread());
+			statement.setString(2,thread.getTitolo());
+			statement.setString(3,thread.getTesto());
+			statement.setString(4,thread.getUsernameUtente());
+			statement.setInt(5,thread.getIdGioco());
+			flag=statement.executeUpdate()>0;
+			con.commit();
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return flag;
+	}
+
 	
 
 }

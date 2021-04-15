@@ -9,7 +9,9 @@
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/header.css">
-	 
+	
+	 <!-- SweetAlert v2.0 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>  
 	</head>
 
 	<body>
@@ -68,7 +70,7 @@
 						 	  }
 							  else {
 						%>
-							<a class="nav-button" href="logout.jsp">LOGOUT</a>
+							<a class="nav-button" href="/GameSquare/Logout">LOGOUT</a>
 						<%
 							}
 						%>
