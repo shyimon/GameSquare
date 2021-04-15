@@ -10,9 +10,12 @@
         setTimeout("preventBack()", 0);
         window.onunload = function () { null };
     </script>
+    <link rel="stylesheet" type="text/css" href="css/login-page.css">
 </head>
 <body style="margin:0">
-<h1>Rudimentale pagina di login, da aggiustare</h1>
+		<header class="login-header">
+			<%@ include file="./fragment/header.jsp" %>
+		</header>
 <br>
 
 
@@ -47,7 +50,19 @@
 						    </form>
 					    </div>
 <br>
-<a href="index.jsp">Torna alla home</a>
+<div class="tasti-nav" id="torna-home">
+	<a href="index.jsp">Torna alla home</a>
+</div>
+
+<div class="tasti-nav" id="registrati">
+	<a href="registrazione.jsp">Non hai un account? Registrati!</a>
+</div>
+
+<div class="tasti-nav" id="recupero-password">
+	<a href="recupero-password.jsp">Hai dimenticato la password?</a>
+</div>
+
+
 
 </body>
 </html>
