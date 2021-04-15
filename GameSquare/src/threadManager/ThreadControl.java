@@ -53,8 +53,10 @@ public class ThreadControl extends HttpServlet {
 		RequestDispatcher dispatcher;
 		if(action.equals("discussion")) 
 			dispatcher = getServletContext().getRequestDispatcher("/pagina-thread.jsp");
+		else if(action.equals("newdiscussion")) 
+			dispatcher = getServletContext().getRequestDispatcher("/nuova-discussione.jsp");
 		else
-			dispatcher = getServletContext().getRequestDispatcher("/home.jsp");
+			dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
 		
 		dispatcher.forward(request, response);
 	}

@@ -33,6 +33,18 @@
 					<div id="myModal" class="modal">
 						<img class="modal-content" id="img01" style="width: 350px;">
 					</div>
+					<div class="col-md-12">
+					<% if(utenteLoggato != null)
+						{%>					
+							<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a></
+						
+					<%	}
+						else
+						{%>
+							<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a></
+						<%}%>
+					</div>
+					
 				<div class="col-md-8" id="spacerDettagli">
 					<div>
 					<br>
@@ -123,7 +135,17 @@
 			<% 	}
 			}
 				} else { %>
-					<div class="col-md-12"><h4>Nessuna Discussione.</h4><a href="#">Sii il primo a crearla!</a></div>
+					<div class="col-md-12"><h4>Nessuna Discussione.</h4>
+					<% if(utenteLoggato != null)
+						{%>					
+							<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Sii il primo a crearla!</a></
+						
+					<%	}
+						else
+						{%>
+							<a href="login-page.jsp">Sii il primo a crearla!</a></
+						<%}%>
+					</div>
 			<% } %>
 			</div>
 		</div>
