@@ -54,7 +54,7 @@ public class GameControl extends HttpServlet {
 	if(action.equals("gioco")) 
 		dispatcher = getServletContext().getRequestDispatcher("/pagina-gioco.jsp");
 	else
-		dispatcher = getServletContext().getRequestDispatcher("/home.jsp");
+		dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
 	
 	dispatcher.forward(request, response);
 	

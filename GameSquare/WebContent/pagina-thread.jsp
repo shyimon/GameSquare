@@ -79,12 +79,24 @@
 			
 			
 			<% 	}
+					
 			}
 				}
 				} else { %>
-					<div class="col-md-12"><h4>Nessun'altra discussione su questo gioco.</h4><a href="#">Creane una!</a></div>
+					<div class="col-md-12"><h4>Nessun'altra Discussione.</h4>
+					<% if(utenteLoggato != null)
+						{%>					
+							<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Creane una!</a></
+						
+					<%	}
+						else
+						{%>
+							<a href="login-page.jsp">Creane una!</a></
+						<%}%>
+					</div>
 			<% } %>
 			</div>
+		
 		</div>
 
 </body>
