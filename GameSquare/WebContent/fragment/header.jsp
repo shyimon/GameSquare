@@ -40,7 +40,7 @@
 				
 			<div class="nav-items-left">
 				<a class="nav-button" href="/GameSquare/">Home</a>
-				<a class="nav-button" href="/GameSquare/Catalogo">Catalogo</a>
+				<a class="nav-button" href="Game?action=findall">Catalogo</a>
 				<a class="nav-button" href="/GameSquare/Aiuto">Aiuto</a>
 			</div>
 			
@@ -58,11 +58,16 @@
 						<%} %>
 						<%} else {%>
 									<a class="nav-button" href="login-page.jsp"><span class="glyphicon glyphicon-user men"></span>Area Utente</a>
-						<%} %>
-						
-						<a class="nav-button" href="/GameSquare/Catalogo">Aggiungi Gioco</a>
-				
-						<%
+						<%} 
+							if(utenteLoggato!=null) {
+							if(utenteLoggato.getTipo().equals("user") || utenteLoggato.getTipo().equals("mod")){%>
+								<a class="nav-button" href="nuova-richiesta-gioco.jsp">Aggiungi Gioco</a>
+							<%} else{%>
+								<a class="nav-button" href="nuovo-gioco.jsp">Aggiungi Gioco</a>
+							<%}
+							}else{%>
+							<a class="nav-button" href="login-page.jsp">Aggiungi Gioco</a>
+						<%}
 							if(request.getSession(false) == null || request.getSession(false).getAttribute("utenteLoggato") == null) {
 						%>
 							<a class="nav-button" href="login-page.jsp">LOGIN</a>

@@ -8,6 +8,10 @@ public class RichiestaGioco {
 	private String fonte;
 	private boolean risposta;
 	
+	public RichiestaGioco() {
+		
+	}
+	
 	public RichiestaGioco(int idRichiesta, String nomeGioco, String fonte) {
 		this.idRichiesta = idRichiesta;
 		this.nomeGioco = nomeGioco;
@@ -44,6 +48,10 @@ public class RichiestaGioco {
 
 	public void setFonte(String fonte) {
 		this.fonte = fonte;
+	}
+	
+	public boolean getRisposta() {
+		return risposta;
 	}
 
 	public void setRisposta(boolean risposta) {

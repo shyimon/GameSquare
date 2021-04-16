@@ -25,7 +25,9 @@
 <section class="cateProd-section">
 		<div class="container">
 			<div class="row justify-content-center">
-				<% 	if(ricerca!=null) {%>
+				<%  	if(action_name!=null) {%>
+				<h1><%=action_name%></h1>
+					<% 	} else {%>
 					<h1><%=ricerca%></h1>
 			<% 	}%>
 			</div>
@@ -37,8 +39,12 @@
 					
 					<%
 					GiocoDAO GameModel=new GiocoDAO();
-					
-					
+				
+					if(action_name!=null){
+					if(action_name.equals("Tutti i giochi")){
+						array = GameModel.viewGame();
+					}
+					}
 					
 					if(array!=null && array.size()!=0)
 					{
@@ -58,7 +64,7 @@
 							<div class="row justify-content-center" style="margin-left: 20px"><h4>Nessun gioco disponibile.</h4></div>
 							<% if(utenteLoggato!=null) { 
 									if(utenteLoggato.getTipo().equals("user") || utenteLoggato.getTipo().equals("mod")){%>
-							<div class="row justify-content-center" style="margin-left: 20px"><h4>Non trovi il tuo gioco preferito? <a href="#">Richiedilo subito!</a></h4></div>
+							<div class="row justify-content-center" style="margin-left: 20px"><h4>Non trovi il tuo gioco preferito? <a href="nuova-richiesta-gioco.jsp">Richiedilo subito!</a></h4></div>
 							<%		}else{ %>
 							<div class="row justify-content-center" style="margin-left: 20px"><h4>Non trovi il tuo gioco preferito? <a href="#">Aggiungilo subito!</a></h4></div>
 							<%		}
@@ -68,6 +74,9 @@
 							}%>
 					</div>
 				</div>
+			</div>
+		</div>
+	</section>
 
 </body>
 </html>
