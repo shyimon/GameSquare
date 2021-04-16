@@ -38,6 +38,7 @@ public class GameControl extends HttpServlet {
 			{	
 				if(action.equals("gioco"))
 					{
+							System.out.println(action);
 							request.removeAttribute("game");
 			
 							String gameID = request.getParameter("id");
@@ -46,6 +47,7 @@ public class GameControl extends HttpServlet {
 					}
 				else if(action.equals("findall"))
 				{		
+					System.out.println(action);
 					request.removeAttribute("action_name");
 				
 					
