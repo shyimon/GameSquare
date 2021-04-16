@@ -19,7 +19,7 @@ CREATE TABLE gioco (
     publisher varchar(50) NOT NULL,
     anno varchar(4) NOT NULL,
     genere varchar(30) NOT NULL,
-    imgpath varchar(50) DEFAULT NULL,
+    imgpath varchar(50) DEFAULT 'img/Games/placeholder',
     punteggio int NOT NULL,
     media_voti FLOAT DEFAULT 0,
     PRIMARY KEY (id)
