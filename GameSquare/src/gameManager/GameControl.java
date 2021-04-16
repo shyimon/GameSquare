@@ -38,12 +38,21 @@ public class GameControl extends HttpServlet {
 			{	
 				if(action.equals("gioco"))
 					{
+							System.out.println(action);
 							request.removeAttribute("game");
 			
 							String gameID = request.getParameter("id");
 							ArrayList<Gioco> app=gameModel.viewGame("id", gameID);
 							request.setAttribute("game", app.get(0));
 					}
+				else if(action.equals("findall"))
+				{		
+					System.out.println(action);
+					request.removeAttribute("action_name");
+				
+					
+					request.setAttribute("action_name", "Tutti i giochi");
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -53,6 +62,8 @@ public class GameControl extends HttpServlet {
 	RequestDispatcher dispatcher;
 	if(action.equals("gioco")) 
 		dispatcher = getServletContext().getRequestDispatcher("/pagina-gioco.jsp");
+	if(action.equals("findall")) 
+		dispatcher = getServletContext().getRequestDispatcher("/catalogo.jsp");
 	else
 		dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
 	
