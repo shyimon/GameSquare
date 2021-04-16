@@ -17,6 +17,7 @@ public class GiocoDAO {
 	private static ResultSet set=null;
 	private static String viewGame;
 	private static String getPublishers;
+	private static String getGenres;
 
 	
 	public ArrayList<Gioco> viewGame(String ...strings) throws SQLException
@@ -82,6 +83,35 @@ public class GiocoDAO {
 		{
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(getPublishers);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				String pub =set.getString(1);
+				results.add(pub);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return results;
+	}
+	
+	public ArrayList<String> GetGenres() throws SQLException {
+		getGenres = "SELECT DISTINCT genere FROM gioco;";
+		ArrayList <String> results = new ArrayList<String>();
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(getGenres);
 			set=statement.executeQuery();
 			while(set.next())
 			{
