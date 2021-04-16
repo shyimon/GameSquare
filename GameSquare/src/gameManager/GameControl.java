@@ -42,6 +42,7 @@ public class GameControl extends HttpServlet {
 							request.removeAttribute("game");
 			
 							String gameID = request.getParameter("id");
+							System.out.println(gameID);
 							ArrayList<Gioco> app=gameModel.viewGame("id", gameID);
 							request.setAttribute("game", app.get(0));
 					}
@@ -62,7 +63,7 @@ public class GameControl extends HttpServlet {
 	RequestDispatcher dispatcher;
 	if(action.equals("gioco")) 
 		dispatcher = getServletContext().getRequestDispatcher("/pagina-gioco.jsp");
-	if(action.equals("findall")) 
+	else if(action.equals("findall")) 
 		dispatcher = getServletContext().getRequestDispatcher("/catalogo.jsp");
 	else
 		dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
