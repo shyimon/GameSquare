@@ -43,7 +43,7 @@
 					</div>
 					<div>
 						<span>Fonte:<label>*</label></span> <textarea name="gamereq_source"
-							id="gamereq_source" placeholder="Inserire una fonte..." required ></textarea>
+							id="gamereq_source" placeholder="Inserire il link a una fonte valida..." required ></textarea>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -67,6 +67,11 @@ $("#buttonrequest").on('click', function validate(){
 	var gamereq_source = $('#gamereq_source').val();
 	var username = $('#username').val();
 
+	var RGEXsource = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/gm;
+	var sourceRES = RGEXsource.test(gamereq_source);
+	
+
+	
 	if(gamereq_title === "")
 	{
 		Swal.fire({ 
@@ -79,7 +84,7 @@ $("#buttonrequest").on('click', function validate(){
 		setTimeout(function(){location.href="nuova-richiesta-gioco.jsp"} , 135000);
 		return false;
 	}
-	else if(gamereq_source === "")
+	else if(sourceRES == false)
 	{
 		Swal.fire({ 
 			title: 'Inserire una fonte valida',

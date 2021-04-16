@@ -50,9 +50,15 @@ public class CreateGameReq extends HttpServlet {
 				if(RichiestaGiocoDAO.addGameRequest(req))
 				{
 					
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/GameSquare/index.jsp");
-					dispatcher.forward(request, response);
+					//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/GameSquare/index.jsp");
+					//dispatcher.forward(request, response);
 					
+				}
+				else 
+				{
+					request.setAttribute("richiestagioco", "false");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/nuova-richiesta-gioco.jsp");
+					dispatcher.forward(request, response);
 				}
 			
 		} catch (SQLException e) {
