@@ -32,36 +32,37 @@
 					<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;"> Password errata.</h4>
 					<%	}
 	%>
-
-<div id="loginbox" class="loginbox">
-							<form action="UserLogin" method="POST" name="login" id="login-form">
-								<fieldset class="input">
-									<p id="login-form-username">
-										<label for="email">Email</label>
-										<input id="email" type="email" name="user_email" class="inputbox" size="18" autocomplete="off">
-									</p>
-									<p id="login-form-password">
-										<label for="password">Password</label>
-										<input id="password" type="password" name="user_password" class="inputbox" size="18" autocomplete="off">
-									</p>
-										<input type="submit" name="Submit" class="button" value="Login">
-										<div class="clear"></div>
-								</fieldset>
-						    </form>
-					    </div>
-<br>
-<div class="tasti-nav" id="torna-home">
-	<a href="index.jsp">Torna alla home</a>
+<div class="login-area">
+	<h2>Login</h2>
+	<div id="loginbox" class="loginbox">
+		<form action="UserLogin" method="POST" name="login" id="login-form">
+			<fieldset class="input">
+				<p id="login-form-username">
+					<input id="email" type="email" name="user_email" class="inputbox" size="18" autocomplete="off" placeholder="E-mail">
+				</p>
+				<p id="login-form-password">
+					<input id="password" type="password" name="user_password" class="inputbox" size="18" autocomplete="off" placeholder="Password">
+				</p>
+					<input type="submit" name="Submit" class="button" value="Login">
+				<div class="clear"></div>
+			</fieldset>
+	    </form>
+	</div>
+	<br>
+	<div class="tasti-nav">
+		<div id="torna-home">
+			<a href="index.jsp">Torna alla home</a>
+		</div>
+	
+		<div id="registrati">
+			<a href="registrazione.jsp">Non hai un account? Registrati!</a>
+		</div>
+		
+		<div id="recupero-password">
+			<a href="recupero-password.jsp">Hai dimenticato la password?</a>
+		</div>
+	</div>
 </div>
-
-<div class="tasti-nav" id="registrati">
-	<a href="registrazione.jsp">Non hai un account? Registrati!</a>
-</div>
-
-<div class="tasti-nav" id="recupero-password">
-	<a href="recupero-password.jsp">Hai dimenticato la password?</a>
-</div>
-
 
 
 </body>

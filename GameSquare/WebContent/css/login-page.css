@@ -3,6 +3,54 @@
 @media screen
 	{
 	
-	
-	
+		body {
+			height: 500px;
+			background: grey;
+		}
+		
+		.input {
+			border: none;
+		}
+		
+		.login-header {
+			box-shadow: 3px 3px 15px #333;
+		}
+		
+		.login-area {
+			position: relative;
+			margin: 0 auto;
+			background: #ecf0f1;
+			width: 350px;
+			border-radius: 5px;
+			box-shadow: 3px 3px 10px #000;
+			padding: 15px;
+		}
+		
+		h2 {
+			text-align: center;
+			font-weight: 200;
+			font-size: 2em;
+			margin-top: 10px;
+			color: #34495e;
+		}
+		
+		input[type="email"], input[type="password"], .button {
+			width: 80%;
+			margin-left: 10%;
+			margin-bottom: 25px;
+			height: 40px;
+			border-radius: 5px;
+			outline: 0;
+		}
+		
+		input[type="email"], input[type="password"] {
+			border: 1px solid #bbb;
+			padding: 0 0 0 10px;
+			font-size: 14px;
+		}
+		
+		input[type="email"]:focus, input[type="password"]:focus {
+			border: 1px solid black;
+		}
+
 }
