@@ -25,16 +25,16 @@
 			</logo>
 			
 			<div class="wrap-item">
-				<form action="" method="get" id="searchbarForm">
+				<form action="Cerca" method="POST" id="searchbarForm">
 					<div class="searchbar-item">
-						<input type="hidden" name="page" value='1'>
-						<input type="text" class="searchTerm" placeholder="Cerca gioco..." name="q">
+						<input type="text" class="searchTerm" placeholder="Cerca gioco..." name="cerca">
 						<button type="submit" class="searchButton">
 		     	 			<i class="fa fa-search"></i>
 		     	 		</button>
 		     	 	</div>
 				</form>
 			</div>
+			
 			
 			<!-- UTENTE -->
 				
