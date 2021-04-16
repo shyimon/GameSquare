@@ -95,7 +95,7 @@
     		<%try{
 					 ArrayList<String> list = GameModel.GetPublishers();
 						for(String x:list){ %>
-				<a href="#" ><%=x%></a>
+				<a href="Game?action=publisher&pub=<%=x%>" ><%=x%></a>
       			<% }
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
@@ -114,14 +114,6 @@
 					<div class="row justify-content-start">
 					
 					<%
-					
-				
-					if(action_name!=null){
-					if(action_name.equals("Tutti i giochi")){
-						array = GameModel.viewGame();
-					}
-					}
-					
 					if(array!=null && array.size()!=0)
 					{
 						Iterator<?> it = array.iterator();
