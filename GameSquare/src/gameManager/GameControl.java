@@ -37,15 +37,15 @@ public class GameControl extends HttpServlet {
 		if(action != null) 
 			{	
 				if(action.equals("gioco"))
-					{
-							System.out.println(action);
-							request.removeAttribute("game");
+				{
+					System.out.println(action);
+					request.removeAttribute("game");
 			
-							String gameID = request.getParameter("id");
-							System.out.println(gameID);
-							ArrayList<Gioco> app=gameModel.viewGame("id", gameID);
-							request.setAttribute("game", app.get(0));
-					}
+					String gameID = request.getParameter("id");
+					System.out.println(gameID);
+					ArrayList<Gioco> app=gameModel.viewGame("id", gameID);
+					request.setAttribute("game", app.get(0));
+				}
 				else if(action.equals("findall"))
 				{		
 					System.out.println(action);
@@ -66,6 +66,17 @@ public class GameControl extends HttpServlet {
 					request.getSession().setAttribute("giochi", app);	
 				
 				}
+				else if(action.equals("genre"))
+				{		
+					System.out.println(action);
+					request.removeAttribute("action_name");
+					request.getSession().removeAttribute("giochi");	
+					String genere = request.getParameter("gen");
+					ArrayList<Gioco> app=gameModel.viewGame("genere", genere);
+					request.setAttribute("action_name", "Ricerca per genere: "+genere);
+					request.getSession().setAttribute("giochi", app);	
+				
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -78,6 +89,8 @@ public class GameControl extends HttpServlet {
 	else if(action.equals("findall")) 
 		dispatcher = getServletContext().getRequestDispatcher("/catalogo.jsp");
 	else if(action.equals("publisher")) 
+		dispatcher = getServletContext().getRequestDispatcher("/catalogo.jsp");
+	else if(action.equals("genre")) 
 		dispatcher = getServletContext().getRequestDispatcher("/catalogo.jsp");
 	else
 		dispatcher = getServletContext().getRequestDispatcher("/index.jsp");

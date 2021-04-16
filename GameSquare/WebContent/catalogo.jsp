@@ -86,7 +86,6 @@
 		</div>
 		
 		
-			<div>
 			<div class="dropdown">
     		<button class="dropbtn">Ricerca per Publisher
       				<i class="fa fa-caret-down"></i>
@@ -104,7 +103,24 @@
 											 
     		</div>
 		</div> 
-		</div>
+		
+		<div class="dropdown">
+    		<button class="dropbtn">Ricerca per Genere
+      				<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+    		<%try{
+					 ArrayList<String> list = GameModel.GetGenres();
+						for(String x:list){ %>
+				<a href="Game?action=genre&gen=<%=x%>" ><%=x%></a>
+      			<% }
+					} catch (Exception e) {
+						System.out.println(e.getMessage());
+									}  											    													    
+								 %>
+											 
+    		</div>
+		</div> 
 
 		
 		
