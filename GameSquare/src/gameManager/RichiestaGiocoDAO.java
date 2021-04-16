@@ -17,15 +17,17 @@ public class RichiestaGiocoDAO {
 
 	public static boolean addGameRequest(RichiestaGioco req) throws SQLException 
 	{
-		addReq= "INSERT INTO richiestagioco(nomeGioco,Fonte) values(?,?)";
+		addReq= "INSERT INTO richiestagioco(Utente,nomeGioco,fonte, risposta) values(?,?,?,?)";
 		boolean flag=false;
 
 		try 
 		{
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(addReq);
-			statement.setString(1,req.getNomeGioco());
-			statement.setString(2,req.getFonte());
+			statement.setString(1,req.getUsernameUtente());
+			statement.setString(2,req.getNomeGioco());
+			statement.setString(3,req.getFonte());
+			statement.setBoolean(4,req.getRisposta());
 			flag=statement.executeUpdate()>0;
 			con.commit();
 		}

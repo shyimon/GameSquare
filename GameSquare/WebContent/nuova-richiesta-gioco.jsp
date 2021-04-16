@@ -50,7 +50,7 @@
 				<input type="hidden" id="username" name="username" value="<%=utenteLoggato.getUsername()%>">
 	
 				<div class="button2">
-					<input type="button" id="buttonrichiedi" class="setButton"
+					<input type="button" id="buttonrequest" class="setButton"
 						value="Richiedi gioco">
 				</div>
 			</div>
@@ -58,4 +58,62 @@
 		
 </form>
 </body>
+
+<script>
+
+
+$("#buttonrequest").on('click', function validate(){	
+	var gamereq_title  = $('#gamereq_title').val();
+	var gamereq_source = $('#gamereq_source').val();
+	var username = $('#username').val();
+
+	if(gamereq_title === "")
+	{
+		Swal.fire({ 
+			title: 'Inserire il titolo del gioco',
+			type: 'warning',
+			  confirmButtonColor: '#3085d6',
+			  confirmButtonText: 'OK',
+			width: '400px',
+			})
+		setTimeout(function(){location.href="nuova-richiesta-gioco.jsp"} , 135000);
+		return false;
+	}
+	else if(gamereq_source === "")
+	{
+		Swal.fire({ 
+			title: 'Inserire una fonte valida',
+			type: 'warning',
+			  confirmButtonColor: '#3085d6',
+			  confirmButtonText: 'OK',
+			width: '400px',
+			})
+		setTimeout(function(){location.href="nuova-richiesta-gioco.jsp"} , 135000);
+		return false;
+	}
+	{
+		$.ajax({ 
+		type: "POST",
+		url: "CreateGameReq",
+		data: {"gamereq_title": gamereq_title, "gamereq_source": gamereq_source,"username":username},
+		success: function(results){
+			Swal.fire({ //SECONDO POPUP
+				title: 'Richiesta inviata!',
+				text: 'Essa sarà valutata da un gestore catalogo',
+				timer: 40000,
+				type: 'success',
+				showCancelButton: false,
+				showConfirmButton: false,
+				width: '400px',
+				})
+			setTimeout(function(){location.href="/GameSquare/index.jsp"} , 2000);
+			}    
+		})
+	}
+	
+	
+	
+});
+
+</script>
 </html>
