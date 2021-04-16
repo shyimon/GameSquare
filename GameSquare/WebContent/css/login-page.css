@@ -26,6 +26,10 @@
 			padding: 15px;
 		}
 		
+		.loginbox {
+			height: 215px;
+		}
+		
 		h2 {
 			text-align: center;
 			font-weight: 200;
@@ -52,5 +56,40 @@
 		input[type="email"]:focus, input[type="password"]:focus {
 			border: 1px solid black;
 		}
+		
+		.tasti-nav {
+			align-self: center;
+		}
+		
+		.button {
+			background: #91bdff;
+			border: none;
+			color: white;
+			font-size: 18px;
+			font-weight: 200;
+			cursor: pointer;
+			transition: box-shadow 0.4s ease, background 0.4s;
+		}
+		
+		.button:hover {
+			background: #919aff;
+			box-shadow: 1px 1px 5px #555;
+		}
+		
+		#torna-home, #registrati, #recupero-password {
+			text-align: center;
+			font-size: 15px;
+			padding-top: 10px;
+			color: blue;
+		}
+				
+		a:visited {
+			color: blue;
+		}
+		
+		a:hover {
+			color: black;
+		}
+		
 
 }
