@@ -17,141 +17,78 @@
 </head>
 
 <body style="margin:0">
-	<header class="index-header">
+	<header class="header">
 			<%@ include file="./fragment/header.jsp" %>
 	</header>
 
 <!-- sezione con le info del gioco, immagine ecc -->
-
-	<section class="gameinfo-section">
-		<div class="container border-prodsing">
-			<div class="row">
-				<div class="col-md-12">
-					<h3><%=bean.getNome()%></h3>
-				</div>
-			</div>
-			<div class="row" id="spacerPS">
-					<img id="imgXD" src="<%=bean.getImgpath()%>/img1.png" alt="Img" style="width:100%; max-width:280px; height: 280px;" class="imgItem2">
-					<div id="myModal" class="modal">
-						<img class="modal-content" id="img01" style="width: 350px;">
-					</div>
-					<div class="col-md-12">
-					<% if(utenteLoggato != null)
-						{%>					
-							<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a></
-						
-					<%	}
-						else
-						{%>
-							<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a></
-						<%}%>
-					</div>
-					
-				<div class="col-md-8" id="spacerDettagli">
-					<div>
-					<br>
-						<p id="stiletitle">Publisher: </p>
-						<p class="stilep"><%=bean.getPublisher()%></p>
-					</div>
-					<div>
-					<br>
-						<p id="stiletitle">Anno: </p>
-						<p class="stilep" id="model_prod"><%=bean.getAnno()%></p>
-					</div>
-					<div>
-						<br>
-						<p id="stiletitle">Genere: </p>
-							<p class="stilep"> <%=bean.getGenere()%> </p>
-					</div>
-					<div>
-						<br>
-						<p id="stiletitle">Punteggio: </p>
-							<p class="stilep"> <%=bean.getPunteggio()%> </p>
-					</div>
-					<div>
-						<br>
-						<p id="stiletitle">Media dei voti: </p>
-							<p class="stilep"> <%=bean.getMediaVoti()%> </p>
-					</div>
+	<div class="gameinfo-section">
+		<div class="game-info">
+			<div class="gamesec1">
+				<h3 id="game-name"><%=bean.getNome()%></h3>
+				<img id="imgXD" src="<%=bean.getImgpath()%>/img1.png" alt="Img" style="width:100%; max-width:280px; height: 280px;" class="imgItem2">
+				<img class="modal-content" id="img01" style="width: 350px;">
 				
-						</div>
-					</div>
-				</div>
-		<div class="container spacerDescrizioneProd">
-			<div class="row">
-				<div class="col-md-3">
-					<h2 id="titlePPS">DESCRIZIONE</h2>
-				</div>
-				<div class="descstyle col-md-9">
-					<hr>
-				</div> 
+					<p id="stiletitle">Punteggio: <%=bean.getPunteggio()%></p>
+					<p id="stiletitle">Media dei voti: <%=bean.getMediaVoti()%></p>
+			</div>
+			
+			<div class="gamesec2">
+				<h4 id="titlePPS">DESCRIZIONE</h4>
 				<p id="descP"><%=bean.getDescrizione()%></p>
+				<p id="stiletitle">Publisher: <%=bean.getPublisher()%></p>
+				<p id="stiletitle">Anno: <%=bean.getAnno()%></p>
+				<p id="stiletitle">Genere: <%=bean.getGenere()%></p>
 			</div>
 		</div>
-		
-		<div id="ThreadArea" class="container spacerDescrizioneProd">
-			<div class="row">
-				<div class="col-md-3">
-					<h2 >Discussioni più recenti</h2>
-				</div>
-				<div class="descstyle col-md-9">
-					<hr>
-				</div> 
-
-<div>
-		<div>
+			
+			
+		<div class="ThreadArea">
+			<h2 id="titolo">Discussioni più recenti</h2>
+			<div class="discussioni">
 			<%
-			ThreadDAO model_thread=new ThreadDAO();
-			ArrayList<GameThread> array = model_thread.viewThread("Idgioco", ""+bean.getIdGioco());
-         
-			
-			if(array.size()!=0)
-			{
-			
-								
-				Iterator<?> it2 = array.iterator();
-				while (it2.hasNext()) 
-				{
-					GameThread tbean = (GameThread) it2.next();	
-					if (tbean.getTipoThread().equals("Spoiler")){%>
-							
-							<div class="row justify-content-center">
-						<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
-					</div>
-				</div>
-				<br>
-					
-					<%}
-					else{
-			%>
-			
-			
-				
-					<div class="row justify-content-center">
-						<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
-					</div>
-				</div>
-				<br>
-			
-			
-			<% 	}
-			}
-				} else { %>
-					<div class="col-md-12"><h4>Nessuna Discussione.</h4>
-					<% if(utenteLoggato != null)
-						{%>					
-							<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Sii il primo a crearla!</a></
+				ThreadDAO model_thread=new ThreadDAO();
+				ArrayList<GameThread> array = model_thread.viewThread("Idgioco", ""+bean.getIdGioco());		
+				if(array.size()!=0)
+				{										
+					Iterator<?> it2 = array.iterator();
+					while (it2.hasNext()) 
+					{
+						GameThread tbean = (GameThread) it2.next();	
+						if (tbean.getTipoThread().equals("Spoiler")){%>
+						<a class="discussione" href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
+						<%}
+						else{
+						%>
+							<a class="discussione" href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
 						
-					<%	}
-						else
-						{%>
-							<a href="login-page.jsp">Sii il primo a crearla!</a></
-						<%}%>
-					</div>
-			<% } %>
-			</div>
-		</div>
-	</section>
+						<% 	}
+						}
+							} else { %>
+								<h4>Nessuna Discussione.</h4>
+								</div>
+								<% if(utenteLoggato != null)
+									{%>					
+										<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Sii il primo a crearla!</a></
+									
+								<%	}
+									else
+									{%>
+										<a href="login-page.jsp">Sii il primo a crearla!</a></
+									<%}%>
+				<% } %>
+				
+								<% if(utenteLoggato != null)
+				{%>					
+					<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a></		
+				<%}
+					else
+				{%>
+				</div>
+					<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a></
+				<%}%>
+	</div>
+</div>
 	
 </body>
 </html>

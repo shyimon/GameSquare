@@ -14,8 +14,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>GameSquare - Giochi</title>
+	<meta charset="ISO-8859-1">
+	<title>GameSquare - Giochi</title>
+	<link rel="stylesheet" type="text/css" href="css/catalogo.css">
 <style>
 .dropdown {
   float: left;
@@ -68,28 +69,30 @@
 </style>
 
 </head>
-<body>
+<body style="margin:0">
 
 <!-- Header section start -->
-     	  <%@ include file="fragment/header.jsp" %>
-	<!-- Header section end -->
+	<div class="header">
+		<%@ include file="fragment/header.jsp" %>
+	</div> 
+<!-- Header section end -->
 
 <section class="cateProd-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<%  	if(action_name!=null) {%>
-				<h1><%=action_name%></h1>
-					<% 	} else {%>
-					<h1><%=ricerca%></h1>
+	<div class="container">
+		<div class="row justify-content-center">
+			<%  	if(action_name!=null) {%>
+			<h1><%=action_name%></h1>
+				<% 	} else {%>
+				<h1><%=ricerca%></h1>
 			<% 	}%>
-			</div>
 		</div>
+	</div>
 		
 		
-			<div class="dropdown">
-    		<button class="dropbtn">Ricerca per Publisher
-      				<i class="fa fa-caret-down"></i>
-    		</button>
+	<div class="dropdown">
+    	<button class="dropbtn">Ricerca per Publisher
+    		<i class="fa fa-caret-down"></i>
+    	</button>
     		<div class="dropdown-content">
     		<%try{
 					 ArrayList<String> list = GameModel.GetPublishers();

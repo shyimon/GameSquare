@@ -1,8 +1,57 @@
 @charset "ISO-8859-1";
 
 @media screen {
+	
+	.header {
+		box-shadow: 3px 3px 15px #333;
+	}
+		
+		
 	.gameinfo-section {
-		display: block;
-		margin: 1%;
+		display: grid;
+		grid-template-columns: 60% 40%;
+		margin: 0.5%;
+	}
+	
+	#game-name {
+		font-size: 170%;
+	}
+	
+	.game-info {
+		display: grid;
+		grid-template-columns: 45% 50%;
+		grid-column: 1 / 1;
+	}
+	
+	
+	.gamesec1 {
+		text-align: center;
+		padding-right: 10%;
+	}
+	
+	#imgXD {
+		box-shadow: 3px 3px 7px #333;
+	}
+		
+	.ThreadArea {
+		box-shadow: 3px 3px 15px #333;
+		display: grid;
+		grid-template-rows: 8% 82% 10%;
+		padding: 2%;
+		padding-bottom: 5%;
+		border: solid black 2px;
+		border-radius: 0.6em;
+		grid-column: 2 / 2;
+	}
+	
+	.discussioni {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.discussione {
+		border-top: solid 1px grey;
+		padding-bottom: 2%;
+		padding-top: 2%;
 	}
 }
