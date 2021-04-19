@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import threadManager.GameThread;
 import util.*;
 
 public class GiocoDAO {
@@ -16,6 +17,7 @@ public class GiocoDAO {
 	private static PreparedStatement statement=null;
 	private static ResultSet set=null;
 	private static String viewGame;
+	private static String addGame;
 	private static String getPublishers;
 	private static String getGenres;
 
@@ -133,5 +135,40 @@ public class GiocoDAO {
 		}
 		return results;
 	}
+	
+	public static boolean addGame(Gioco game) throws SQLException 
+	{
+		addGame= "INSERT INTO gioco(nome,descrizione,publisher,anno,genere,imgpath, punteggio) values(?,?,?,?,?,?,?)";
+		boolean flag=false;
+
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(addGame);
+			statement.setString(1,game.getNome());
+			statement.setString(2,game.getDescrizione());
+			statement.setString(3,game.getPublisher());
+			statement.setString(4,game.getAnno());
+			statement.setString(5,game.getGenere());
+			statement.setString(6,game.getImgpath());
+			statement.setInt(7,game.getPunteggio());
+			flag=statement.executeUpdate()>0;
+			con.commit();
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return flag;
+	}
+
 
 }
