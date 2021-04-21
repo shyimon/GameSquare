@@ -62,7 +62,11 @@
 							if(utenteLoggato!=null) {
 							if(utenteLoggato.getTipo().equals("user") || utenteLoggato.getTipo().equals("mod")){%>
 								<a class="nav-button" href="nuova-richiesta-gioco.jsp">Aggiungi Gioco</a>
-							<%} else{%>
+							<%} else if(utenteLoggato.getTipo().equals("manager")){%>
+							<a class="nav-button" href="pagina-richieste.jsp">Richieste Giochi</a>
+							<a class="nav-button" href="nuovo-gioco.jsp">Aggiungi Gioco</a>
+						<%} 
+							else{%>
 								<a class="nav-button" href="nuovo-gioco.jsp">Aggiungi Gioco</a>
 							<%}
 							}else{%>

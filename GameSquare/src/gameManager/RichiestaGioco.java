@@ -5,6 +5,9 @@ public class RichiestaGioco {
 	private int idRichiesta;
 	private String usernameUtente;
 	private String nomeGioco;
+	private String publisher;
+	private String anno;
+	private String genere;
 	private String fonte;
 	private boolean risposta;
 	
@@ -48,6 +51,25 @@ public class RichiestaGioco {
 
 	public void setFonte(String fonte) {
 		this.fonte = fonte;
+	}
+	
+	public String getPublisher() {
+		return publisher;
+	}
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+	public String getAnno() {
+		return anno;
+	}
+	public void setAnno(String anno) {
+		this.anno = anno;
+	}
+	public String getGenere() {
+		return genere;
+	}
+	public void setGenere(String genere) {
+		this.genere = genere;
 	}
 	
 	public boolean getRisposta() {

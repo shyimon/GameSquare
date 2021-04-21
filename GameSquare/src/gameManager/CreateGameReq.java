@@ -27,10 +27,16 @@ public class CreateGameReq extends HttpServlet {
 	{
 		String title = null;
 		String source = null;
+		String publisher = null;
+		String genere = null;
+		String anno = null;
 		String username = null;
 		
 		title = request.getParameter("gamereq_title");
 		source = request.getParameter("gamereq_source");
+		publisher = request.getParameter("publisher");
+		genere = request.getParameter("game_genre");
+		anno = request.getParameter("game_year");
 		username = request.getParameter("username");
 		
 		System.out.println(title+" "+source+" "+username); //test
@@ -41,6 +47,9 @@ public class CreateGameReq extends HttpServlet {
 		req.setNomeGioco(title);
 		req.setFonte(source);
 		req.setUsernameUtente(username);
+		req.setAnno(anno);
+		req.setGenere(genere);
+		req.setPublisher(publisher);
 		req.setRisposta(false);
 		
 	

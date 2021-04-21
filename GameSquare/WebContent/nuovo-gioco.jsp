@@ -111,7 +111,7 @@ $("#buttonaggiungi").on('click', function validate(){
 	var game_year = $('#game_year').val();
 	var game_desc = $('#game_desc').val();
 	
-	alert('pulsante premuto' + '1:'+game_title +' 2:'+ publisher +' 3:'+ game_genre+' 4:'+ game_year +' 5:'+ game_desc + ' 6: '+ score);
+	//alert('pulsante premuto' + '1:'+game_title +' 2:'+ publisher +' 3:'+ game_genre+' 4:'+ game_year +' 5:'+ game_desc + ' 6: '+ score);
 	
 	if(game_title === "")
 	{
