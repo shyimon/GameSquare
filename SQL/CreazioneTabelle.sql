@@ -58,6 +58,9 @@ CREATE TABLE richiestagioco (
 	id INT NOT NULL AUTO_INCREMENT,
     Utente VARCHAR(50) NOT NULL,
     nomeGioco VARCHAR(50) NOT NULL,
+    publisher varchar(50) NOT NULL,
+    anno varchar(4) NOT NULL,
+    genere varchar(30) NOT NULL,
     fonte TEXT NOT NULL,
     risposta BOOLEAN,
     FOREIGN KEY (Utente)

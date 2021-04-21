@@ -42,6 +42,46 @@
 							placeholder="Inserire un titolo..." required>
 					</div>
 					<div>
+						<span>Publisher:<label>*</label></span> <input
+							name="publisher" type="text" id="publisher"
+							placeholder="Inserire un publisher..." required>
+					
+					<label for="year">Anno di uscita:</label>
+							<select id="game_year" name="game_year">
+								<% for (int anno = 2021; anno>=1958; anno--){ %>
+ 									<option value="<%=anno%>"><%=anno%></option>
+ 									<%} %>
+							</select>
+					</div>
+					
+					<div>
+						<label for="genre">Genere:</label>
+							<select id="game_genre" name="game_genre">
+ 									<option value="Altro">Altro</option>
+ 									<option value="Applicazione">Applicazione</option>
+  									<option value="Azione">Azione</option>
+ 									<option value="Avventura">Avventura</option>
+  									<option value="Arcade">Arcade</option>
+  									<option value="Action-Adventure">Action-Adventure</option>
+  									<option value="Action RPG">Action RPG</option>
+  									<option value="Educativo">Educativo</option>
+  									<option value="Gestionale">Gestionale</option>
+  									<option value="JRPG">JRPG</option>
+  									<option value="Musicale">Musicale</option>
+  									<option value="Party">Party</option>
+  									<option value="Platform">Platform</option>
+  									<option value="Picchiaduro">Picchiaduro</option>
+  									<option value="Puzzle">Puzzle</option>
+  									<option value="RPG">RPG</option>
+  									<option value="Roguelike">Roguelike</option>
+  									<option value="Sparatutto">Sparatutto</option>
+  									<option value="Sport">Sport</option>
+  									<option value="Stealth">Stealth</option>
+  									<option value="Strategico">Strategico</option>
+							</select>
+						</div>
+					
+					<div>
 						<span>Fonte:<label>*</label></span> <textarea name="gamereq_source"
 							id="gamereq_source" placeholder="Inserire il link a una fonte valida..." required ></textarea>
 					</div>
