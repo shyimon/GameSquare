@@ -15,59 +15,48 @@
 		list-style-type: none;
 	}
 
+/*INDEX*/
 	.games-list {
-        display: grid;
-        grid-template-columns: repeat(4, 25%)
+		padding: 1%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
 	}
     
     .game-object {
-    	display: grid;
-    	grid-template-rows: 85% 15%;
-    	margin: 3%;
-    	margin-top: 5%;
-    	border-radius: 0.2em;
+		background: #b3b3b3;
+		padding: 1%;
+		padding-bottom: 0%;
+		flex-basis: 20%;		
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		border: solid 2px;
+		margin: 0.5%;
+		border-radius: 5%;
+		box-shadow: 3px 3px 10px #000;
     }
 
+    .imageContainer img {
+		width: 220px;
+		aspect-ratio: auto 220 / 220;
+		height: 220px;
+		box-shadow: 2px 2px 5px #000;
+	 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
 
-
-    .imageContainer {
-    	background: #696969;
-    	grid-row: 1 / 1;
-		text-align: center;
-		border-left: 3px solid;
-		border-right: 3px solid;
-		border-top: 3px solid;
-    }
-    
-    .imgItem {
-    	height: 95%;
-    	width: auto;
-    	border-radius: 0.3em;
-    }
-    
-    .nameContainer {
-    	width: 80%;
-    	height: 90%;
-		background: #696969;
-		grid-row: 2 / 2;
-		justify-self: center;
-		border-left: 3px solid;
-		border-right: 3px solid;
-		border-bottom: 3px solid;
-    }
+	.imageContainer img:hover {
+		box-shadow: 4px 4px 13px #000;
+	}
 	
-	.game-name {
-	    height: 90%;
-		width: 80%;
-		color: black;
+	.nameContainer h5 {
+		text-align: center;
+	}
+	
+	.nameContainer a {
 		text-decoration: none;
-		justify-self: center;
-		text-align: center;
-	}
-	
-	.imageContainer:hover ~ .nameContainer, .imageContainer:hover {
-		cursor: pointer;
-		background: #383838;
-		transition: background 0.3s ease-in-out;
-	}
+		color: black;
+		font-size: x-large;}
 }

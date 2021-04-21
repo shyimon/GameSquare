@@ -33,15 +33,20 @@
 		box-shadow: 3px 3px 7px #333;
 	}
 		
-	.ThreadArea {
+	.threads {
 		box-shadow: 3px 3px 15px #333;
-		display: grid;
-		grid-template-rows: 8% 82% 10%;
-		padding: 2%;
-		padding-bottom: 5%;
 		border: solid black 2px;
 		border-radius: 0.6em;
+		display: grid;
+		grid-template-rows: 80% 20%;
 		grid-column: 2 / 2;
+	}	
+	
+	.ThreadArea {
+		display: flex;
+		flex-direction: column;
+		padding: 2%;
+		padding-bottom: 5%;
 	}
 	
 	.discussioni {
@@ -53,5 +58,30 @@
 		border-top: solid 1px grey;
 		padding-bottom: 2%;
 		padding-top: 2%;
+	}
+	
+	.crea-discussione {
+		text-align: center;
+		align-self: center;
+	}
+	
+	.crea-discussione a, .crea-discussione a:visited{
+		text-decoration: none;
+		text-shadow: gray;
+		color: black;
+	}
+	
+	
+	
+	.crea-discussione a{
+		background: #e76eff;
+		padding: 2%;
+		border: solid 1px;
+		border-radius: 5px;
+	}
+	
+	.crea-discussione a:hover {
+		cursor: pointer;
+		background: #ad52bf;
 	}
 }
