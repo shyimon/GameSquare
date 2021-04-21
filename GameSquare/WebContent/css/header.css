@@ -22,7 +22,7 @@
 		width: 40%;
 		padding: 10%;
 	}
-	
+
 	.wrap-item {
 		grid-column: 2 / 2;
 		grid-row: 2;

@@ -65,12 +65,11 @@
 		align-self: center;
 	}
 	
-	.crea-discussione a, .crea-discussione a:visited{
+	.crea-discussione a, .crea-discussione a:visited {
 		text-decoration: none;
 		text-shadow: gray;
 		color: black;
 	}
-	
 	
 	
 	.crea-discussione a{
