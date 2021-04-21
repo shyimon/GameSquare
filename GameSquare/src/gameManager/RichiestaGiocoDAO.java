@@ -16,6 +16,7 @@ public class RichiestaGiocoDAO {
 	private static ResultSet set=null;
 	private static String addReq;
 	private static String viewReq;
+	private static String deleteReq;
 
 	public static boolean addGameRequest(RichiestaGioco req) throws SQLException 
 	{
@@ -105,4 +106,31 @@ public class RichiestaGiocoDAO {
 		}
 		return richieste;
 	}
+	
+	public static boolean deleteGameRequest(int id) throws SQLException
+	{
+		boolean flag=false;
+		try
+		{
+			deleteReq="DELETE FROM richiestagioco WHERE id=?";
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(deleteReq);
+			statement.setInt(1,id);
+			flag=statement.executeUpdate()>0;
+			con.commit();
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return flag;
+	}	
 }

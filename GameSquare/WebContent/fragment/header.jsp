@@ -54,7 +54,7 @@
 								if((utenteLoggato.getTipo()).equals("user")){ %>
 									<a class="nav-button" href="area-utente.jsp"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getUsername()%> </a>
 						<%} else{ %>
-									<a class="nav-button" href="area-utente.jsp" style = "font-size:15px"><span class="glyphicon glyphicon-user men"></span>Admin:<%=" "+utenteLoggato.getUsername()%></a>											
+									<a class="nav-button" href="area-utente.jsp" style = "font-size:15px"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getTipo()%>:<%=" "+utenteLoggato.getUsername()%></a>											
 						<%} %>
 						<%} else {%>
 									<a class="nav-button" href="login-page.jsp"><span class="glyphicon glyphicon-user men"></span>Area Utente</a>
