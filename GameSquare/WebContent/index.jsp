@@ -20,9 +20,13 @@
 	<!-- Giochi -->
 		<section class="catalogo-section">
 			<div class="container">
-				<div class="headerCatalogo col-md-12">
-					<p>Giochi popolari</p>
-				</div>
+				 <div class="row">
+					<div class="headerCatalogo col-md-12">
+						<p>Giochi popolari</p>
+					</div>
+					</div>
+			<div>
+			<div>
 				<%
 				GiocoDAO model_product=new GiocoDAO();
 				ArrayList<Gioco> array = model_product.viewGame();
@@ -52,7 +56,7 @@
 								<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
 							</div>
 								<div class="nameContainer">
-									<h5><a class="game-name" href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><%=bean.getNome()%></a></h5>
+									<a class="game-name" href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><p><b><%=bean.getNome()%></b></p></a>
 							</div>
 					</li>
 				
@@ -62,6 +66,8 @@
 						<div class="col-md-12"><h4>Nessun gioco disponibile</h4></div>
 				<% } %>
 				</ul>
+				</div>
+			</div>
 				</div>
 		</section>
 	

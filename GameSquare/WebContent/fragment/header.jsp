@@ -29,15 +29,15 @@
 	</head>
 
 	<body>
-	
+
 		<div class="header-grid">
-		
-			<logo class="logo-item">
+
+			<div class="logo-item">
 				<a href="/GameSquare/">
 					<img src="./img/Website/logo.png" class="logo-image">
 				</a>
-			</logo>
-			
+			</div>
+
 			<div class="wrap-item">
 				<form action="Cerca" method="POST" id="searchbarForm">
 					<div class="searchbar-item">
@@ -49,9 +49,7 @@
 				</form>
 			</div>
 			
-			
-			<!-- UTENTE -->
-				
+		<!-- UTENTE -->
 			<div class="nav-items-left">
 				<a class="nav-button" href="/GameSquare/">Home</a>
 				<a class="nav-button" href="Game?action=findall">Catalogo</a>
