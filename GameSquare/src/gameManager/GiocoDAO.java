@@ -20,6 +20,7 @@ public class GiocoDAO {
 	private static String addGame;
 	private static String getPublishers;
 	private static String getGenres;
+	private static String updateAverage;
 
 	
 	public ArrayList<Gioco> viewGame(String ...strings) throws SQLException
@@ -140,7 +141,7 @@ public class GiocoDAO {
 	{
 		addGame= "INSERT INTO gioco(nome,descrizione,publisher,anno,genere,imgpath, punteggio) values(?,?,?,?,?,?,?)";
 		boolean flag=false;
-
+		
 		try 
 		{
 			con=ConnectionPool.getConnection();
@@ -170,5 +171,32 @@ public class GiocoDAO {
 		return flag;
 	}
 
+	public static boolean updateAverage(int gameID, float media) throws SQLException 
+	{
+		boolean flag=false;
+		updateAverage = "UPDATE gioco SET media_voti=? WHERE id=?";
+		try
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(updateAverage);
+			statement.setFloat(1,media);
+			statement.setInt(2,gameID);
+			flag=statement.executeUpdate()>0;
+			con.commit();
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return flag;
+	}
 
 }

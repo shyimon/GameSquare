@@ -6,7 +6,7 @@
     
   <%	
 	Gioco bean = (Gioco) request.getAttribute("game");
-	GiocoDAO gameModel = new GiocoDAO();
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -43,8 +43,15 @@
 				
 				<br>
 				<div class="VoteArea">
-				<% if(utenteLoggato!=null){ %>
-				<p id="usrValue"><%=utenteLoggato.getUsername()%></p>
+				<% if(utenteLoggato!=null){ 
+				VotoDAO voteModel = new VotoDAO();
+				ArrayList <Voto> voti = voteModel.getVote("Gioco", " "+bean.getIdGioco(), "utente", utenteLoggato.getUsername()); 
+				if(voti.size()!=0){ 
+						Voto voto = voti.get(0);%>
+					<h4>Hai votato questo gioco con <%=voto.getValutazione()%> <input type="button" id="deleteVote" class="setButton" value="Cancella voto"></h4>
+				<% }%>
+				
+				<input type="hidden" id="usrValue" value="<%=utenteLoggato.getUsername()%>">
 				<% } %>
 				<form>
 				<input type="hidden" id="gameIdValue" value="<%=bean.getIdGioco()%>">
@@ -112,7 +119,7 @@
 				<%}
 					else
 				{%>
-					<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a></
+					<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a>
 				<%}%>
 	</div>
 </div>
@@ -121,10 +128,10 @@
 
 <script>
 document.getElementById("vote").selectedIndex = -1;
+var username  = $('#usrValue').val();
+var game_id = $('#gameIdValue').val();
 
 $("#voteButton").on("click", function vote() {
-	var username  = $('#usrValue').text();
-	var game_id = $('#gameIdValue').val();
 	var vote_value = $('#vote').val();
     
    
@@ -140,40 +147,52 @@ $("#voteButton").on("click", function vote() {
 		setTimeout(function(){location.href="pagina-gioco.jsp"} , 135000);
 		return false;
 	} 
-    else{
-    	alert(username + " ha votato " +game_id+" con "+vote_value );
+    else
+	{
+    	//alert(username + " ha votato " +game_id+" con "+vote_value );
+    	$.ajax({ //INVOCAZIONE AJAX
+		  	type: "POST",
+		    url: "AddVote",
+		    data: {"username" : username, "game_id": game_id, "vote_value": vote_value},
+		    success: function(results){
+		    	Swal.fire({ //SECONDO POPUP
+		  			  title: 'Valutazione aggiunta!',
+		  			  timer: 1000,
+		  			  type: 'success',
+		  			  showCancelButton: false,
+		  			  showConfirmButton: false,
+		  			  width: '400px',
+		  			})
+		  			setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+			  }
+		})
     }
-    /*Swal.fire({ //PRIMO POPUP
-		  title: 'Sei sicuro di voler rifiutare la richiesta?',
-		  text: "La richiesta sarà eliminata dal sistema.",
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: '#3085d6',
-		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Conferma',
-		  cancelButtonText: 'Annulla'
-		}).then((result) => {
-		  if (result.value) {
-			  //alert(reqid + " " + action);
-			 		$.ajax({ //INVOCAZIONE AJAX
-				  	type: "GET",
-				    url: "Request",
-				    data: {"action" : action, "reqid": reqid},
-				    success: function(results){
-				    	Swal.fire({ //SECONDO POPUP
-				  			  title: 'Richiesta Eliminata',
-				  			  timer: 1000,
-				  			  type: 'success',
-				  			  showCancelButton: false,
-				  			  showConfirmButton: false,
-				  			  width: '400px',
-				  			})
-				  		setTimeout(function(){location.href="pagina-richieste.jsp"} , 1000);
-					  }
-				})
-		  	}
-		})*/
 });
+
+
+    $('#deleteVote').on("click", function deleteVote() {
+    	
+						
+    	//alert(username + " vuole togliere il voto a " +game_id );
+    				$.ajax({ //INVOCAZIONE AJAX
+					  	type: "GET",
+					    url: "DeleteVote",
+					    data: {"username" : username, "game_id": game_id},
+					    success: function(results){
+					    	Swal.fire({ //SECONDO POPUP
+					  			  title: 'Voto Eliminato',
+					  			  timer: 1000,
+					  			  type: 'success',
+					  			  showCancelButton: false,
+					  			  showConfirmButton: false,
+					  			  width: '400px',
+					  			})
+					  		setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+						  }
+					})
+			});
+  
+
 </script>
 
 </html>

@@ -9,6 +9,9 @@ public class Voto {
 	public Voto(int valutazione) {
 		this.valutazione = valutazione;
 	}
+	public Voto() {
+	
+	}
 
 	public int getValutazione() {
 		return valutazione;

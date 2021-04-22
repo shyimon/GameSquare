@@ -152,7 +152,17 @@ $("#buttonaggiungi").on('click', function validate(){
 				width: '400px',
 				})
 			setTimeout(function(){location.href="Game?action=findall"} , 2000);
-			}    
+			},
+			error: function (result){
+				Swal.fire({ 
+					title: 'Il gioco è già presente!',
+					type: 'error',
+					showCancelButton: false,
+					showConfirmButton: false,
+					width: '400px',
+					})
+				setTimeout(function(){location.href="nuovo-gioco.jsp"} , 135000);
+			}
 		})
 	}
 	
