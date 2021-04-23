@@ -91,6 +91,8 @@
 	.nav-button {
 		padding: 1% 2% 1% 2%;
 		background: black;
+		width: -webkit-fill-available;
+		transition: all 0.5s;
 	}
 	
 	.nav-button:hover {

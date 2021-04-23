@@ -87,8 +87,12 @@
 			%>
 					
 					<div class="gioco">
-						<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
-						<a class="game-name" href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><p><b><%=bean.getNome()%></b></p></a>
+						<div class="game-image">
+							<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
+						</div>						
+						<div class="game-name">
+							<h5><a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><%=bean.getNome()%></a></h5>
+						</div>
 					</div>
 					<% 	}
 						} else { %>

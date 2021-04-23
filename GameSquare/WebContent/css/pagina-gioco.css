@@ -34,17 +34,17 @@
 	}
 		
 	.threads {
+		display: flex;
+		flex-direction: column;
+		grid-column: 2 / 2;
+	}	
+	
+	.ThreadArea {
 		box-shadow: 3px 3px 15px #333;
 		border: solid black 2px;
 		border-radius: 0.6em;
 		display: grid;
 		grid-template-rows: 80% 20%;
-		grid-column: 2 / 2;
-	}	
-	
-	.ThreadArea {
-		display: flex;
-		flex-direction: column;
 		padding: 2%;
 		padding-bottom: 5%;
 	}
@@ -61,6 +61,7 @@
 	}
 	
 	.crea-discussione {
+		width: 100%;
 		text-align: center;
 		align-self: center;
 	}

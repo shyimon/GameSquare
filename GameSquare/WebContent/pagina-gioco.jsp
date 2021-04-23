@@ -77,6 +77,7 @@
 			
 			
 		<div class="ThreadArea">
+			<div class="thread">
 			<h2 id="titolo">Discussioni più recenti</h2>
 			<div class="discussioni">
 			<%
@@ -109,10 +110,9 @@
 										<a href="login-page.jsp">Sii il primo a crearla!</a></
 									<%}%></h4>
 								<% } %>	
-						</div>
-								
-				
-				<div>
+						</div>	
+				</div>
+			<div class="crea-discussione">
 				<% if(utenteLoggato != null)
 				{%>					
 					<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a></		
@@ -121,7 +121,7 @@
 				{%>
 					<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a>
 				<%}%>
-	</div>
+		</div>
 </div>
 </div>
 </body>

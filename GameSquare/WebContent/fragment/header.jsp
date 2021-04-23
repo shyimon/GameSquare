@@ -51,9 +51,9 @@
 			
 		<!-- UTENTE -->
 			<div class="nav-items-left">
-				<a class="nav-button" href="/GameSquare/">Home</a>
-				<a class="nav-button" href="Game?action=findall">Catalogo</a>
-				<a class="nav-button" href="/GameSquare/Aiuto">Aiuto</a>
+				<a class="botton" href="/GameSquare/">Home</a>
+				<button class="nav-button"><a href="Game?action=findall">Catalogo</a></button>
+				<button class="nav-button"><a href="/GameSquare/Aiuto">Aiuto</a></button>
 			</div>
 			
 			<div class="nav-items-right">
@@ -64,34 +64,34 @@
 							}
 							if(utenteLoggato!=null) {
 								if((utenteLoggato.getTipo()).equals("user")){ %>
-									<a class="nav-button" href="area-utente.jsp"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getUsername()%> </a>
+									<button class="nav-button"><a href="area-utente.jsp"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getUsername()%> </a></button>
 						<%} else{ %>
-									<a class="nav-button" href="area-utente.jsp" style = "font-size:15px"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getTipo()%>:<%=" "+utenteLoggato.getUsername()%></a>											
+									<button class="nav-button"><a href="area-utente.jsp"><%=utenteLoggato.getTipo()%>:<%=" "+utenteLoggato.getUsername()%></a></button>							
 						<%} %>
 						<%} else {%>
-									<a class="nav-button" href="login-page.jsp"><span class="glyphicon glyphicon-user men"></span>Area Utente</a>
+									<button class="nav-button"><a href="login-page.jsp"><span class="glyphicon glyphicon-user men"></span>Area Utente</a></button>
 						<%} 
 							if(utenteLoggato!=null) {
 							if(utenteLoggato.getTipo().equals("user") || utenteLoggato.getTipo().equals("mod")){%>
-								<a class="nav-button" href="nuova-richiesta-gioco.jsp">Aggiungi Gioco</a>
+								<button class="nav-button"><a href="nuova-richiesta-gioco.jsp">Aggiungi Gioco</a></button>
 							<%} else if(utenteLoggato.getTipo().equals("manager")){%>
-							<a class="nav-button" href="pagina-richieste.jsp">Richieste Giochi</a>
-							<a class="nav-button" href="nuovo-gioco.jsp">Aggiungi Gioco</a>
+							<button class="nav-button"><a href="pagina-richieste.jsp">Richieste Giochi</a></button>
+							<button class="nav-button"><a href="nuovo-gioco.jsp">Aggiungi Gioco</a></button>
 						<%} 
 							else{%>
-								<a class="nav-button" href="nuovo-gioco.jsp">Aggiungi Gioco</a>
+								<button class="nav-button"><a class="nav-button" href="nuovo-gioco.jsp">Aggiungi Gioco</a></button>
 							<%}
 							}else{%>
-							<a class="nav-button" href="login-page.jsp">Aggiungi Gioco</a>
+							<button class="nav-button"><a href="login-page.jsp">Aggiungi Gioco</a></button>
 						<%}
 							if(request.getSession(false) == null || request.getSession(false).getAttribute("utenteLoggato") == null) {
 						%>
-							<a class="nav-button" href="login-page.jsp">LOGIN</a>
+							<button class="nav-button"><a href="login-page.jsp">LOGIN</a></button>
 						<%
 						 	  }
 							  else {
 						%>
-							<a class="nav-button" href="/GameSquare/Logout">LOGOUT</a>
+							<button class="nav-button"><a href="/GameSquare/Logout">LOGOUT</a></button>
 						<%
 							}
 						%>
