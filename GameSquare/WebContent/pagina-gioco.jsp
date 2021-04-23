@@ -29,7 +29,7 @@
 				<img id="imgXD" src="<%=bean.getImgpath()%>/img1.png" alt="Img" style="width:100%; max-width:280px; height: 280px;" class="imgItem2">
 				<img class="modal-content" id="img01" style="width: 350px;">
 				
-					<p id="stiletitle">Punteggio: <%=bean.getPunteggio()%></p>
+					<p id="stiletitle">Punteggio: <h4 id="score"><%=bean.getPunteggio()%></h4></p>
 					<p id="stiletitle">Media dei voti: <%=bean.getMediaVoti()%></p>
 			</div>
 			
