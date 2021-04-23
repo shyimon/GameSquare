@@ -20,6 +20,7 @@ public class ElementoListaDAO {
 	private static String GetGameName;
 	private static String GetGameScore;
 	private static String updateScore;
+	private static String GetStats;
 	
 	public static boolean addListElement(ElementoLista elem) throws SQLException 
 	{
@@ -230,5 +231,37 @@ public class ElementoListaDAO {
 			}
 		}
 		return flag;
+	}
+	
+	public int getCategoryStats(int gameID, String categoria) throws SQLException
+	{
+		GetStats="SELECT count(*) FROM elementolista WHERE IdGioco=? and categoria=?";
+		int count=0;
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(GetStats);
+			statement.setInt(1, gameID);
+			statement.setString(2, categoria);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				count = set.getInt(1);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return count;
 	}
 }
