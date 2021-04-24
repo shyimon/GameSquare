@@ -85,8 +85,11 @@
 			<% if(utenteLoggato!=null){ 
 				ElementoLista elem = listModel.getListElement(utenteLoggato.getUsername(),bean.getIdGioco()); 
 				if(elem!=null){ %>
-					<p>Hai aggiunto questo gioco alla tua lista come: <b id="userCategory"><%=elem.getCategoria()%> <input type="button" id="deleteFromList" class="setButton" value="Rimuovi dalla lista"></b> </p>
+					<p>Hai aggiunto questo gioco alla tua lista come: <b id="userCategory"><%=elem.getCategoria()%></b>  <input type="button" id="deleteFromList" class="setButton" value="Rimuovi dalla lista"></p>
 				<% }
+				else{%>
+					<b id="userCategory"> </b>
+					<%}
 				}%>
 
 				<form>
