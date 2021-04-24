@@ -2,10 +2,13 @@
     pageEncoding="ISO-8859-1"
     import="java.util.*"
     import="gameManager.*"
-    import="threadManager.*"%>
+    import="threadManager.*"
+    import="listManager.*"%>
     
   <%	
 	Gioco bean = (Gioco) request.getAttribute("game");
+
+	ElementoListaDAO listModel = new ElementoListaDAO();
 	
 %>
 <!DOCTYPE html>
@@ -31,6 +34,13 @@
 				
 					<p id="stiletitle">Punteggio: <h4 id="score"><%=bean.getPunteggio()%></h4></p>
 					<p id="stiletitle">Media dei voti: <%=bean.getMediaVoti()%></p>
+					  
+					 <div class="LiStats">
+		  			 <p> Giocatori che hanno acquistato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Acquistato")%></b></p>
+		   			 <p> Giocatori che stanno giocando a questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "In corso")%></b></p>
+		    		 <p> Giocatori che hanno completato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Completato")%></b></p>
+		   			 <p> Giocatori che hanno platinato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Platinatotato")%></b></p>
+		  			 </div>
 			</div>
 			
 			<div class="gamesec2">
@@ -72,6 +82,12 @@
 			<br>
 			
 			<div class="ListArea">
+			<% if(utenteLoggato!=null){ 
+				ElementoLista elem = listModel.getListElement(utenteLoggato.getUsername(),bean.getIdGioco()); 
+				if(elem!=null){ %>
+					<p>Hai aggiunto questo gioco alla tua lista come: <b id="userCategory"><%=elem.getCategoria()%> <input type="button" id="deleteFromList" class="setButton" value="Rimuovi dalla lista"></b> </p>
+				<% }
+				}%>
 
 				<form>
 					<label for="category">Scegli una categoria:</label>
@@ -91,6 +107,8 @@
 					<% } %>
 				</form>
 			</div>
+		   
+		
 		   
 		   </div>
 			
@@ -135,12 +153,10 @@
 						</div>	
 				</div>
 			<div class="crea-discussione">
-				<% if(utenteLoggato != null)
-				{%>					
-					<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a></		
+				<% if(utenteLoggato != null){%>					
+					<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a>	
 				<%}
-					else
-				{%>
+					else {%>
 					<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a>
 				<%}%>
 		</div>

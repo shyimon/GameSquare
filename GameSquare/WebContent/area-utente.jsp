@@ -66,5 +66,7 @@
 				</div>
 			</div>
 	</section>
+	
+	<%@ include file="list-view.jsp" %>
 </body>
 </html>

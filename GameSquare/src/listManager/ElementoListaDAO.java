@@ -54,7 +54,7 @@ public class ElementoListaDAO {
 	
 	public ArrayList <ElementoLista> getUserList(String username) throws SQLException
 	{
-		getList="SELECT * FROM voto WHERE Utente=?";
+		getList="SELECT * FROM elementolista WHERE Utente=? ORDER BY categoria";
 		ArrayList<ElementoLista> results=new ArrayList<ElementoLista>();
 		
 		try 
@@ -85,6 +85,47 @@ public class ElementoListaDAO {
 			}
 		}
 		return results;
+	}
+	
+	public ElementoLista getListElement(String username, int gameid) throws SQLException
+	{
+		String getListElement="SELECT * FROM elementolista WHERE Utente=? AND IdGioco=?";
+		ArrayList<ElementoLista> results=new ArrayList<ElementoLista>();
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(getListElement);
+			statement.setString(1, username);
+			statement.setInt(2, gameid);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				ElementoLista el =new ElementoLista();
+				el.setUsernameUtente(set.getString(1));
+				el.setIdGioco(set.getInt(2));
+				el.setCategoria(set.getString(3));
+				results.add(el);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		
+		if(results.size()!=0) {
+		return results.get(0);
+		} else {
+		return null;
+		}
 	}
 	
 	public static boolean deleteListElement(int gameid, String user) throws SQLException
