@@ -41,8 +41,8 @@
 				<p id="stiletitle">Genere: <%=bean.getGenere()%></p>
 				
 				
-				<br>
-				<div class="VoteArea">
+			<br>
+			<div class="VoteArea">
 				<% if(utenteLoggato!=null){ 
 				VotoDAO voteModel = new VotoDAO();
 				ArrayList <Voto> voti = voteModel.getVote("Gioco", " "+bean.getIdGioco(), "utente", utenteLoggato.getUsername()); 
@@ -67,8 +67,30 @@
 					<a href="login-page.jsp"> Valuta </a>
 					<% } %>
 				</form>
-				
-				</div>
+			</div>
+			
+			<br>
+			
+			<div class="ListArea">
+
+				<form>
+					<label for="category">Scegli una categoria:</label>
+						<select id="category" name="category">
+							<option value="Acquistato">Acquistato</option>
+							<option value="In corso">In corso</option>
+							<option value="Completato">Completato</option>
+							<option value="Platinato">Platinato</option>
+							<% if(utenteLoggato!=null && utenteLoggato.getTipo().equals("dev")){ %>
+ 								<option value="Sviluppato">Sviluppato</option>
+ 								<% } %>
+						</select>
+						<% if(utenteLoggato!=null){ %>
+					<input type="button" id="addButton" class="setButton" value="Aggiungi alla tua lista">
+					<% }else{ %>
+					<a href="login-page.jsp"> Aggiungi alla tua lista </a>
+					<% } %>
+				</form>
+			</div>
 		   
 		   </div>
 			
@@ -127,72 +149,14 @@
 </body>
 
 <script>
+
+//dichirazione di variabili utili per gli script importati
 document.getElementById("vote").selectedIndex = -1;
 var username  = $('#usrValue').val();
 var game_id = $('#gameIdValue').val();
-
-$("#voteButton").on("click", function vote() {
-	var vote_value = $('#vote').val();
-    
-   
-    if(vote_value === null)
-	{
-		Swal.fire({ 
-			title: 'Inserire un voto valido',
-			type: 'warning',
-			  confirmButtonColor: '#3085d6',
-			  confirmButtonText: 'OK',
-			width: '400px',
-			})
-		setTimeout(function(){location.href="pagina-gioco.jsp"} , 135000);
-		return false;
-	} 
-    else
-	{
-    	//alert(username + " ha votato " +game_id+" con "+vote_value );
-    	$.ajax({ //INVOCAZIONE AJAX
-		  	type: "POST",
-		    url: "AddVote",
-		    data: {"username" : username, "game_id": game_id, "vote_value": vote_value},
-		    success: function(results){
-		    	Swal.fire({ //SECONDO POPUP
-		  			  title: 'Valutazione aggiunta!',
-		  			  timer: 1000,
-		  			  type: 'success',
-		  			  showCancelButton: false,
-		  			  showConfirmButton: false,
-		  			  width: '400px',
-		  			})
-		  			setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
-			  }
-		})
-    }
-});
-
-
-    $('#deleteVote').on("click", function deleteVote() {
-    	
-						
-    	//alert(username + " vuole togliere il voto a " +game_id );
-    				$.ajax({ //INVOCAZIONE AJAX
-					  	type: "GET",
-					    url: "DeleteVote",
-					    data: {"username" : username, "game_id": game_id},
-					    success: function(results){
-					    	Swal.fire({ //SECONDO POPUP
-					  			  title: 'Voto Eliminato',
-					  			  timer: 1000,
-					  			  type: 'success',
-					  			  showCancelButton: false,
-					  			  showConfirmButton: false,
-					  			  width: '400px',
-					  			})
-					  		setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
-						  }
-					})
-			});
-  
-
 </script>
+
+<script src="script/GestioneVoti.js"></script>
+<script src="script/GestioneLista.js"></script>
 
 </html>

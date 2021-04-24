@@ -1,0 +1,4 @@
+/**
+ * 
+ */
+var score  = $('#score').text();
