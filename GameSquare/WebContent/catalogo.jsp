@@ -28,51 +28,45 @@
 
 <section class="catalogo-pagina">
 	<div class="container">
-		<div class="row justify-content-center">
-			<%  	if(action_name!=null) {%>
-			<h1><%=action_name%></h1>
-				<% 	} else {%>
-				<h1><%=ricerca%></h1>
-			<% 	}%>
-		</div>
+		<%  	if(action_name!=null) {%>
+		<p><%=action_name%></p>
+			<% 	} else {%>
+			<p><%=ricerca%></p>
+		<% 	}%>
 	</div>
 		
 		
-	<div class="dropdown">
-		<div class="pub-btn">
-	    	<button class="dropbtn">Ricerca per Publisher
-	    		<i class="fa fa-caret-down"></i>
-	    	</button>
-	    	<div class="pub-content">
+	<nav>
+		<ul>
+			<li><a href="#">Ricerca per Publisher</a>
+	    	<ul>
     			<%try{
 					 ArrayList<String> list = GameModel.GetPublishers();
 						for(String x:list){ %>
-				<a href="Game?action=publisher&pub=<%=x%>" ><%=x%></a>
+				<li><a href="Game?action=publisher&pub=<%=x%>" ><%=x%></a></li>
       			<% }
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
 									}  											    													    
 				%>
-			</div>
-	    </div>
-    	
-		<div class="gen-btn">		 
-			<button class="dropbtn">Ricerca per Genere
-	      		<i class="fa fa-caret-down"></i>
-	    	</button>
-	    	<div class="genere-content">
+			</ul>
+			</li>
+    		 
+			<li><a href="#">Ricerca per Genere</a>
+	    	<ul>
 	    		<%try{
 					 ArrayList<String> list = GameModel.GetGenres();
 						for(String x:list){ %>
-				<a href="Game?action=genre&gen=<%=x%>" ><%=x%></a>
+				<li><a href="Game?action=genre&gen=<%=x%>" ><%=x%></a></li>
 	      		<% }
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
 						}  											    													    
 				%>							 			 
-			</div> 
-    		</div>
-		</div> 
+    		</ul>
+    		</li>
+    	</ul>
+	</nav> 
 
 		
 		

@@ -51,7 +51,7 @@
 			
 		<!-- UTENTE -->
 			<div class="nav-items-left">
-				<a class="botton" href="/GameSquare/">Home</a>
+				<button class="nav-button"><a href="/GameSquare/">Home</a></button>
 				<button class="nav-button"><a href="Game?action=findall">Catalogo</a></button>
 				<button class="nav-button"><a href="/GameSquare/Aiuto">Aiuto</a></button>
 			</div>

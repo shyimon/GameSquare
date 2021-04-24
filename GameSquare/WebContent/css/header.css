@@ -19,8 +19,8 @@
 	}
 	
 	.logo-image {
-		width: 40%;
-		padding: 10%;
+		width: 35%;
+		padding: 3%;
 	}
 
 	.wrap-item {
@@ -83,25 +83,28 @@
     	height: 100%;
 		grid-column: 3;
 		grid-row: 2;
-		margin-right: 5%;
 		display: flex;
 		justify-content: space-between;
 	}
 	
 	.nav-button {
-		padding: 1% 2% 1% 2%;
 		background: black;
 		width: -webkit-fill-available;
 		transition: all 0.5s;
+		border-top-left-radius: 0.5em;
+		border-top-right-radius: 0.5em;
+		margin-left: 1%;
+		margin-right: 1%;
 	}
 	
 	.nav-button:hover {
 		background: grey;
 	}
 	
-	a.nav-button {
+	.nav-button a {
 		color: white;
 		text-decoration: none;
+		font: message-box;
 	}
-	
+		
 }

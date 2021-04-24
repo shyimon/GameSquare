@@ -17,56 +17,41 @@
 
 <body style="margin:0">
 
+	<div class="header">   
+		<%@ include file="fragment/header.jsp" %>
+	</div>
 
-   <%@ include file="fragment/header.jsp" %>
 	
-	
-<section class="utente-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<h1>Area Utente -  <%=utenteLoggato.getUsername()%></h1>
+	<section class="utente-section">
+		<div id="info-section">
+			<div class="username">
+				<h1><%=utenteLoggato.getUsername()%></h1>
+			</div>
+			<!-- Info utente -->
+			<div class="infobox">
+				<ul>
+					<li>
+						<img id="imgXD" src="./img/Website/default-propic.jpg" alt="Img" style="width:100%; max-width:280px; height: 280px;" class="imgItem2">
+					</li>
+					<li class="userinfo">
+						<p>Username: <%=utenteLoggato.getUsername()%></p>
+					</li>
+					<li class="userinfo">
+						<p>E-Mail: <%=utenteLoggato.getEmail()%></p>
+					</li>
+					<li class="userinfo">
+						<p>Tipo: <%=utenteLoggato.getTipo()%></p>
+					</li>
+					<li class="userinfo" id="last">
+						<p>Punteggio abilità: <%=utenteLoggato.getPunteggio()%></p>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<div class="container border-utentepage">
-			<div class="row justify-content-start">
-				<div class="col-md-6">
-					<h4 id="list1" class="utenteh4">Informazioni Utente</h4>
-				</div>
-			</div>
+		
+		<div class="list">
+			<%@ include file="list-view.jsp" %>
 		</div>
-		<!-- Info utente -->
-		<div class="container" id="utdiv">
-			<div class="container spacerUP borderutdiv" id="infPut">
-				<div class="row justify-content-start">
-					<div class="col-md-3">
-						<div class="row">
-							<h4 class="upH4">Username: </h4>
-							<p class="upPCircle"><%=utenteLoggato.getUsername()%></p>
-						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="row">
-							<h4 class="upH4">E-Mail: </h4>
-							<p class="upPCircle"><%=utenteLoggato.getEmail()%></p>
-						</div>
-					</div>
-					<div class="col-md-5">
-						<div class="row">
-							<h4 class="upH4">Tipo: </h4>
-							<p class="upPCircle"><%=utenteLoggato.getTipo()%></p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-5">
-						<div class="row">
-							<h4 class="upH4">Punteggio abilità: </h4>
-							<p class="upPCircle"><%=utenteLoggato.getPunteggio()%></p>
-						</div>
-					</div>
-				</div>
-			</div>
 	</section>
-	
-	<%@ include file="list-view.jsp" %>
 </body>
 </html>
