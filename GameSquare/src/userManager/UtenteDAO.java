@@ -20,7 +20,7 @@ public class UtenteDAO {
 	private static String checkEmail;
 	private static String checkPassword;
 	private static String showAccount;
-	private static String showAllUsers;
+	private static String showTopUsers;
 	private static String checkLogin;
 
 	static
@@ -29,7 +29,7 @@ public class UtenteDAO {
 		checkEmail="SELECT username FROM utente where email=?";
 		checkPassword="SELECT username FROM utente where password=?";
 		showAccount="SELECT * FROM utente where email=?";
-		showAllUsers="SELECT * FROM utente WHERE Tipo='user'";
+		showTopUsers="SELECT * FROM utente ORDER BY punteggio DESC LIMIT 10";
 		checkLogin="SELECT username,email,password,punteggio,tipo FROM utente where email=? AND password=?";
 	}
 	
@@ -160,6 +160,40 @@ public class UtenteDAO {
 			}
 		}
 		return score;
+	}
+	
+	public ArrayList<Utente> findTopUsers() throws SQLException
+	{
+		ArrayList<Utente> utenti=new ArrayList<Utente>();
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(showTopUsers);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				Utente user=new Utente();
+				user.setUsername(set.getString(1));
+				user.setEmail(set.getString(2));
+				user.setPassword(set.getString(3));
+				user.setPunteggio(set.getInt(4));
+				user.setTipo(set.getString(5));
+				utenti.add(user);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return utenti;
 	}
 }
 

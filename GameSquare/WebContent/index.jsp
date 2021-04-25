@@ -34,7 +34,7 @@
 					while(I<array.size())
 					{
 						Gioco g = array.get(I);
-						if(arrayFeatured.size() < 9)
+						if(arrayFeatured.size() < 11)
 							arrayFeatured.add(g);
 						I++;
 					}
@@ -64,6 +64,43 @@
 				</ul>
 				</div>
 		</section>
+	
+	<!-- Classifica Utenti -->
+		<section class="classifica-section">
+			<div class="container">
+				<p>Top 10 Utenti del sito</p>
+			</div>
+			<div>
+				<%
+				ArrayList<Utente> arrayTop10 = userModel.findTopUsers();						
+				int j=0;
+				
+				if((arrayTop10!=null || arrayTop10.size()!=0))
+				{
+					
+				%>
+				<ul class="users-list">
+				<%				
+					Iterator<?> it3 = arrayTop10.iterator();
+					while (it3.hasNext()) 
+					{	
+						j++;
+						Utente user = (Utente) it3.next();	
+				%>
+				
+					<li class="playerInTop10">
+						<h5><%=j%>° <%=user.getUsername()%> (<%=user.getTipo()%>) - <%=user.getPunteggio()%> punti</h5>
+					</li>
+				
+				
+				<% 	}
+					} else { %>
+						<div class="col-md-12"><h4>Nessun utente disponibile.</h4></div>
+				<% } %>
+				</ul>
+				</div>
+		
+	</section>
 	
 	</body>
 </html>
