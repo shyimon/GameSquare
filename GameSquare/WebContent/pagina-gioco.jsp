@@ -32,8 +32,8 @@
 				<img id="imgXD" src="<%=bean.getImgpath()%>/img1.png" alt="Img" style="width:100%; max-width:280px; height: 280px;" class="imgItem2">
 				<img class="modal-content" id="img01" style="width: 350px;">
 				
-					<p id="stiletitle">Punteggio: <h4 id="score"><%=bean.getPunteggio()%></h4></p>
-					<p id="stiletitle">Media dei voti: <%=bean.getMediaVoti()%></p>
+					<p id="stiletitle">Punteggio: <b><%=bean.getPunteggio()%></b></p>
+					<p id="stiletitle">Media dei voti: <b><%=bean.getMediaVoti()%></b></p>
 					  
 					 <div class="LiStats">
 		  			 <p> Giocatori che hanno acquistato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Acquistato")%></b></p>
@@ -44,81 +44,74 @@
 			</div>
 			
 			<div class="gamesec2">
-				<h4 id="titlePPS">DESCRIZIONE</h4>
-				<p id="descP"><%=bean.getDescrizione()%></p>
-				<p id="stiletitle">Publisher: <%=bean.getPublisher()%></p>
-				<p id="stiletitle">Anno: <%=bean.getAnno()%></p>
-				<p id="stiletitle">Genere: <%=bean.getGenere()%></p>
+				<div class="game-card">
+					<p id="gamecard">Game Card</p>
+					<p id="descP"><%=bean.getDescrizione()%></p>
+					<p id="stiletitle">Publisher: <%=bean.getPublisher()%></p>
+					<p id="stiletitle">Anno: <%=bean.getAnno()%></p>
+					<p id="stiletitle">Genere: <%=bean.getGenere()%></p>
+				</div>
 				
-				
-			<br>
-			<div class="VoteArea">
+				<div class="post-gamecard">
+					<div class="VoteArea">
+						<% if(utenteLoggato!=null){ 
+						VotoDAO voteModel = new VotoDAO();
+						ArrayList <Voto> voti = voteModel.getVote("Gioco", " "+bean.getIdGioco(), "utente", utenteLoggato.getUsername()); 
+						if(voti.size()!=0){ 
+								Voto voto = voti.get(0);%>
+							<h4>Hai votato questo gioco con <div class="num-voto"><%=voto.getValutazione()%></div> <input type="button" id="deleteVote" class="setButton" value="Cancella voto"></h4>
+						<% }%>
+						
+						<input type="hidden" id="usrValue" value="<%=utenteLoggato.getUsername()%>">
+						<% } %>
+						<form>
+						<input type="hidden" id="gameIdValue" value="<%=bean.getIdGioco()%>">
+							<label for="vote">Il tuo voto:</label>
+								<select id="vote" name="vote">
+									<% for (int i = 1; i<=10; i++){ %>
+		 								<option value="<%=i%>"><%=i%></option>
+		 							<%} %>
+								</select>
+								<% if(utenteLoggato!=null){ %>
+							<input type="button" id="voteButton" class="setButton" value="Valuta">
+							<% }else{ %>
+							<a href="login-page.jsp"> Valuta </a>
+							<% } %>
+						</form>
+				</div>
+				<div class="ListArea">
 				<% if(utenteLoggato!=null){ 
-				VotoDAO voteModel = new VotoDAO();
-				ArrayList <Voto> voti = voteModel.getVote("Gioco", " "+bean.getIdGioco(), "utente", utenteLoggato.getUsername()); 
-				if(voti.size()!=0){ 
-						Voto voto = voti.get(0);%>
-					<h4>Hai votato questo gioco con <%=voto.getValutazione()%> <input type="button" id="deleteVote" class="setButton" value="Cancella voto"></h4>
-				<% }%>
-				
-				<input type="hidden" id="usrValue" value="<%=utenteLoggato.getUsername()%>">
-				<% } %>
-				<form>
-				<input type="hidden" id="gameIdValue" value="<%=bean.getIdGioco()%>">
-					<label for="vote">Il tuo voto:</label>
-						<select id="vote" name="vote">
-							<% for (int i = 1; i<=10; i++){ %>
- 								<option value="<%=i%>"><%=i%></option>
- 							<%} %>
-						</select>
-						<% if(utenteLoggato!=null){ %>
-					<input type="button" id="voteButton" class="setButton" value="Valuta">
-					<% }else{ %>
-					<a href="login-page.jsp"> Valuta </a>
-					<% } %>
-				</form>
-			</div>
-			
-			<br>
-			
-			<div class="ListArea">
-			<% if(utenteLoggato!=null){ 
-				ElementoLista elem = listModel.getListElement(utenteLoggato.getUsername(),bean.getIdGioco()); 
-				if(elem!=null){ %>
-					<p>Hai aggiunto questo gioco alla tua lista come: <b id="userCategory"><%=elem.getCategoria()%></b>  <input type="button" id="deleteFromList" class="setButton" value="Rimuovi dalla lista"></p>
-				<% }
-				else{%>
-					<b id="userCategory"> </b>
-					<%}
-				}%>
-
-				<form>
-					<label for="category">Scegli una categoria:</label>
-						<select id="category" name="category">
-							<option value="Acquistato">Acquistato</option>
-							<option value="In corso">In corso</option>
-							<option value="Completato">Completato</option>
-							<option value="Platinato">Platinato</option>
-							<% if(utenteLoggato!=null && utenteLoggato.getTipo().equals("dev")){ %>
- 								<option value="Sviluppato">Sviluppato</option>
- 								<% } %>
-						</select>
-						<% if(utenteLoggato!=null){ %>
-					<input type="button" id="addButton" class="setButton" value="Aggiungi alla tua lista">
-					<b id="usrScore"><%=userModel.getScore(utenteLoggato.getUsername())%></b>
-					<% }else{ %>
-					<a href="login-page.jsp"> Aggiungi alla tua lista </a>
-					<% } %>
-				</form>
-			</div>
-		   
-		
-		   
+					ElementoLista elem = listModel.getListElement(utenteLoggato.getUsername(),bean.getIdGioco()); 
+					if(elem!=null){ %>
+						<p>Hai aggiunto questo gioco alla tua lista come: <b id="userCategory"><%=elem.getCategoria()%></b>  <input type="button" id="deleteFromList" class="setButton" value="Rimuovi dalla lista"></p>
+					<% }
+					else{%>
+						<b id="userCategory"> </b>
+						<%}
+					}%>
+	
+					<form>
+						<label for="category">Scegli una categoria:</label>
+							<select id="category" name="category">
+								<option value="Acquistato">Acquistato</option>
+								<option value="In corso">In corso</option>
+								<option value="Completato">Completato</option>
+								<option value="Platinato">Platinato</option>
+								<% if(utenteLoggato!=null && utenteLoggato.getTipo().equals("dev")){ %>
+	 								<option value="Sviluppato">Sviluppato</option>
+	 								<% } %>
+							</select>
+							<% if(utenteLoggato!=null){ %>
+						<input type="button" id="addButton" class="setButton" value="Aggiungi alla tua lista">
+						<b id="usrScore"><%=userModel.getScore(utenteLoggato.getUsername())%></b>
+						<% }else{ %>
+						<a href="login-page.jsp"> Aggiungi alla tua lista </a>
+						<% } %>
+					</form>
+				</div> 
+				</div>
 		   </div>
-			
 		</div>
-			
-			
 			
 		<div class="ThreadArea">
 			<div class="thread">
