@@ -43,7 +43,7 @@
 						<p>Tipo: <%=utenteLoggato.getTipo()%></p>
 					</li>
 					<li class="userinfo" id="last">
-						<p>Punteggio abilità: <%=utenteLoggato.getPunteggio()%></p>
+						<p>Punteggio abilità: <%=userModel.getScore(utenteLoggato.getUsername())%></p>
 					</li>
 				</ul>
 			</div>

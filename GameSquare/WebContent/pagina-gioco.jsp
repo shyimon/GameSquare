@@ -105,6 +105,7 @@
 						</select>
 						<% if(utenteLoggato!=null){ %>
 					<input type="button" id="addButton" class="setButton" value="Aggiungi alla tua lista">
+					<b id="usrScore"><%=userModel.getScore(utenteLoggato.getUsername())%></b>
 					<% }else{ %>
 					<a href="login-page.jsp"> Aggiungi alla tua lista </a>
 					<% } %>

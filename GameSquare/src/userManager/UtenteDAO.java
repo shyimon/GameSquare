@@ -131,4 +131,35 @@ public class UtenteDAO {
 		return flag;	
 	}
 	
+	public int getScore(String username) throws SQLException
+	{
+		String getScore="SELECT punteggio FROM utente WHERE username=?";
+		int score=0;
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(getScore);
+			statement.setString(1, username);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				score = set.getInt(1);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return score;
+	}
 }
+

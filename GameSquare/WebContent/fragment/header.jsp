@@ -3,6 +3,12 @@
     import="userManager.*"
     import="util.*"
     import="java.util.*"%>
+    
+      <%	
+
+	UtenteDAO userModel = new UtenteDAO();
+	
+%>
 <!DOCTYPE html>
 <html>
 	<head>

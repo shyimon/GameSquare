@@ -2,15 +2,16 @@
  * 
  */
 var score  = $('#score').text();
+var usrScore = $('#usrScore').text();
 //funzione jQuery per l'aggiunta di un gioco a una determinata lista, sulla rispettiva pagina
-$("#addButton").on("click", function vote() {
+$("#addButton").on("click", function addToList() {
 	var category_value = $('#category').val();
 	var user_category = $('#userCategory').text();
-    
+    alert(username+" ha aggiunto alla lista di categoria "+category_value+" il gioco id "+game_id+" con un punteggio di "+score+" da un punteggio di "+usrScore);
     //alert(category_value + " " + user_category);
     if(category_value === user_category){
     //alert("categorie uguali");
-    //alert(username+" ha aggiunto alla lista di categoria "+category_value+" il gioco id "+game_id+" con un punteggio di "+score);
+    
   	Swal.fire({ //SECONDO POPUP
 		  			  title: 'Categoria gia selezionata!',
 		  			  timer: 1000,
@@ -25,7 +26,7 @@ $("#addButton").on("click", function vote() {
       $.ajax({ //INVOCAZIONE AJAX
 		  	type: "GET",
 		    url: "AddToList",
-		    data: {"username" : username, "game_id": game_id, "category_value": category_value, "score": score},
+		    data: {"username" : username, "game_id": game_id, "category_value": category_value, "score": score, "usrScore": usrScore},
 		    success: function(results){
 		    	Swal.fire({ //SECONDO POPUP
 		  			  title: 'Aggiunto alla lista!',
@@ -42,8 +43,8 @@ $("#addButton").on("click", function vote() {
     else {
       $.ajax({ //INVOCAZIONE AJAX
 		  	type: "GET",
-		    url: "AddToList",
-		    data: {"username" : username, "game_id": game_id, "category_value": category_value, "score": score},
+		    url: "ChangeCateg",
+		    data: {"username" : username, "game_id": game_id, "category_value": category_value, "score": score, "usrScore": usrScore},
 		    success: function(results){
 		    	Swal.fire({ //SECONDO POPUP
 		  			  title: 'Categoria aggiornta!',
@@ -61,7 +62,7 @@ $("#addButton").on("click", function vote() {
 });
 
 //funzione jQuery per la rimozione di un determinato gioco dalla lista, sulla rispettiva pagina
-    $('#deleteFromList').on("click", function deleteVote() {
+    $('#deleteFromList').on("click", function deleteFromList() {
     	alert(username + " vuole togliere dalla lista " +game_id );
     				$.ajax({ //INVOCAZIONE AJAX
 					  	type: "GET",
