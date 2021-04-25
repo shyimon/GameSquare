@@ -42,7 +42,7 @@
 	
 	.searchTerm {
 	  width: 100%;
-	  border: 3px solid grey;
+	  border: 3px solid #0C3445;
 	  border-right: none;
 	  border-bottom-left-radius: .35em;
 	  border-top-left-radius: .35em;
@@ -58,8 +58,8 @@
 	
 	.searchButton {
 	  width: 40px;
-	  border: 1px solid grey;
-	  background: grey;
+	  border: 1px solid #0C3445;
+	  background: #0C3445;
 	  text-align: center;
 	  color: #fff;
 	  cursor: pointer;
@@ -90,7 +90,7 @@
 	.nav-button {
 		background: black;
 		width: -webkit-fill-available;
-		transition: all 0.5s;
+		transition: all 0.3s;
 		border-top-left-radius: 0.5em;
 		border-top-right-radius: 0.5em;
 		margin-left: 1%;

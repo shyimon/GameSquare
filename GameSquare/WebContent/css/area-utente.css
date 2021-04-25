@@ -1,6 +1,11 @@
 @charset "ISO-8859-1";
 
 @media screen {
+	body {
+	    background: linear-gradient(0deg, #7DC8E8 0%, #BDE467 100%);
+   		min-height: 100vh;
+		font-family: sans-serif;
+	}
 	
 	.header {
 		box-shadow: 3px 3px 15px #333;
@@ -39,6 +44,7 @@
 	}
 	
 	.list {
+		background-color: #A8DAF0;
 	    box-shadow: 3px 3px 15px #333;
 	    border: solid black 2px;
 	    border-radius: 0.6em;
