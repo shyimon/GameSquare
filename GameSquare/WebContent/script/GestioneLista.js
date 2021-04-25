@@ -3,11 +3,12 @@
  */
 var score  = $('#score').text();
 var usrScore = $('#usrScore').text();
+var user_category = $('#userCategory').text();
+
 //funzione jQuery per l'aggiunta di un gioco a una determinata lista, sulla rispettiva pagina
 $("#addButton").on("click", function addToList() {
 	var category_value = $('#category').val();
-	var user_category = $('#userCategory').text();
-    alert(username+" ha aggiunto alla lista di categoria "+category_value+" il gioco id "+game_id+" con un punteggio di "+score+" da un punteggio di "+usrScore);
+    //alert(username+" ha aggiunto alla lista di categoria "+category_value+" il gioco id "+game_id+" con un punteggio di "+score+" da un punteggio di "+usrScore);
     //alert(category_value + " " + user_category);
     if(category_value === user_category){
     //alert("categorie uguali");
@@ -44,7 +45,7 @@ $("#addButton").on("click", function addToList() {
       $.ajax({ //INVOCAZIONE AJAX
 		  	type: "GET",
 		    url: "ChangeCateg",
-		    data: {"username" : username, "game_id": game_id, "category_value": category_value, "score": score, "usrScore": usrScore},
+		    data: {"username" : username, "game_id": game_id, "category_value": category_value, "score": score, "usrScore": usrScore, "user_category": user_category},
 		    success: function(results){
 		    	Swal.fire({ //SECONDO POPUP
 		  			  title: 'Categoria aggiornta!',
@@ -63,11 +64,11 @@ $("#addButton").on("click", function addToList() {
 
 //funzione jQuery per la rimozione di un determinato gioco dalla lista, sulla rispettiva pagina
     $('#deleteFromList').on("click", function deleteFromList() {
-    	alert(username + " vuole togliere dalla lista " +game_id );
+    	//alert(username + " vuole togliere dalla lista " +game_id );
     				$.ajax({ //INVOCAZIONE AJAX
 					  	type: "GET",
 					    url: "DeleteFromList",
-					    data: {"username" : username, "game_id": game_id},
+					    data: {"username" : username, "game_id": game_id,  "score": score, "usrScore": usrScore, "user_category": user_category},
 					    success: function(results){
 					    	Swal.fire({ //SECONDO POPUP
 					  			  title: 'Gioco rimosso dalla lista',
