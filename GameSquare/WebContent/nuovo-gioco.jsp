@@ -9,7 +9,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Aggiunta di un nuovo gioco</title>
-
+<link rel="stylesheet" type="text/css" href="css/nuovo-gioco.css">  
 
 
 <!-- JQUERY 3.4.1 -->
@@ -28,77 +28,75 @@
 
 
 </head>
-<body>
-<header>
-			<%@ include file="fragment/header.jsp" %>
-		</header>
-<h1>Nuovo gioco</h1>
+<body style="margin:0">
+	<div class="header">
+		<%@ include file="fragment/header.jsp" %>
+	</div>
+	
+	<div class="container">
+		<form id="this-form">
+			<h1>Nuovo gioco</h1>
+			<div id="input-box">
+				<input class="input-field" name="game_title" type="text" id="game-title" placeholder=" " required autocomplete="off">
+				<label for="game-title">Inserire un titolo*</label>
+			</div>
+			
+			<div id="input-box">
+				<input name="publisher" type="text" id="publisher" placeholder=" " required>
+				<label for="publisher">Inserire un publisher*</label>
+			</div>
+			
+			<div id="input-box">
+				<select id="game_genre" name="game_genre">
+ 					<option value="Altro">Altro</option>
+ 					<option value="Applicazione">Applicazione</option>
+ 					<option value="Azione">Azione</option>
+ 					<option value="Avventura">Avventura</option>
+  					<option value="Arcade">Arcade</option>
+  					<option value="Action-Adventure">Action-Adventure</option>
+  					<option value="Action RPG">Action RPG</option>
+  					<option value="Educativo">Educativo</option>
+  					<option value="Gestionale">Gestionale</option>
+  					<option value="JRPG">JRPG</option>
+  					<option value="Musicale">Musicale</option>
+  					<option value="Party">Party</option>
+  					<option value="Platform">Platform</option>
+  					<option value="Picchiaduro">Picchiaduro</option>
+  					<option value="Puzzle">Puzzle</option>
+  					<option value="RPG">RPG</option>
+  					<option value="Roguelike">Roguelike</option>
+  					<option value="Sparatutto">Sparatutto</option>
+  					<option value="Sport">Sport</option>
+  					<option value="Stealth">Stealth</option>
+  					<option value="Strategico">Strategico</option>
+				</select>
+				<label id="genre-label" for="game_genre">Genere:</label>
+			</div>
 
-<form>
-			<div class="container">
+			<div id="input-box">
+			 	<input type="number" id="score" name="score" min="50" max="200" value="50" step="10">
+			 	<label for="quantity">Punteggio:</label>
+			</div>
 
-				<div class="form-top-grid">
-					<div>
-						<span>Titolo del Gioco:<label>*</label></span> <input
-							name="game_title" type="text" id="game_title"
-							placeholder="Inserire un titolo..." required>
-					</div>
-					<div>
-						<span>Publisher:<label>*</label></span> <input
-							name="publisher" type="text" id="publisher"
-							placeholder="Inserire un publisher..." required>
-					</div>
-						<div>
-						<label for="genre">Genere:</label>
-							<select id="game_genre" name="game_genre">
- 									<option value="Altro">Altro</option>
- 									<option value="Applicazione">Applicazione</option>
-  									<option value="Azione">Azione</option>
- 									<option value="Avventura">Avventura</option>
-  									<option value="Arcade">Arcade</option>
-  									<option value="Action-Adventure">Action-Adventure</option>
-  									<option value="Action RPG">Action RPG</option>
-  									<option value="Educativo">Educativo</option>
-  									<option value="Gestionale">Gestionale</option>
-  									<option value="JRPG">JRPG</option>
-  									<option value="Musicale">Musicale</option>
-  									<option value="Party">Party</option>
-  									<option value="Platform">Platform</option>
-  									<option value="Picchiaduro">Picchiaduro</option>
-  									<option value="Puzzle">Puzzle</option>
-  									<option value="RPG">RPG</option>
-  									<option value="Roguelike">Roguelike</option>
-  									<option value="Sparatutto">Sparatutto</option>
-  									<option value="Sport">Sport</option>
-  									<option value="Stealth">Stealth</option>
-  									<option value="Strategico">Strategico</option>
-							</select>
-						</div>
-							<div>
-						  		<label for="quantity">Punteggio:</label>
- 							 	<input type="number" id="score" name="score" min="50" max="200" value="50" step="10">
- 							 </div>
-						<label for="year">Anno:</label>
-							<select id="game_year" name="game_year">
-								<% for (int anno = 2021; anno>=1958; anno--){ %>
- 									<option value="<%=anno%>"><%=anno%></option>
- 									<%} %>
-							</select>
-						</div>
-					<div>
-						<span>Descrizione</span> <textarea name="game_desc"
-							id="game_desc" placeholder="Inserire una descrizione" ></textarea>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="button2">
-					<input type="button" id="buttonaggiungi" class="setButton"
-						value="Aggiungi gioco">
-				</div>
+			<div id="input-box">
+				<select id="game_year" name="game_year">
+					<% for (int anno = 2021; anno>=1958; anno--){ %>
+ 					<option value="<%=anno%>"><%=anno%></option>
+ 					<%} %>
+				</select>
+				<label id="game-year-label" for="game_year">Anno di pubblicazione:</label>
+			</div>
 
-		
-</form>
+			<div id="input-box">
+				<textarea name="game_desc" id="game-desc" placeholder=" " ></textarea>
+				<label for="game-desc">Inserire una descrizione</label>
+			</div>
 
+			<div id="input-box">
+				<input type="button" id="buttonaggiungi" class="setButton" value="Aggiungi gioco">
+			</div>
+		</form>
+	</div>
 </body>
 
 <script>

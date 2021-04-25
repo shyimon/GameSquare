@@ -4,8 +4,9 @@
 	{
 	
 		body {
-			height: 500px;
-			background: grey;
+		    background: linear-gradient(0deg, #7DC8E8 0%, #BDE467 100%);
+	   		min-height: 100vh;
+			font-family: sans-serif;
 		}
 		
 		.input {
