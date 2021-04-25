@@ -39,7 +39,7 @@
 		  			 <p> Giocatori che hanno acquistato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Acquistato")%></b></p>
 		   			 <p> Giocatori che stanno giocando a questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "In corso")%></b></p>
 		    		 <p> Giocatori che hanno completato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Completato")%></b></p>
-		   			 <p> Giocatori che hanno platinato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Platinatotato")%></b></p>
+		   			 <p> Giocatori che hanno platinato questo gioco: <b><%=listModel.getCategoryStats(bean.getIdGioco(), "Platinato")%></b></p>
 		  			 </div>
 			</div>
 			

@@ -64,11 +64,11 @@ $("#addButton").on("click", function addToList() {
 
 //funzione jQuery per la rimozione di un determinato gioco dalla lista, sulla rispettiva pagina
     $('#deleteFromList').on("click", function deleteFromList() {
-    	//alert(username + " vuole togliere dalla lista " +game_id );
+    	//alert(username + " vuole togliere dalla lista " +game_id+" che ha salvato come " +user_category+ " punteggio: "+usrScore +" "+score);
     				$.ajax({ //INVOCAZIONE AJAX
 					  	type: "GET",
 					    url: "DeleteFromList",
-					    data: {"username" : username, "game_id": game_id,  "score": score, "usrScore": usrScore, "user_category": user_category},
+					    data: {"username" : username, "game_id": game_id, "score": score, "usrScore": usrScore, "user_category": user_category},
 					    success: function(results){
 					    	Swal.fire({ //SECONDO POPUP
 					  			  title: 'Gioco rimosso dalla lista',

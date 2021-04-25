@@ -31,7 +31,6 @@ public class DeleteFromListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = null; 
 		String gameID = null; 
-		String category_value = null; 
 		String user_category= null;
 		int score = 0;
 		int usrScore = 0;
@@ -40,16 +39,23 @@ public class DeleteFromListServlet extends HttpServlet {
 		user_category=request.getParameter("user_category");
 		score=Integer.parseInt(request.getParameter("score"));
 		usrScore=Integer.parseInt(request.getParameter("usrScore"));
-		System.out.println(username + " vuole togliere " +gameID+" dalla lista, punteggio "+score+" partendo da un punteggio di "+usrScore+" e dalla categoria "+user_category);//test
+		System.out.println(username + " vuole togliere " +gameID+" punteggio "+score+" partendo da un punteggio di "+usrScore+" e dalla categoria "+user_category);//test
 		
 		int oldScore =calcolaPunteggio(score, user_category);
 		//System.out.println("il vecchio punteggio è "+ score);
 		usrScore-=oldScore;
 		//System.out.println("l'utente ora avrà "+ usrScore);
+		//score =calcolaPunteggio(score, category_value);
+		//System.out.println("il nuovo punteggio è "+ score);
+		
+		usrScore+=0;
+		System.out.println("l'utente ora avrà "+ usrScore);
+		
 		try {
-			if(ElementoListaDAO.deleteListElement(Integer.parseInt(gameID), username)) {
+			if(ElementoListaDAO.updateUserScore(username, usrScore)) {
+				ElementoListaDAO.deleteListElement(Integer.parseInt(gameID), username);
 				System.out.println("Eliminato");
-				ElementoListaDAO.updateUserScore(username, usrScore);
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
