@@ -75,7 +75,7 @@
 								<% if(utenteLoggato!=null){ %>
 							<input type="button" id="voteButton" class="setButton" value="Valuta">
 							<% }else{ %>
-							<a href="login-page.jsp"> Valuta </a>
+							<a id="reindirizzamento-login" href="login-page.jsp"> Valuta </a>
 							<% } %>
 						</form>
 				</div>
@@ -105,7 +105,7 @@
 						<input type="button" id="addButton" class="setButton" value="Aggiungi alla tua lista">
 						<b id="usrScore"><%=userModel.getScore(utenteLoggato.getUsername())%></b>
 						<% }else{ %>
-						<a href="login-page.jsp"> Aggiungi alla tua lista </a>
+						<a id="reindirizzamento-login" href="login-page.jsp"> Aggiungi alla tua lista </a>
 						<% } %>
 					</form>
 				</div> 
