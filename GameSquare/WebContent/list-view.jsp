@@ -29,7 +29,7 @@
 
 							
 		
-		<div>
+		<div class="giochi">
 		<%
 				ElementoListaDAO model=new ElementoListaDAO();
 				ArrayList<ElementoLista> array = model.getUserList(utenteLoggato.getUsername());		

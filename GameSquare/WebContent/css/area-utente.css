@@ -48,8 +48,6 @@
 	    box-shadow: 3px 3px 15px #333;
 	    border: solid black 2px;
 	    border-radius: 0.6em;
-	    display: grid;
-	    grid-template-rows: 80% 20%;
 	    padding: 2%;
 	    padding-bottom: 5%;
 	}
