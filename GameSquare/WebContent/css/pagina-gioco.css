@@ -22,6 +22,7 @@
 	.gamesec2 {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-around;
 	}
 	
 	#game-name {
@@ -120,7 +121,7 @@
 		background: linear-gradient(0deg, #73C5E7 0%, #467CC3 100%);
 	}
 	
-	.setButton {
+	.setButton, #reindirizzamento-login {
 	background: linear-gradient(0deg, #A8DAF0 0%, #6592CD 100%);
     padding: 1%;
     border: solid 1px;
@@ -128,9 +129,18 @@
     transition: all 0.3s;
 	}
 	
-	.setButton:hover {
+	.setButton:hover, #reindirizzamento-login:hover{
 		background: linear-gradient(0deg, #73C5E7 0%, #467CC3 100%);
 		transition: all 0.3s;
+	}
+	
+	#reindirizzamento-login {
+		text-decoration: none;
+		color: black;
+	}
+	
+	#reindirizzamento-login:visited {
+		color: black;
 	}
 	
 	#vote, #category {
@@ -147,4 +157,9 @@
 	#score {
 		display: contents;
 	}
+	
+	.VoteArea, .ListArea {
+		padding-bottom: 4%;
+	}
+	
 }

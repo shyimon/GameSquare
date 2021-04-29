@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+
+@media screen {
+	.header {
+		box-shadow: 3px 3px 15px #333;
+	}
+	
+	body {
+	    background: linear-gradient(0deg, #7DC8E8 0%, #BDE467 100%);
+   		min-height: 100vh;
+		font-family: sans-serif;
+	}
+	
+}
