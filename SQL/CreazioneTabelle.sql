@@ -70,7 +70,7 @@ CREATE TABLE richiesta_gioco (
 );
 
 
-CREATE TABLE elementolista (
+CREATE TABLE elemento_lista (
     utente VARCHAR(50) NOT NULL,
     id_gioco INT NOT NULL,
     categoria VARCHAR(50) NOT NULL,
