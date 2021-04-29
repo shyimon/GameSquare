@@ -56,7 +56,7 @@
 					<div class="VoteArea">
 						<% if(utenteLoggato!=null){ 
 						VotoDAO voteModel = new VotoDAO();
-						ArrayList <Voto> voti = voteModel.getVote("Gioco", " "+bean.getIdGioco(), "utente", utenteLoggato.getUsername()); 
+						ArrayList <Voto> voti = voteModel.getVote("id_gioco", " "+bean.getIdGioco(), "utente", utenteLoggato.getUsername()); 
 						if(voti.size()!=0){ 
 								Voto voto = voti.get(0);%>
 							<h4>Hai votato questo gioco con <div class="num-voto"><%=voto.getValutazione()%></div> <input type="button" id="deleteVote" class="setButton" value="Cancella voto"></h4>
@@ -119,7 +119,7 @@
 			<div class="discussioni">
 			<%
 				ThreadDAO model_thread=new ThreadDAO();
-				ArrayList<GameThread> array = model_thread.viewThread("Idgioco", ""+bean.getIdGioco());		
+				ArrayList<GameThread> array = model_thread.viewThread("id_gioco", ""+bean.getIdGioco());		
 				if(array.size()!=0)
 				{										
 					Iterator<?> it2 = array.iterator();

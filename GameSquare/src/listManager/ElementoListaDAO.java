@@ -24,7 +24,7 @@ public class ElementoListaDAO {
 	
 	public static boolean addListElement(ElementoLista elem) throws SQLException 
 	{
-		addToList= "INSERT INTO elementolista (Utente,IdGioco,categoria) values(?,?,?)";
+		addToList= "INSERT INTO elemento_lista (utente,id_gioco,categoria) values(?,?,?)";
 		boolean flag=false;
 
 		try 
@@ -54,7 +54,7 @@ public class ElementoListaDAO {
 	
 	public ArrayList <ElementoLista> getUserList(String username) throws SQLException
 	{
-		getList="SELECT * FROM elementolista WHERE Utente=? ORDER BY categoria";
+		getList="SELECT * FROM elemento_lista WHERE utente=? ORDER BY categoria";
 		ArrayList<ElementoLista> results=new ArrayList<ElementoLista>();
 		
 		try 
@@ -89,7 +89,7 @@ public class ElementoListaDAO {
 	
 	public ElementoLista getListElement(String username, int gameid) throws SQLException
 	{
-		String getListElement="SELECT * FROM elementolista WHERE Utente=? AND IdGioco=?";
+		String getListElement="SELECT * FROM elemento_lista WHERE utente=? AND id_gioco=?";
 		ArrayList<ElementoLista> results=new ArrayList<ElementoLista>();
 		
 		try 
@@ -133,7 +133,7 @@ public class ElementoListaDAO {
 		boolean flag=false;
 		try
 		{
-			deleteFromList="DELETE FROM elementolista WHERE IdGioco=? AND Utente=?";
+			deleteFromList="DELETE FROM elemento_lista WHERE id_gioco=? AND utente=?";
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(deleteFromList);
 			statement.setInt(1,gameid);
@@ -159,7 +159,7 @@ public class ElementoListaDAO {
 	public static boolean updateCategory(String user, int gameID, String categoria) throws SQLException 
 	{
 		boolean flag=false;
-		updateCategory = "UPDATE elementolista SET categoria=? WHERE Utente=? AND IdGioco=?";
+		updateCategory = "UPDATE elemento_lista SET categoria=? WHERE utente=? AND id_gioco=?";
 		try
 		{
 			con=ConnectionPool.getConnection();
@@ -187,7 +187,7 @@ public class ElementoListaDAO {
 	
 	public String getGameName(int gameID) throws SQLException
 	{
-		GetGameName="SELECT DISTINCT nome FROM elementolista JOIN gioco ON gioco.id=elementoLista.IdGioco WHERE IdGioco=?";
+		GetGameName="SELECT DISTINCT nome FROM elemento_lista JOIN gioco ON gioco.id=elemento_lista.id_gioco WHERE id_gioco=?";
 		String name=null;
 		
 		try 
@@ -217,7 +217,7 @@ public class ElementoListaDAO {
 	}
 	public int getGameScore(int gameID) throws SQLException
 	{
-		GetGameScore="SELECT DISTINCT punteggio FROM elementolista JOIN gioco ON gioco.id=elementoLista.IdGioco WHERE IdGioco=?";
+		GetGameScore="SELECT DISTINCT punteggio FROM elemento_lista JOIN gioco ON gioco.id=elemento_lista.id_gioco WHERE id_gioco=?";
 		int score=0;
 		
 		try 
@@ -249,7 +249,7 @@ public class ElementoListaDAO {
 	public static boolean updateUserScore(String user, int punteggio) throws SQLException 
 	{
 		boolean flag=false;
-		updateScore = "update elementolista join utente on utente.username=elementoLista.Utente set punteggio=? where utente=?";
+		updateScore = "update elemento_lista join utente on utente.username=elemento_lista.utente set punteggio=? where utente=?";
 		try
 		{
 			con=ConnectionPool.getConnection();
@@ -276,7 +276,7 @@ public class ElementoListaDAO {
 	
 	public int getCategoryStats(int gameID, String categoria) throws SQLException
 	{
-		GetStats="SELECT count(*) FROM elementolista WHERE IdGioco=? and categoria=?";
+		GetStats="SELECT count(*) FROM elemento_lista WHERE id_gioco=? and categoria=?";
 		int count=0;
 		
 		try 

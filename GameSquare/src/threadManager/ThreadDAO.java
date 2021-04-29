@@ -36,7 +36,7 @@ public class ThreadDAO {
 					viewThread+=strings[i]+"=?";
 			}
 		}
-		viewThread+=" ORDER BY idThread DESC; ";
+		viewThread+=" ORDER BY id_thread DESC; ";
 		
 		try 
 		{
@@ -76,7 +76,7 @@ public class ThreadDAO {
 
 	public static boolean addThread(GameThread thread) throws SQLException 
 	{
-		addThread= "INSERT INTO thread(tipoThread,Titolo,Testo,utente,Idgioco) values(?,?,?,?,?)";
+		addThread= "INSERT INTO thread(tipo_thread,titolo,testo,utente,id_gioco) values(?,?,?,?,?)";
 		boolean flag=false;
 
 		try 

@@ -20,7 +20,7 @@ public class RichiestaGiocoDAO {
 
 	public static boolean addGameRequest(RichiestaGioco req) throws SQLException 
 	{
-		addReq= "INSERT INTO richiestagioco(Utente,nomeGioco,fonte,publisher,anno,genere,risposta) values(?,?,?,?,?,?,?)";
+		addReq= "INSERT INTO richiesta_gioco(utente,nome_gioco,fonte,publisher,anno,genere,risposta) values(?,?,?,?,?,?,?)";
 		boolean flag=false;
 
 		try 
@@ -54,7 +54,7 @@ public class RichiestaGiocoDAO {
 	
 	public ArrayList<RichiestaGioco> viewRequest(String ...strings) throws SQLException
 	{
-		viewReq="SELECT * FROM richiestagioco";
+		viewReq="SELECT * FROM richiesta_gioco";
 		ArrayList<RichiestaGioco> richieste=new ArrayList<RichiestaGioco>();
 		int j=1;
 		if(strings.length>0)
@@ -112,7 +112,7 @@ public class RichiestaGiocoDAO {
 		boolean flag=false;
 		try
 		{
-			deleteReq="DELETE FROM richiestagioco WHERE id=?";
+			deleteReq="DELETE FROM richiesta_gioco WHERE id=?";
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(deleteReq);
 			statement.setInt(1,id);

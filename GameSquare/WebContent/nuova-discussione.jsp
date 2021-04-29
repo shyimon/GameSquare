@@ -67,7 +67,7 @@
 				<input type="hidden" id="username" name="username" value="<%=utenteLoggato.getUsername()%>">
 				<% if(utenteLoggato.getTipo().equals("mod")|| utenteLoggato.getTipo().equals("dev")){ %>
 				<div id="input-box">
-					<input type="button" id="button-cr" class="setButton"
+					<input type="button" id="buttoncrea" class="setButton"
 						value="Crea thread">
 				</div>
 				<%}else{ %>

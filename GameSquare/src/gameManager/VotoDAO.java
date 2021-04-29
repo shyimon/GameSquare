@@ -22,7 +22,7 @@ public class VotoDAO {
 	
 	public static boolean addVote(Voto voto) throws SQLException 
 	{
-		addVote= "INSERT INTO voto(valutazione,utente,Gioco) values(?,?,?)";
+		addVote= "INSERT INTO voto(valutazione,utente,id_gioco) values(?,?,?)";
 		boolean flag=false;
 
 		try 
@@ -105,7 +105,7 @@ public class VotoDAO {
 		boolean flag=false;
 		try
 		{
-			deleteVote="DELETE FROM voto WHERE Gioco=? AND utente=?";
+			deleteVote="DELETE FROM voto WHERE id_gioco=? AND utente=?";
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(deleteVote);
 			statement.setInt(1,gameid);
@@ -131,7 +131,7 @@ public class VotoDAO {
 	public static boolean updateVote(String user, int gameID, int voto) throws SQLException 
 	{
 		boolean flag=false;
-		updateVote = "UPDATE voto SET valutazione=? WHERE utente=? AND Gioco=?";
+		updateVote = "UPDATE voto SET valutazione=? WHERE utente=? AND id_gioco=?";
 		try
 		{
 			con=ConnectionPool.getConnection();
@@ -160,7 +160,7 @@ public class VotoDAO {
 	public float calculateAverage(int gameid) throws SQLException
 	{
 		float avg = 0;
-		average="SELECT AVG(valutazione) FROM voto WHERE Gioco=?";
+		average="SELECT AVG(valutazione) FROM voto WHERE id_gioco=?";
 		
 		try 
 		{

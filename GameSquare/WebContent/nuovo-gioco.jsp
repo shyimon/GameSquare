@@ -36,7 +36,7 @@
 			<form id="this-form">
 				<h1>Nuovo gioco</h1>
 				<div id="input-box">
-					<input class="input-field" name="game_title" type="text" id="game-title" placeholder=" " required autocomplete="off">
+					<input class="input-field" name="game_title" type="text" id="game_title" placeholder=" " required autocomplete="off">
 					<label for="game-title">Inserire un titolo*</label>
 				</div>
 				
@@ -87,7 +87,7 @@
 				</div>
 	
 				<div id="input-box">
-					<textarea name="game_desc" id="game-desc" placeholder=" " ></textarea>
+					<textarea name="game_desc" id="game_desc" placeholder=" " ></textarea>
 					<label for="game-desc">Inserire una descrizione</label>
 				</div>
 	

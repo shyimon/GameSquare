@@ -41,7 +41,7 @@ public class ThreadControl extends HttpServlet {
 								request.removeAttribute("thread");
 				
 								String threadID = request.getParameter("threadid");
-								ArrayList<GameThread> app=threadModel.viewThread("idThread", threadID);
+								ArrayList<GameThread> app=threadModel.viewThread("id_thread", threadID);
 								request.setAttribute("thread", app.get(0));
 						}
 				}
