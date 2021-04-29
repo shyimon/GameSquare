@@ -60,7 +60,7 @@
 		transition: 100ms ease all;
 	}
 	
-	#game-title, #publisher, #score, form textarea, form select  {
+	#game_title, #publisher, #score, form textarea, form select  {
 		border: 1px solid #999;
 		border-radius: 3px;
 		padding: 20px 10px 10px;

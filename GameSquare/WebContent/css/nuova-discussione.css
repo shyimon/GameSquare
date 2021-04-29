@@ -85,7 +85,7 @@
 		font-size: 0.8em;
 	}
 
-	#button-cr {
+	.setButton {
         background: linear-gradient(0deg, rgba(34,48,195,1) 0%, rgba(45,119,253,1) 100%);
         box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
         width: 100%;
