@@ -28,42 +28,42 @@ CREATE TABLE gioco (
 CREATE TABLE voto(
 	valutazione TINYINT NOT NULL,
 	utente VARCHAR(50) NOT NULL,
-    Gioco INT NOT NULL,
+    id_gioco INT NOT NULL,
     FOREIGN KEY (utente)
         REFERENCES utente (username)
         ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (Gioco)
+	FOREIGN KEY (id_gioco)
         REFERENCES gioco (id)
         ON UPDATE CASCADE ON DELETE CASCADE,
-	PRIMARY KEY (utente, Gioco)
+	PRIMARY KEY (utente, id_gioco)
 	);
 
 CREATE TABLE thread (
-    idThread INT AUTO_INCREMENT NOT NULL,
-	tipoThread VARCHAR(50) NOT NULL,
-    Titolo VARCHAR(50) NOT NULL,
-    Testo TEXT NOT NULL,
+    id_thread INT AUTO_INCREMENT NOT NULL,
+	tipo_thread VARCHAR(50) NOT NULL,
+    titolo VARCHAR(50) NOT NULL,
+    testo TEXT NOT NULL,
     utente VARCHAR(50) NOT NULL,
-    Idgioco INT NOT NULL,
+    id_gioco INT NOT NULL,
     FOREIGN KEY (utente)
         REFERENCES utente (username)
         ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (Idgioco)
+	FOREIGN KEY (id_gioco)
         REFERENCES gioco (id)
         ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY (idThread)
+    PRIMARY KEY (id_thread)
 );
 
-CREATE TABLE richiestagioco (
+CREATE TABLE richiesta_gioco (
 	id INT NOT NULL AUTO_INCREMENT,
-    Utente VARCHAR(50) NOT NULL,
-    nomeGioco VARCHAR(50) NOT NULL,
+    utente VARCHAR(50) NOT NULL,
+    nome_gioco VARCHAR(50) NOT NULL,
     publisher varchar(50) NOT NULL,
     anno varchar(4) NOT NULL,
     genere varchar(30) NOT NULL,
     fonte TEXT NOT NULL,
     risposta BOOLEAN,
-    FOREIGN KEY (Utente)
+    FOREIGN KEY (utente)
         REFERENCES utente (username)
         ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY (id)
@@ -71,15 +71,15 @@ CREATE TABLE richiestagioco (
 
 
 CREATE TABLE elementolista (
-    Utente VARCHAR(50) NOT NULL,
-    IdGioco INT NOT NULL,
+    utente VARCHAR(50) NOT NULL,
+    id_gioco INT NOT NULL,
     categoria VARCHAR(50) NOT NULL,
-    FOREIGN KEY (Utente)
+    FOREIGN KEY (utente)
         REFERENCES utente (username)
         ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY (IdGioco)
+    FOREIGN KEY (id_gioco)
         REFERENCES gioco (id)
         ON UPDATE CASCADE ON DELETE CASCADE,
-    PRIMARY KEY (Utente, IdGioco)
+    PRIMARY KEY (utente, id_gioco)
 );
 
