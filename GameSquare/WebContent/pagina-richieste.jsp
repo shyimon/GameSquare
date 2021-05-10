@@ -74,7 +74,6 @@
 $("#request .refuseButton").each(function () {
     $(this).on("click", function refuseRequest() {
     	var reqid = this.value;
-    	var action = "refuseReq";
         //alert(val);
         Swal.fire({ //PRIMO POPUP
 			  title: 'Sei sicuro di voler rifiutare la richiesta?',
@@ -90,8 +89,8 @@ $("#request .refuseButton").each(function () {
 				  //alert(reqid + " " + action);
 				 		$.ajax({ //INVOCAZIONE AJAX
 					  	type: "GET",
-					    url: "Request",
-					    data: {"action" : action, "reqid": reqid},
+					    url: "RefuseReq",
+					    data: {"reqid": reqid},
 					    success: function(results){
 					    	Swal.fire({ //SECONDO POPUP
 					  			  title: 'Richiesta Eliminata',
@@ -113,7 +112,6 @@ $("#request .refuseButton").each(function () {
 $("#request .acceptButton").each(function () {
     $(this).on("click", function acceptRequest() {
     	var reqid = this.value;
-    	var action = "acceptReq";
         //alert(val);
         Swal.fire({ //PRIMO POPUP
 			  title: 'Sei sicuro di voler accettare la richiesta?',
@@ -126,11 +124,10 @@ $("#request .acceptButton").each(function () {
 			  cancelButtonText: 'Annulla'
 			}).then((result) => {
 			  if (result.value) {
-				 alert(reqid + " " + action);
 				 		$.ajax({ //INVOCAZIONE AJAX
 					  	type: "GET",
-					    url: "Request",
-					    data: {"action" : action, "reqid": reqid},
+					    url: "AcceptReq",
+					    data: {"reqid": reqid},
 					    success: function(results){
 					    	Swal.fire({ //SECONDO POPUP
 					  			  title: 'Richiesta Approvata',
