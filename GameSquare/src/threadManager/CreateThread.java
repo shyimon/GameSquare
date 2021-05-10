@@ -55,7 +55,7 @@ public class CreateThread extends HttpServlet {
 				if(ThreadDAO.addThread(disc))
 				{
 					request.setAttribute("inserimentoThread", "true");
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Game?action=gioco&id="+disc.getIdGioco());
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/GamePage?id="+disc.getIdGioco());
 					dispatcher.forward(request, response);
 					
 				}

@@ -43,7 +43,7 @@
     			<%try{
 					 ArrayList<String> list = GameModel.GetPublishers();
 						for(String x:list){ %>
-				<li><a href="Game?action=publisher&pub=<%=x%>" ><%=x%></a></li>
+				<li><a href="Publisher?pub=<%=x%>" ><%=x%></a></li>
       			<% }
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
@@ -57,7 +57,7 @@
 	    		<%try{
 					 ArrayList<String> list = GameModel.GetGenres();
 						for(String x:list){ %>
-				<li><a href="Game?action=genre&gen=<%=x%>" ><%=x%></a></li>
+				<li><a href="Genre?gen=<%=x%>" ><%=x%></a></li>
 	      		<% }
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
@@ -82,10 +82,10 @@
 					
 					<div class="gioco">
 						<div class="game-image">
-							<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
+							<a href="GamePage?id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
 						</div>						
 						<div class="game-name">
-							<h5><a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><%=bean.getNome()%></a></h5>
+							<h5><a href="GamePage?id=<%=bean.getIdGioco()%>"><%=bean.getNome()%></a></h5>
 						</div>
 					</div>
 					<% 	}

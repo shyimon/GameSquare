@@ -49,10 +49,10 @@
 				
 					<li class="game-object">
 							<div class="imageContainer">
-								<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
+								<a href="GamePage?id=<%=bean.getIdGioco()%>"><img src=<%=bean.getImgpath()+"/img1.png"%> width="150" height="150" class="imgItem"></a>
 							</div>
 								<div class="nameContainer">
-									<h5><a class="game-name" href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><%=bean.getNome()%></a></h5>
+									<h5><a class="game-name" href="GamePage?id=<%=bean.getIdGioco()%>"><%=bean.getNome()%></a></h5>
 							</div>
 					</li>
 				

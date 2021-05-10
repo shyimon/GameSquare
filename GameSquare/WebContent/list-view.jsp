@@ -38,7 +38,7 @@
 					Iterator<?> it2 = array.iterator();
 					while (it2.hasNext()){
 					ElementoLista bean = (ElementoLista) it2.next();%>
-						<b> - </b><a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><%=model.getGameName(bean.getIdGioco())%></a><b> - <%=bean.getCategoria()%></b>
+						<b> - </b><a href="GamePage?id=<%=bean.getIdGioco()%>"><%=model.getGameName(bean.getIdGioco())%></a><b> - <%=bean.getCategoria()%></b>
 						<br>
 						<br>
 					<% }

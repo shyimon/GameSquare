@@ -21,7 +21,7 @@ $("#addButton").on("click", function addToList() {
 		  			  showConfirmButton: false,
 		  			  width: '400px',
 		  			})
-		  			setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+		  			setTimeout(function(){location.href="GamePage?id="+game_id} , 1000);
     }
     else if(user_category === " "){
       $.ajax({ //INVOCAZIONE AJAX
@@ -37,7 +37,7 @@ $("#addButton").on("click", function addToList() {
 		  			  showConfirmButton: false,
 		  			  width: '400px',
 		  			})
-		  			setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+		  			setTimeout(function(){location.href="GamePage?id="+game_id} , 1000);
 			  }
 		})
     }
@@ -55,7 +55,7 @@ $("#addButton").on("click", function addToList() {
 		  			  showConfirmButton: false,
 		  			  width: '400px',
 		  			})
-		  			setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+		  			setTimeout(function(){location.href="GamePage?id="+game_id} , 1000);
 			  }
 		})
     }
@@ -78,7 +78,7 @@ $("#addButton").on("click", function addToList() {
 					  			  showConfirmButton: false,
 					  			  width: '400px',
 					  			})
-					  		setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+					  		setTimeout(function(){location.href="GamePage?id="+game_id} , 1000);
 						  }
 					})
 			});
