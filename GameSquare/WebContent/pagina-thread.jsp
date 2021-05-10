@@ -58,7 +58,7 @@
 						if (tbean.getTipoThread().equals("Spoiler")){%>
 								
 								<div class="row justify-content-center">
-							<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
+							<a href="ViewThread?threadid=<%=tbean.getIdThread()%>"> <b>La discussione è marcata come SPOILER</b>: clicca per visualizzarla! - scritta da <%=tbean.getUsernameUtente()%> </a>
 						</div>
 					</div>
 					<br>
@@ -70,7 +70,7 @@
 				
 					
 						<div class="row justify-content-center">
-							<a href="Thread?action=discussion&threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
+							<a href="ViewThread?threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
 						</div>
 					</div>
 					<br>
@@ -84,7 +84,7 @@
 						<div class="col-md-12"><h4>Nessun'altra Discussione.</h4>
 						<% if(utenteLoggato != null)
 							{%>					
-								<a href="Thread?action=newdiscussion&gameid=<%=bean.getIdGioco()%>">Creane una!</a></
+								<a href="NewThread?gameid=<%=bean.getIdGioco()%>">Creane una!</a></
 							
 						<%	}
 							else
