@@ -68,7 +68,7 @@ public class AddGame extends HttpServlet {
 						if(GiocoDAO.addGame(gioco))
 						{
 		
-							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Game?action=findall");
+							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/FindAll");
 							dispatcher.forward(request, response);
 							
 						}

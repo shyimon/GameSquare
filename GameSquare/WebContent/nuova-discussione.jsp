@@ -118,7 +118,7 @@
 					showConfirmButton: false,
 					width: '400px',
 					})
-				setTimeout(function(){location.href="Game?action=gioco&id="+gameId+"#ThreadArea"} , 2000);
+				setTimeout(function(){location.href="GamePage?id="+gameId+"#ThreadArea"} , 2000);
 				}    
 			})
 		}

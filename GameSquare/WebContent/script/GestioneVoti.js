@@ -33,7 +33,7 @@ $("#voteButton").on("click", function vote() {
 		  			  showConfirmButton: false,
 		  			  width: '400px',
 		  			})
-		  			setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+		  			setTimeout(function(){location.href="GamePage?id="+game_id} , 1000);
 			  }
 		})
     }
@@ -57,7 +57,7 @@ $("#voteButton").on("click", function vote() {
 					  			  showConfirmButton: false,
 					  			  width: '400px',
 					  			})
-					  		setTimeout(function(){location.href="Game?action=gioco&id="+game_id} , 1000);
+					  		setTimeout(function(){location.href="GamePage?id="+game_id} , 1000);
 						  }
 					})
 			});

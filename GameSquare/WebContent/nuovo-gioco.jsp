@@ -148,7 +148,7 @@
 					showConfirmButton: false,
 					width: '400px',
 					})
-				setTimeout(function(){location.href="Game?action=findall"} , 2000);
+				setTimeout(function(){location.href="FindAll"} , 2000);
 				},
 				error: function (result){
 					Swal.fire({ 

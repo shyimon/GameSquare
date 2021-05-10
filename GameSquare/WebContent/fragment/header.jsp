@@ -58,7 +58,7 @@
 		<!-- UTENTE -->
 			<div class="nav-items-left">
 				<button class="nav-button"><a href="/GameSquare/">Home</a></button>
-				<button class="nav-button"><a href="Game?action=findall">Catalogo</a></button>
+				<button class="nav-button"><a href="FindAll">Catalogo</a></button>
 				<button class="nav-button"><a href="/GameSquare/Aiuto">Aiuto</a></button>
 			</div>
 			

@@ -21,7 +21,7 @@
 	<header class="header">
 		<%@ include file="./fragment/header.jsp" %>
 	</header>
-	<a href="Game?action=gioco&id=<%=bean.getIdGioco()%>"><b>--Torna alla pagina del gioco--</b></a>
+	<a href="GamePage?id=<%=bean.getIdGioco()%>"><b>--Torna alla pagina del gioco--</b></a>
 	<br>
 	<h2>Discussione [<%=bean.getTipoThread()%>]</h2>
 	<h1><%=bean.getTitolo()%></h1>
