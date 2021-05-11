@@ -62,7 +62,6 @@ CREATE TABLE richiesta_gioco (
     anno varchar(4) NOT NULL,
     genere varchar(30) NOT NULL,
     fonte TEXT NOT NULL,
-    risposta BOOLEAN,
     FOREIGN KEY (utente)
         REFERENCES utente (username)
         ON UPDATE CASCADE ON DELETE CASCADE,
