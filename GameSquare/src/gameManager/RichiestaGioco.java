@@ -9,7 +9,6 @@ public class RichiestaGioco {
 	private String anno;
 	private String genere;
 	private String fonte;
-	private boolean risposta;
 	
 	public RichiestaGioco() {
 		
@@ -72,12 +71,6 @@ public class RichiestaGioco {
 		this.genere = genere;
 	}
 	
-	public boolean getRisposta() {
-		return risposta;
-	}
-
-	public void setRisposta(boolean risposta) {
-		this.risposta = risposta;
-	}
+	
 	
 }

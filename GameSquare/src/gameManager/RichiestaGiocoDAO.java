@@ -20,7 +20,7 @@ public class RichiestaGiocoDAO {
 
 	public static boolean addGameRequest(RichiestaGioco req) throws SQLException 
 	{
-		addReq= "INSERT INTO richiesta_gioco(utente,nome_gioco,fonte,publisher,anno,genere,risposta) values(?,?,?,?,?,?,?)";
+		addReq= "INSERT INTO richiesta_gioco(utente,nome_gioco,fonte,publisher,anno,genere) values(?,?,?,?,?,?)";
 		boolean flag=false;
 
 		try 
@@ -33,7 +33,6 @@ public class RichiestaGiocoDAO {
 			statement.setString(4,req.getPublisher());
 			statement.setString(5,req.getAnno());
 			statement.setString(6,req.getGenere());
-			statement.setBoolean(7,req.getRisposta());
 			flag=statement.executeUpdate()>0;
 			con.commit();
 		}
@@ -75,7 +74,6 @@ public class RichiestaGiocoDAO {
 				req.setAnno(set.getString(5));
 				req.setGenere(set.getString(6));
 				req.setFonte(set.getString(7));
-				req.setRisposta(set.getBoolean(8));
 				richieste.add(req);
 			}
 		}
@@ -118,7 +116,6 @@ public class RichiestaGiocoDAO {
 				req.setAnno(set.getString(5));
 				req.setGenere(set.getString(6));
 				req.setFonte(set.getString(7));
-				req.setRisposta(set.getBoolean(8));
 				richieste.add(req);
 			}
 		}

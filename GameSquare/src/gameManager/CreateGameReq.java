@@ -50,7 +50,6 @@ public class CreateGameReq extends HttpServlet {
 		req.setAnno(anno);
 		req.setGenere(genere);
 		req.setPublisher(publisher);
-		req.setRisposta(false);
 		
 	
 		
