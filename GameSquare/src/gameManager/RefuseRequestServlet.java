@@ -34,8 +34,8 @@ public class RefuseRequestServlet extends HttpServlet {
 		try {
 			String reqID = request.getParameter("reqid");
 			System.out.println("ricevuta richiesta eliminazione id: "+reqID);
-			ArrayList<RichiestaGioco> app = model.viewRequest("id", reqID);
-			RichiestaGiocoDAO.deleteGameRequest(app.get(0).getIdRichiesta());
+			RichiestaGioco app = model.viewRequestById(Integer.parseInt(reqID));
+			RichiestaGiocoDAO.deleteGameRequest(app.getIdRichiesta());
 				} catch (SQLException e) {
 				// TODO Auto-generated catch block
 					e.printStackTrace();

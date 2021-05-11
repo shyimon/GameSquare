@@ -41,7 +41,7 @@ public class Ricerca extends HttpServlet {
 				
 				request.removeAttribute("products");
 				
-				giochi = model_product.viewGame(); //mi prendo tutti i giochi
+				giochi = model_product.findAllGames(); //mi prendo tutti i giochi
 				int I = 0;					
 				String parola="";
 				int indiceScorrimentoParolaFine = 1;

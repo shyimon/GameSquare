@@ -44,7 +44,7 @@
 			<div>
 				<%
 				RichiestaGiocoDAO model=new RichiestaGiocoDAO();
-				ArrayList<RichiestaGioco> array = model.viewRequest();
+				ArrayList<RichiestaGioco> array = model.getAllRequests();
 				
 				if(array.size()!=0)
 				{

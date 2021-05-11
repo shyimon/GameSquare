@@ -36,8 +36,8 @@ public class ViewThreadServlet extends HttpServlet {
 
 				request.removeAttribute("thread");
 				String threadID = request.getParameter("threadid");
-				ArrayList<GameThread> app=threadModel.viewThread("id_thread", threadID);
-				request.setAttribute("thread", app.get(0));
+				GameThread app=threadModel.viewThreadById(Integer.parseInt(threadID));
+				request.setAttribute("thread", app);
 						
 			} catch (SQLException e) {
 				e.printStackTrace();

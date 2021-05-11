@@ -37,7 +37,7 @@ public class FindAllServlet extends HttpServlet {
 			
 				request.getSession().removeAttribute("giochi");	
 				request.removeAttribute("action_name");
-				ArrayList<Gioco> app=gameModel.viewGame();
+				ArrayList<Gioco> app=gameModel.findAllGames();
 				request.setAttribute("action_name", "Tutti i giochi");
 				request.getSession().setAttribute("giochi", app);	
 		

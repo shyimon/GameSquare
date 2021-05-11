@@ -48,8 +48,8 @@ public class AddGame extends HttpServlet {
 		//System.out.println(title+" "+type+" "+text+" "+gameID+" "+username); //test
 		
 		try {
-			ArrayList<Gioco> app=gameModel.viewGame("nome", name,"publisher", publisher,"anno", anno);
-			if(app.size()== 0) {
+			
+			if(gameModel.checkExistingGame(name, publisher, anno)==false) {
 				
 				//creazione del nuovo oggetto gioco
 				

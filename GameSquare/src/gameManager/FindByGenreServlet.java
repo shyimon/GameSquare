@@ -37,7 +37,7 @@ public class FindByGenreServlet extends HttpServlet {
    		request.removeAttribute("action_name");
 		request.getSession().removeAttribute("giochi");	
 		String genere = request.getParameter("gen");
-		ArrayList<Gioco> app=gameModel.viewGame("genere", genere);
+		ArrayList<Gioco> app=gameModel.findByGenre(genere);
 		request.setAttribute("action_name", "Ricerca per genere: "+genere);
 		request.getSession().setAttribute("giochi", app);	
    		

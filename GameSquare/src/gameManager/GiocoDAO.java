@@ -23,31 +23,17 @@ public class GiocoDAO {
 	private static String updateAverage;
 
 	
-	public ArrayList<Gioco> viewGame(String ...strings) throws SQLException
+
+	
+	public ArrayList<Gioco> findAllGames() throws SQLException
 	{
 		viewGame="SELECT * FROM gioco";
 		ArrayList<Gioco> giochi=new ArrayList<Gioco>();
-		int j=1;
-		if(strings.length>0)
-		{
-			if(!Utilities.fieldOk(strings))
-				throw new SQLException("parametri di ricerca errati");
-			viewGame+=" WHERE ";
-			for(int i=0;i<strings.length;i+=2)
-			{					
-				if(i!=strings.length-2)
-					viewGame+=strings[i]+"=? AND ";
-				else
-					viewGame+=strings[i]+"=?;";
-			}
-		}
+		
 		try 
 		{
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(viewGame);
-			for(int i=1;i<strings.length;i+=2,j++) 
-				statement.setString(j,strings[i]);
-		
 			set=statement.executeQuery();
 			while(set.next())
 			{
@@ -79,8 +65,221 @@ public class GiocoDAO {
 		return giochi;
 	}
 	
+	public ArrayList<Gioco> getTopRated() throws SQLException
+	{
+		viewGame="SELECT * FROM gioco ORDER BY media_voti DESC LIMIT 11";
+		ArrayList<Gioco> giochi=new ArrayList<Gioco>();
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(viewGame);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				Gioco vidya=new Gioco();
+				vidya.setIdGioco(set.getInt(1));
+				vidya.setNome(set.getString(2));
+				vidya.setDescrizione(set.getString(3));
+				vidya.setPublisher(set.getString(4));
+				vidya.setAnno(set.getString(5));
+				vidya.setGenere(set.getString(6));
+				vidya.setImgpath(set.getString(7));
+				vidya.setPunteggio(set.getInt(8));
+				vidya.setMediaVoti(set.getFloat(9));
+				giochi.add(vidya);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return giochi;
+	}
+	
+	public Gioco findGameById(int id) throws SQLException
+	{
+		viewGame="SELECT * FROM gioco WHERE id=?";
+		ArrayList<Gioco> giochi=new ArrayList<Gioco>();
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(viewGame); 
+			statement.setInt(1, id);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				Gioco vidya=new Gioco();
+				vidya.setIdGioco(set.getInt(1));
+				vidya.setNome(set.getString(2));
+				vidya.setDescrizione(set.getString(3));
+				vidya.setPublisher(set.getString(4));
+				vidya.setAnno(set.getString(5));
+				vidya.setGenere(set.getString(6));
+				vidya.setImgpath(set.getString(7));
+				vidya.setPunteggio(set.getInt(8));
+				vidya.setMediaVoti(set.getFloat(9));
+				giochi.add(vidya);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		if(giochi.size()==0) {
+			return null;
+		}
+		return giochi.get(0);
+	}
+	
+	
+	public ArrayList<Gioco> findByPublisher(String publisher) throws SQLException
+	{
+		viewGame="SELECT * FROM gioco WHERE publisher=?";
+		ArrayList<Gioco> giochi=new ArrayList<Gioco>();
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(viewGame); 
+			statement.setString(1, publisher);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				Gioco vidya=new Gioco();
+				vidya.setIdGioco(set.getInt(1));
+				vidya.setNome(set.getString(2));
+				vidya.setDescrizione(set.getString(3));
+				vidya.setPublisher(set.getString(4));
+				vidya.setAnno(set.getString(5));
+				vidya.setGenere(set.getString(6));
+				vidya.setImgpath(set.getString(7));
+				vidya.setPunteggio(set.getInt(8));
+				vidya.setMediaVoti(set.getFloat(9));
+				giochi.add(vidya);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return giochi;
+	}
+	
+	public ArrayList<Gioco> findByGenre(String genre) throws SQLException
+	{
+		viewGame="SELECT * FROM gioco WHERE genere=?";
+		ArrayList<Gioco> giochi=new ArrayList<Gioco>();
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(viewGame); 
+			statement.setString(1, genre);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				Gioco vidya=new Gioco();
+				vidya.setIdGioco(set.getInt(1));
+				vidya.setNome(set.getString(2));
+				vidya.setDescrizione(set.getString(3));
+				vidya.setPublisher(set.getString(4));
+				vidya.setAnno(set.getString(5));
+				vidya.setGenere(set.getString(6));
+				vidya.setImgpath(set.getString(7));
+				vidya.setPunteggio(set.getInt(8));
+				vidya.setMediaVoti(set.getFloat(9));
+				giochi.add(vidya);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return giochi;
+	}
+	
+	public boolean checkExistingGame(String nome, String publisher, String anno) throws SQLException
+	{
+		viewGame="SELECT * FROM gioco WHERE nome=? AND publisher=? AND anno=?";
+		ArrayList<Gioco> giochi=new ArrayList<Gioco>();
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(viewGame); 
+			statement.setString(1, nome);
+			statement.setString(2, publisher);
+			statement.setString(3, anno);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				Gioco vidya=new Gioco();
+				vidya.setIdGioco(set.getInt(1));
+				vidya.setNome(set.getString(2));
+				vidya.setDescrizione(set.getString(3));
+				vidya.setPublisher(set.getString(4));
+				vidya.setAnno(set.getString(5));
+				vidya.setGenere(set.getString(6));
+				vidya.setImgpath(set.getString(7));
+				vidya.setPunteggio(set.getInt(8));
+				vidya.setMediaVoti(set.getFloat(9));
+				giochi.add(vidya);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		if(giochi.size()==0) {
+			return false;
+		}
+		return true;
+	}
+	
 	public ArrayList<String> GetPublishers() throws SQLException {
-		getPublishers = "SELECT DISTINCT publisher FROM gioco;";
+		getPublishers = "SELECT DISTINCT publisher FROM gioco ORDER BY publisher;";
 		ArrayList <String> results = new ArrayList<String>();
 		try 
 		{
@@ -109,7 +308,7 @@ public class GiocoDAO {
 	}
 	
 	public ArrayList<String> GetGenres() throws SQLException {
-		getGenres = "SELECT DISTINCT genere FROM gioco;";
+		getGenres = "SELECT DISTINCT genere FROM gioco ORDER BY genere;";
 		ArrayList <String> results = new ArrayList<String>();
 		try 
 		{

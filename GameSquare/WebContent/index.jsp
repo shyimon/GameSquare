@@ -25,19 +25,12 @@
 			<div>
 				<%
 				GiocoDAO model_product=new GiocoDAO();
-				ArrayList<Gioco> array = model_product.viewGame();
-	           	ArrayList<Gioco> arrayFeatured = new ArrayList<Gioco>();						
+	           	ArrayList<Gioco> arrayFeatured = model_product.getTopRated();						
 				int I=0;
 				
-				if((array!=null || array.size()!=0) && (arrayFeatured!=null || arrayFeatured.size()!=0))
+				if((arrayFeatured!=null || arrayFeatured.size()!=0))
 				{
-					while(I<array.size())
-					{
-						Gioco g = array.get(I);
-						if(arrayFeatured.size() < 11)
-							arrayFeatured.add(g);
-						I++;
-					}
+					
 				%>
 				<ul class="games-list">
 				<%				

@@ -18,33 +18,59 @@ public class ThreadDAO {
 	private static String addThread;
 
 	
-	public ArrayList<GameThread> viewThread(String ...strings) throws SQLException
+	public GameThread viewThreadById(int idThread) throws SQLException
 	{
-		viewThread="SELECT * FROM thread";
+		viewThread="SELECT * FROM thread WHERE id_thread=?";
 		ArrayList<GameThread> threads=new ArrayList<GameThread>();
-		int j=1;
-		if(strings.length>0)
+		
+		try 
 		{
-			if(!Utilities.fieldOk(strings))
-				throw new SQLException("parametri di ricerca errati");
-			viewThread+=" WHERE ";
-			for(int i=0;i<strings.length;i+=2)
-			{					
-				if(i!=strings.length-2)
-					viewThread+=strings[i]+"=? AND ";
-				else
-					viewThread+=strings[i]+"=?";
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(viewThread);
+			statement.setInt(1, idThread);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				GameThread disc=new GameThread();
+				disc.setIdThread(set.getInt(1));
+				disc.setTipoThread(set.getString(2));
+				disc.setTitolo(set.getString(3));
+				disc.setTesto(set.getString(4));
+				disc.setUsernameUtente(set.getString(5));
+				disc.setIdGioco(set.getInt(6));
+				threads.add(disc);
 			}
 		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		if(threads.size()==0) {
+			return null;
+		}
+		return threads.get(0);
+	}
+	
+	public ArrayList<GameThread> viewThreadByGame(int idGioco) throws SQLException
+	{
+		viewThread="SELECT * FROM thread WHERE id_gioco=?";
+		ArrayList<GameThread> threads=new ArrayList<GameThread>();
+		
 		viewThread+=" ORDER BY id_thread DESC; ";
 		
 		try 
 		{
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(viewThread);
-			for(int i=1;i<strings.length;i+=2,j++) 
-				statement.setString(j,strings[i]);
-		
+			statement.setInt(1, idGioco);
 			set=statement.executeQuery();
 			while(set.next())
 			{

@@ -52,31 +52,61 @@ public class RichiestaGiocoDAO {
 		return flag;
 	}
 	
-	public ArrayList<RichiestaGioco> viewRequest(String ...strings) throws SQLException
+	
+	
+	public RichiestaGioco viewRequestById(int id) throws SQLException
 	{
-		viewReq="SELECT * FROM richiesta_gioco";
+		viewReq="SELECT * FROM richiesta_gioco WHERE id=?";
 		ArrayList<RichiestaGioco> richieste=new ArrayList<RichiestaGioco>();
-		int j=1;
-		if(strings.length>0)
-		{
-			if(!Utilities.fieldOk(strings))
-				throw new SQLException("parametri di ricerca errati");
-			viewReq+=" WHERE ";
-			for(int i=0;i<strings.length;i+=2)
-			{					
-				if(i!=strings.length-2)
-					viewReq+=strings[i]+"=? AND ";
-				else
-					viewReq+=strings[i]+"=?;";
-			}
-		}
+		
 		try 
 		{
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(viewReq);
-			for(int i=1;i<strings.length;i+=2,j++) 
-				statement.setString(j,strings[i]);
-		
+			statement.setInt(1, id);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				RichiestaGioco req=new RichiestaGioco();
+				req.setIdRichiesta(set.getInt(1));
+				req.setUsernameUtente(set.getString(2));
+				req.setNomeGioco(set.getString(3));
+				req.setPublisher(set.getString(4));
+				req.setAnno(set.getString(5));
+				req.setGenere(set.getString(6));
+				req.setFonte(set.getString(7));
+				req.setRisposta(set.getBoolean(8));
+				richieste.add(req);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		if(richieste.size()!=0) {
+			return richieste.get(0);
+			} else {
+				return null;
+			}
+	}
+	
+	public ArrayList<RichiestaGioco> getAllRequests() throws SQLException
+	{
+		viewReq="SELECT * FROM richiesta_gioco";
+		ArrayList<RichiestaGioco> richieste=new ArrayList<RichiestaGioco>();
+
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(viewReq);;
 			set=statement.executeQuery();
 			while(set.next())
 			{

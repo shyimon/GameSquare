@@ -37,7 +37,7 @@ public class FindByPublisherServlet extends HttpServlet {
 			request.removeAttribute("action_name");
 			request.getSession().removeAttribute("giochi");	
 			String publisher = request.getParameter("pub");
-			ArrayList<Gioco> app=gameModel.viewGame("publisher", publisher);
+			ArrayList<Gioco> app=gameModel.findByPublisher(publisher);
 			request.setAttribute("action_name", "Ricerca per publisher: "+publisher);
 			request.getSession().setAttribute("giochi", app);		
 		

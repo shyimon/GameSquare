@@ -50,31 +50,17 @@ public class VotoDAO {
 		return flag;
 	}
 	
-	public ArrayList <Voto> getVote(String ...strings) throws SQLException
+	public Voto getVote(int idGioco, String utente) throws SQLException
 	{
-		getVote="SELECT * FROM voto";
+		getVote="SELECT * FROM voto WHERE id_gioco=? AND utente=?";
 		ArrayList<Voto> results=new ArrayList<Voto>();
-		int j=1;
-		if(strings.length>0)
-		{
-			if(!Utilities.fieldOk(strings))
-				throw new SQLException("parametri di ricerca errati");
-			getVote+=" WHERE ";
-			for(int i=0;i<strings.length;i+=2)
-			{					
-				if(i!=strings.length-2)
-					getVote+=strings[i]+"=? AND ";
-				else
-					getVote+=strings[i]+"=?;";
-			}
-		}
+		
 		try 
 		{
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(getVote);
-			for(int i=1;i<strings.length;i+=2,j++) 
-				statement.setString(j,strings[i]);
-		
+			statement.setInt(1, idGioco);
+			statement.setString(2, utente);
 			set=statement.executeQuery();
 			while(set.next())
 			{
@@ -97,7 +83,11 @@ public class VotoDAO {
 				ConnectionPool.rilasciaConnessione(con);
 			}
 		}
-		return results;
+		
+		if(results.size()==0) {
+			return null;
+		}
+		return results.get(0);
 	}
 	
 	public static boolean deleteVote(int gameid, String user) throws SQLException

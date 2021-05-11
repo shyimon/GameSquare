@@ -43,7 +43,7 @@
 	<div>
 			<div>
 				<%
-				ArrayList<GameThread> array = threadModel.viewThread("id_gioco", ""+bean.getIdGioco());
+				ArrayList<GameThread> array = threadModel.viewThreadByGame(bean.getIdGioco());
 	         
 				
 				if(array.size()!=1)

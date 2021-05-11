@@ -35,7 +35,7 @@ public class AcceptRequestServlet extends HttpServlet {
 		String reqID = request.getParameter("reqid");
 		System.out.println("ricevuta richiesta aggiunta id: "+reqID);
 		RichiestaGioco app;
-		app = model.viewRequest("id", reqID).get(0);
+		app = model.viewRequestById(Integer.parseInt(reqID));
 		Gioco g = new Gioco(app.getNomeGioco(), "Questo gioco è stato aggiunto al sito su suggerimento di: "+app.getUsernameUtente(), app.getPublisher(), app.getAnno(), app.getGenere());
 		g.setPunteggio(100);
 		g.setImgpath("img/Games/placeholder");

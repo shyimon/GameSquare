@@ -40,8 +40,8 @@ public class AddVoteServlet extends HttpServlet {
 		vote_value = request.getParameter("vote_value");
 		System.out.println(username + " ha votato " +gameID+" con "+vote_value);//test
 		try {
-			ArrayList<Voto> app = voteModel.getVote("id_gioco", gameID, "utente", username);
-			if(app.size()!=0) {
+			Voto app = voteModel.getVote(Integer.parseInt(gameID), username);
+			if(app!=null) {
 				if(VotoDAO.updateVote(username, Integer.parseInt(gameID), Integer.parseInt(vote_value))) {
 						System.out.println("Valutazione aggiornata");
 						

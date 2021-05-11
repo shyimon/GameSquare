@@ -37,8 +37,8 @@ public class GamePageServlet extends HttpServlet {
 				
 				String gameID = request.getParameter("id");
 				System.out.println("Gioco "+gameID);
-				ArrayList<Gioco> app=gameModel.viewGame("id", gameID);
-				request.setAttribute("game", app.get(0));
+				Gioco app=gameModel.findGameById(Integer.parseInt(gameID));
+				request.setAttribute("game", app);
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
