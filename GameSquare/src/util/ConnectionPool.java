@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 
 public class ConnectionPool {
 	private static List<Connection> freeDbConnections;
+	private static boolean isTest = false;
 
 	static {
 		freeDbConnections = new LinkedList<Connection>();
@@ -24,9 +25,16 @@ public class ConnectionPool {
 
 	private static synchronized Connection createDBConnection() throws SQLException {
 		Connection newConnection = null;
+		String db;
+		
+		if(!isTest) {
+			db = Costanti.dbName;
+		} else {
+			db = Costanti.dbName+"_test";
+		}
 
 		newConnection = DriverManager.getConnection(
-				"jdbc:mysql://" + Costanti.dbIp + ":" + Costanti.dbPort + "/" + Costanti.dbName
+				"jdbc:mysql://" + Costanti.dbIp + ":" + Costanti.dbPort + "/" + db
 						+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", //&useSSL=false"
 						Costanti.dbUsername, Costanti.dbPassword);
 
@@ -58,5 +66,14 @@ public class ConnectionPool {
 	public static synchronized void rilasciaConnessione(Connection connection) throws SQLException {
 		if (connection != null)
 			freeDbConnections.add(connection);
+	}
+	
+	public static boolean isTest() {
+		return isTest;
+	}
+
+
+	public static void setTest(boolean isTest) {
+		ConnectionPool.isTest = isTest;
 	}
 }
