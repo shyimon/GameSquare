@@ -138,7 +138,7 @@
 								<h4>Nessuna Discussione.
 								<% if(utenteLoggato != null)
 									{%>					
-										<a href="NewThread?gameid=<%=bean.getIdGioco()%>">Sii il primo a crearla!</a></
+										<a href="nuova-discussione.jsp?gameid=<%=bean.getIdGioco()%>">Sii il primo a crearla!</a></
 									
 								<%	}
 									else
@@ -150,7 +150,7 @@
 				</div>
 			<div class="crea-discussione">
 				<% if(utenteLoggato != null){%>					
-					<a href="NewThread?gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a>	
+					<a href="nuova-discussione.jsp?gameid=<%=bean.getIdGioco()%>">Crea una nuova discussione su <%=bean.getNome()%></a>	
 				<%}
 					else {%>
 					<a href="login-page.jsp">Crea una nuova discussione su <%=bean.getNome()%></a>

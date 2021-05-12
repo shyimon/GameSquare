@@ -7,7 +7,7 @@
     <%	
 	GiocoDAO gameModel = new GiocoDAO();
     int idGioco = Integer.parseInt(request.getParameter("gameid"));
-    Gioco game = gameModel.findGameById(idGioco);;
+    Gioco game = gameModel.findGameById(idGioco);
 %>
     
 <!DOCTYPE html>

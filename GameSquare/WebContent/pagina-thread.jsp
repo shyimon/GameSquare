@@ -84,7 +84,7 @@
 						<div class="col-md-12"><h4>Nessun'altra Discussione.</h4>
 						<% if(utenteLoggato != null)
 							{%>					
-								<a href="NewThread?gameid=<%=bean.getIdGioco()%>">Creane una!</a></
+								<a href="nuova-discussione.jsp?gameid=<%=bean.getIdGioco()%>">Creane una!</a></
 							
 						<%	}
 							else

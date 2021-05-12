@@ -70,14 +70,6 @@ public class UtenteDAO {
 	}
 	
 	
-	public synchronized void logout(HttpSession session) throws SQLException {	//logout dell'utente
-		
-		synchronized(session) 
-		{
-			session.invalidate();
-		}
-	}
-	
 	
 	public boolean checkEmail(String Email) throws SQLException {	//check dell'email
 		boolean flag=false;
