@@ -277,7 +277,7 @@ public class ElementoListaDAO {
 	public int getCategoryStats(int gameID, String categoria) throws SQLException
 	{
 		GetStats="SELECT count(*) FROM elemento_lista WHERE id_gioco=? and categoria=?";
-		int count=0;
+		int count=-1;
 		
 		try 
 		{

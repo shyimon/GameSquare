@@ -9,6 +9,11 @@ public class ElementoLista {
 	public ElementoLista() {
 		
 	}
+	public ElementoLista(String user, int idGame, String category) {
+		this.usernameUtente = user;
+		this.idGioco = idGame;
+		this.categoria = category;
+	}
 
 	public String getUsernameUtente() {
 		return usernameUtente;

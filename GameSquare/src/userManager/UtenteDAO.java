@@ -27,7 +27,7 @@ public class UtenteDAO {
 	{
 		addUtente="INSERT INTO utente(username,email,password) values(?,?,?)";
 		checkEmail="SELECT username FROM utente where email=?";
-		checkPassword="SELECT username FROM utente where password=?";
+		checkPassword="SELECT username FROM utente where email=? AND password=?";
 		showAccount="SELECT * FROM utente where email=?";
 		showTopUsers="SELECT * FROM utente ORDER BY punteggio DESC LIMIT 10";
 		checkLogin="SELECT username,email,password,punteggio,tipo FROM utente where email=? AND password=?";
@@ -97,14 +97,15 @@ public class UtenteDAO {
 		return flag;	
 	}
 	
-	public boolean checkPassword(String Pass) throws SQLException {	//check della password
+	public boolean checkPassword(String email, String Pass) throws SQLException {	//check della password
 		boolean flag=false;
 
 		try 
 		{
 			con=ConnectionPool.getConnection();
 			statement=con.prepareStatement(checkPassword);
-			statement.setString(1,Pass);
+			statement.setString(1,email);
+			statement.setString(2,Pass);
 			set=statement.executeQuery();
 			flag=set.next();
 		} 		
@@ -126,7 +127,7 @@ public class UtenteDAO {
 	public int getScore(String username) throws SQLException
 	{
 		String getScore="SELECT punteggio FROM utente WHERE username=?";
-		int score=0;
+		int score= -1;
 		
 		try 
 		{

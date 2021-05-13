@@ -14,9 +14,12 @@ public class RichiestaGioco {
 		
 	}
 	
-	public RichiestaGioco(int idRichiesta, String nomeGioco, String fonte) {
-		this.idRichiesta = idRichiesta;
+	public RichiestaGioco(String utente, String nomeGioco, String publisher, String anno, String genere, String fonte) {
+		this.usernameUtente = utente;
 		this.nomeGioco = nomeGioco;
+		this.publisher = publisher;
+		this.anno = anno;
+		this.genere = genere;
 		this.fonte = fonte;
 	}
 

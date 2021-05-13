@@ -6,8 +6,10 @@ public class Voto {
 	private String usernameUtente;
 	private int idGioco;
 	
-	public Voto(int valutazione) {
+	public Voto(int valutazione, String utente, int idGioco) {
 		this.valutazione = valutazione;
+		this.usernameUtente = utente;
+		this.idGioco = idGioco;
 	}
 	public Voto() {
 	

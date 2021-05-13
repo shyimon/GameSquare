@@ -177,4 +177,38 @@ public class VotoDAO {
 		}
 		return avg;
 	}
+	
+	public ArrayList<Voto> findAllVotes() throws SQLException //per il testing
+	{
+		String findall="SELECT * FROM voto";
+		ArrayList<Voto> voti=new ArrayList<Voto>();
+		
+		try 
+		{
+			con=ConnectionPool.getConnection();
+			statement=con.prepareStatement(findall);
+			set=statement.executeQuery();
+			while(set.next())
+			{
+				Voto v = new Voto();
+				v.setValutazione(set.getInt(1));
+				v.setUsernameUtente(set.getString(2));
+				v.setIdGioco(set.getInt(3));
+				voti.add(v);
+			}
+		}
+		finally
+		{
+			try
+			{
+				if(statement!=null)
+					statement.close();
+			}
+			finally
+			{
+				ConnectionPool.rilasciaConnessione(con);
+			}
+		}
+		return voti;
+	}
 }

@@ -41,7 +41,7 @@ public class UserLogin extends HttpServlet {
 			{
 				Utente utenteLoggato = model_utente.checkLogin(user_email, user_password);
 				boolean correctEmail = model_utente.checkEmail(user_email);
-				boolean correctPass = model_utente.checkPassword(user_password);
+				boolean correctPass = model_utente.checkPassword(user_email, user_password);
 				
 				if(correctEmail && correctPass) {
 					session.setAttribute("utenteLoggato", utenteLoggato);
