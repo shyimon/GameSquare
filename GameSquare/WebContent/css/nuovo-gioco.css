@@ -96,5 +96,10 @@
         padding: 20px;
         cursor: pointer;
         font-size: 1.2em;
+       	transition: all 0.3s;
     }
+    
+    #buttonaggiungi:hover{
+		background: linear-gradient(0deg, #73C5E7 0%, #467CC3 100%);
+	}
 }
