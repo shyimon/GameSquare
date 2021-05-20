@@ -45,24 +45,27 @@ public class UserLogin extends HttpServlet {
 				
 				if(correctEmail && correctPass) {
 					session.setAttribute("utenteLoggato", utenteLoggato);
-					session.setAttribute("email", user_email);
-					
+					session.setAttribute("utente", utenteLoggato.getUsername());
+					request.setAttribute("result", "logged");
 					redirectedPage = "/index.jsp";
 				}
 				else if (!correctEmail)
 				{
 					request.setAttribute("correctEmail", false);
+					request.setAttribute("result", "incorrectEmail");
 					redirectedPage = "/login-page.jsp";
 				}
 				else if (!correctPass)
 				{
 					request.setAttribute("correctPassword", false);
+					request.setAttribute("result", "incorrectPass");
 					redirectedPage = "/login-page.jsp";
 				}
 				else
 				{
 					request.setAttribute("correctEmail", false);
 					request.setAttribute("correctPassword", false);
+					request.setAttribute("result", "wrongLogin");
 					redirectedPage = "/login-page.jsp";
 				}
 			}
@@ -76,7 +79,7 @@ public class UserLogin extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
     
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 

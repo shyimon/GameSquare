@@ -44,7 +44,7 @@ public class ViewThreadServlet extends HttpServlet {
 			}	
 		
 		RequestDispatcher dispatcher;
-		dispatcher = getServletContext().getRequestDispatcher("/pagina-thread.jsp");
+		dispatcher = request.getRequestDispatcher("/pagina-thread.jsp");
 		dispatcher.forward(request, response);
 		
 	}

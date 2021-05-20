@@ -18,5 +18,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="C:/Users/omega/OneDrive/Documents/GitHub/gamesquare/librerie/mockito-all-2.0.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/omega/OneDrive/Documents/GitHub/gamesquare/librerie/mybatis-3.5.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/omega/OneDrive/Documents/GitHub/gamesquare/librerie/spring-core-5.3.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/omega/OneDrive/Documents/GitHub/gamesquare/librerie/spring-test-5.3.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/omega/OneDrive/Documents/GitHub/gamesquare/librerie/spring-web-5.3.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

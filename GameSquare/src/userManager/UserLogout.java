@@ -17,13 +17,16 @@ public class UserLogout extends HttpServlet
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		request.getSession(false).removeAttribute("utenteLoggato");
-		request.getSession(false).removeAttribute("email");
-		request.getSession(false).invalidate();
-		response.sendRedirect(request.getContextPath() + "/logout.jsp");
+		
+			request.getSession(false).removeAttribute("utenteLoggato");
+			request.getSession(false).removeAttribute("utente");
+			request.getSession(false).invalidate();
+			response.getWriter().write("Logout effettuato");
+			response.sendRedirect(request.getContextPath() + "/logout.jsp");
+		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		doGet(request, response);
 	}

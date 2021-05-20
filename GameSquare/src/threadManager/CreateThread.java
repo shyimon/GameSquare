@@ -36,8 +36,8 @@ public class CreateThread extends HttpServlet {
 		text = request.getParameter("thread_text");
 		gameID = request.getParameter("gameId");
 		username = request.getParameter("username");
-		System.out.println(title+" "+type+" "+text+" "+gameID+" "+username); //test
-		
+		//response.getWriter().write(title+" "+type+" "+text+" "+gameID+" "+username);//test
+		System.out.println(title+" "+type+" "+text+" "+gameID+" "+username);//test
 		//creazione del nuovo thread
 		GameThread disc = new GameThread();
 		
@@ -55,20 +55,22 @@ public class CreateThread extends HttpServlet {
 				if(ThreadDAO.addThread(disc))
 				{
 					request.setAttribute("inserimentoThread", "true");
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/GamePage?id="+disc.getIdGioco());
+					response.getWriter().write(title+" "+type+" "+text+" "+gameID+" "+username);//test
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/GamePage?id="+disc.getIdGioco());
 					dispatcher.forward(request, response);
 					
 				}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
+			request.setAttribute("inserimentoThread", "false");
 			e.printStackTrace();
 		}
 		
 	}
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{	
 		doPost(request, response);
 	}
