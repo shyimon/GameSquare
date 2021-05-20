@@ -59,11 +59,12 @@ public class AddToListServlet extends HttpServlet {
 			e.setUsernameUtente(username);
 			e.setCategoria(category_value);
 			if(ElementoListaDAO.addListElement(e)) {
-				System.out.println("Aggiunto alla lista");
+				
 				ElementoListaDAO.updateUserScore(username, usrScore);
+				response.getWriter().write("Aggiunto alla lista, nuovo punteggio = "+usrScore);//test
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			request.setAttribute("result", "notAdded");
 			e.printStackTrace();
 		}
 	}
@@ -71,7 +72,7 @@ public class AddToListServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
