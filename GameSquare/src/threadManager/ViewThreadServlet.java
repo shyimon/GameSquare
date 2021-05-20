@@ -36,23 +36,33 @@ public class ViewThreadServlet extends HttpServlet {
 
 				request.removeAttribute("thread");
 				String threadID = request.getParameter("threadid");
+				RequestDispatcher dispatcher;
 				GameThread app=threadModel.viewThreadById(Integer.parseInt(threadID));
-				request.setAttribute("thread", app);
+				if(app!=null) {
+					request.setAttribute("thread", app);
+					response.getWriter().write(app.getTitolo());//test
+					dispatcher = request.getRequestDispatcher("/pagina-thread.jsp");
+					dispatcher.forward(request, response);
+				}
+				else {
+					response.getWriter().write("errore");//test
+					dispatcher = request.getRequestDispatcher("/index.jsp");
+					dispatcher.forward(request, response);
+				}
+				
 						
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}	
 		
-		RequestDispatcher dispatcher;
-		dispatcher = request.getRequestDispatcher("/pagina-thread.jsp");
-		dispatcher.forward(request, response);
+		
 		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

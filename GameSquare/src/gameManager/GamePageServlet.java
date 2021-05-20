@@ -34,25 +34,34 @@ public class GamePageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 				request.removeAttribute("game");
-				
 				String gameID = request.getParameter("id");
 				System.out.println("Gioco "+gameID);
+				RequestDispatcher dispatcher;
 				Gioco app=gameModel.findGameById(Integer.parseInt(gameID));
-				request.setAttribute("game", app);
+				if(app!=null) {
+					request.setAttribute("game", app);
+					response.getWriter().write(app.getNome());//test
+					dispatcher = request.getRequestDispatcher("/pagina-gioco.jsp");
+					dispatcher.forward(request, response);
+				}
+				else {
+					response.getWriter().write("errore");//test
+					dispatcher = request.getRequestDispatcher("/index.jsp");
+					dispatcher.forward(request, response);
+				}
+				
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}	
-		RequestDispatcher dispatcher;
-		dispatcher = getServletContext().getRequestDispatcher("/pagina-gioco.jsp");
 		
-		dispatcher.forward(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
