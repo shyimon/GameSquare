@@ -15,7 +15,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 
 import listManager.AddToListServlet;
 import util.ConnectionPool;
-public class AddToListServletTest {
+public class AddToListServletTest extends Mockito {
 
 	private AddToListServlet servlet;
 	private MockHttpServletRequest request;

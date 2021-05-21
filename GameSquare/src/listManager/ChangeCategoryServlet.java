@@ -44,22 +44,26 @@ public class ChangeCategoryServlet extends HttpServlet {
 		usrScore=Integer.parseInt(request.getParameter("usrScore"));
 		System.out.println(username + " ha aggiunto " +gameID+" a "+category_value+" punteggio "+score+" partendo da un punteggio di "+usrScore+" e dalla categoria "+user_category);//test
 		
-		int oldScore =calcolaPunteggio(score, user_category);
+		int oldScore =ScoreHelper.calcolaPunteggio(score, user_category);
 		//System.out.println("il vecchio punteggio è "+ score);
 		usrScore-=oldScore;
 		//System.out.println("l'utente ora avrà "+ usrScore);
-		score =calcolaPunteggio(score, category_value);
+		score = ScoreHelper.calcolaPunteggio(score, category_value);
 		//System.out.println("il nuovo punteggio è "+ score);
 		
 		usrScore+=score;
 		System.out.println("l'utente ora avrà "+ usrScore);
 		try {
 			if(ElementoListaDAO.updateCategory(username, Integer.parseInt(gameID), category_value)) {
-				System.out.println("Categoria aggiornata");
 				ElementoListaDAO.updateUserScore(username, usrScore);
+				response.getWriter().write("Categoria aggiornata, nuovo punteggio = "+usrScore);
+			}
+			else {
+				response.getWriter().write("Errore");
+				response.setStatus(500);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			response.getWriter().write("Errore SQL");
 			e.printStackTrace();
 		}
 		
@@ -68,23 +72,10 @@ public class ChangeCategoryServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 	
-	int calcolaPunteggio(int score, String categoria) {
-		int newScore=score;
-		
-		if(categoria.equals("In corso"))
-			newScore=score+10;
-		else if(categoria.equals("Completato"))
-			newScore=score+30;
-		else if(categoria.equals("Platinato"))
-			newScore=score+50;
-		else if(categoria.equals("Sviluppato"))
-			newScore=score*2;
-		return newScore;
-	}
 
 }

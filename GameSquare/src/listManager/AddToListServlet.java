@@ -46,7 +46,7 @@ public class AddToListServlet extends HttpServlet {
 		System.out.println(username + " ha aggiunto " +gameID+" a "+category_value+" punteggio "+score+" partendo da un punteggio di "+usrScore);//test
 		
 		
-		score =calcolaPunteggio(score, category_value);
+		score =ScoreHelper.calcolaPunteggio(score, category_value);
 		System.out.println("il nuovo punteggio è "+ score);
 		
 		usrScore+=score;
@@ -76,19 +76,4 @@ public class AddToListServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	
-	int calcolaPunteggio(int score, String categoria) {
-		int newScore=score;
-		
-		if(categoria.equals("In corso"))
-			newScore=score+10;
-		else if(categoria.equals("Completato"))
-			newScore=score+30;
-		else if(categoria.equals("Platinato"))
-			newScore=score+50;
-		else if(categoria.equals("Sviluppato"))
-			newScore=score*2;
-		return newScore;
-	}
-
 }
