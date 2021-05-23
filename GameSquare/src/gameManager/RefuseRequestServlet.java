@@ -33,19 +33,26 @@ public class RefuseRequestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			String reqID = request.getParameter("reqid");
-			System.out.println("ricevuta richiesta eliminazione id: "+reqID);
-			RichiestaGioco app = model.viewRequestById(Integer.parseInt(reqID));
-			RichiestaGiocoDAO.deleteGameRequest(app.getIdRichiesta());
-				} catch (SQLException e) {
-				// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			if(model.viewRequestById(Integer.parseInt(reqID))==null) {
+				request.setAttribute("result", "fail");
+				response.getWriter().write("Richiesta inesistente");
+			} else {
+				System.out.println("ricevuta richiesta eliminazione id: "+reqID);
+				RichiestaGiocoDAO.deleteGameRequest(Integer.parseInt(reqID));
+				if(model.viewRequestById(Integer.parseInt(reqID))==null)
+					request.setAttribute("result", "success");
+			}
+			
+			} catch (SQLException e) {
+				response.sendError(500);
+				e.printStackTrace();
+			}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

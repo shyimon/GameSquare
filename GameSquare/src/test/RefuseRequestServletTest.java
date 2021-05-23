@@ -1,6 +1,7 @@
 package test;
-import org.mockito.Mockito;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -14,19 +15,20 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 
-import gameManager.GamePageServlet;
+import gameManager.RefuseRequestServlet;
 import util.ConnectionPool;
 
-public class GamePageTest extends Mockito{
 
-	private GamePageServlet servlet;
+public class RefuseRequestServletTest extends Mockito{
+	
+	private RefuseRequestServlet servlet;
 	private MockHttpServletRequest request;
 	private MockHttpServletResponse response;
 	
 	
 	@BeforeEach
 	public void setUp() throws Exception {
-		servlet = new GamePageServlet();
+		servlet = new RefuseRequestServlet();
 		request = new MockHttpServletRequest();
 		response = new MockHttpServletResponse();
 		DatabaseHelper.initializeDatabase();
@@ -37,27 +39,42 @@ public class GamePageTest extends Mockito{
 		ConnectionPool.setTest(false);
 	}
 	
-	//visualizzazione corretta del gioco
+	//rifiuto di una richiesta esistente
 	@Test
 	public void testCase_1() throws ServletException, IOException{
 	
-		request.addParameter("id", "1");
+		request.addParameter("reqid", "2");
 
 		servlet.doPost(request, response);
-		assertEquals("Final Fantasy VII", response.getContentAsString());
+		
+		assertEquals("success", request.getAttribute("result"));
 		
 	}
 	
-	//visualizzazione errata del gioco
+	//rifiuto di una richiesta esistente
 		@Test
-		public void testCase_2() throws ServletException, IOException{
+		public void testCase_1_2() throws ServletException, IOException{
 		
-			request.addParameter("id", "0");
+			request.addParameter("reqid", "0");
 
 			servlet.doPost(request, response);
-			assertEquals("errore", response.getContentAsString());
+			
+			assertEquals("fail", request.getAttribute("result"));
 			
 		}
 	
+	
+	//ecezione con valore nullo
+	@Test
+	public void testCase_2() throws ServletException, IOException{
+	
+		try {
+			servlet.doPost(request, response);
+			fail("Valore nullo");
+		} catch (Exception e) {
+			//success
+		}
+		
+	}
 	
 }

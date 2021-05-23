@@ -39,7 +39,7 @@ public class Ricerca extends HttpServlet {
 				ArrayList<Gioco> giochi = new ArrayList<Gioco>();
 				ArrayList<Gioco> risultato = new ArrayList<Gioco>();
 				
-				request.removeAttribute("products");
+				request.removeAttribute("giochi");
 				
 				giochi = model_product.findAllGames(); //mi prendo tutti i giochi
 				int I = 0;					
@@ -68,9 +68,15 @@ public class Ricerca extends HttpServlet {
 				
 				String ricerca = ("Hai cercato: "+cerca);
 
+				if(risultato.size()==0) {
+					request.setAttribute("result", "noResults");
+				} else {
+					request.setAttribute("result", "found");
+					request.setAttribute("resultSize", risultato.size());
+				}
+				
 				request.getSession().setAttribute("ricerca", ricerca);
 				request.getSession().setAttribute("giochi", risultato);	
-				
 				redirectedPage = "/catalogo.jsp";
 				
 				} catch (Exception e) {
@@ -84,7 +90,7 @@ public class Ricerca extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doPost(request, response);
 	}

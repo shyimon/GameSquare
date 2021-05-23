@@ -57,7 +57,7 @@ public class CreateGameReq extends HttpServlet {
 			
 				if(RichiestaGiocoDAO.addGameRequest(req))
 				{
-					
+					request.setAttribute("richiestagioco", "true");
 					//RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/GameSquare/index.jsp");
 					//dispatcher.forward(request, response);
 					
@@ -70,14 +70,14 @@ public class CreateGameReq extends HttpServlet {
 				}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			request.setAttribute("richiestagioco", "false");
 			e.printStackTrace();
 		}
 		
 	}
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{	
 		doPost(request, response);
 	}
