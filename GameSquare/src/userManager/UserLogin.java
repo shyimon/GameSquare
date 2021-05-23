@@ -61,16 +61,17 @@ public class UserLogin extends HttpServlet {
 					request.setAttribute("result", "incorrectPass");
 					redirectedPage = "/login-page.jsp";
 				}
-				else
+				/*else
 				{
 					request.setAttribute("correctEmail", false);
 					request.setAttribute("correctPassword", false);
 					request.setAttribute("result", "wrongLogin");
 					redirectedPage = "/login-page.jsp";
-				}
+				}*/
 			}
 				 catch (Exception e) {
 					 System.out.println("Servlet error");
+					 request.setAttribute("result", "wrongLogin");
 				e.printStackTrace();
 				}
 			}

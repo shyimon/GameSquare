@@ -59,7 +59,7 @@ public class CreateThread extends HttpServlet {
 					RequestDispatcher dispatcher = request.getRequestDispatcher("/GamePage?id="+disc.getIdGioco());
 					dispatcher.forward(request, response);
 					
-				}
+				} 
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

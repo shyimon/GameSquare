@@ -73,4 +73,7 @@ public class UserLoginTest extends Mockito {
 		assertEquals("logged", (String) request.getAttribute("result"));
 		assertEquals("AerithGain", (String) request.getSession().getAttribute("utente"));
 	}
+	
+	
+	
 }

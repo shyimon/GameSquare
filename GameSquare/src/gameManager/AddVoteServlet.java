@@ -42,11 +42,10 @@ public class AddVoteServlet extends HttpServlet {
 		try {
 			Voto app = voteModel.getVote(Integer.parseInt(gameID), username);
 			if(app!=null) {
-				if(VotoDAO.updateVote(username, Integer.parseInt(gameID), Integer.parseInt(vote_value))) {
+				VotoDAO.updateVote(username, Integer.parseInt(gameID), Integer.parseInt(vote_value));
 						System.out.println("Valutazione aggiornata");
 						request.setAttribute("result", "success");
-						
-				}
+				
 			}
 			else {
 				System.out.println("Non c'è ancora questo voto."); //test
@@ -54,7 +53,7 @@ public class AddVoteServlet extends HttpServlet {
 				v.setIdGioco(Integer.parseInt(gameID));
 				v.setUsernameUtente(username);
 				v.setValutazione(Integer.parseInt(vote_value));
-				if(VotoDAO.addVote(v))
+				VotoDAO.addVote(v);
 					System.out.println("Valutazione aggiunta");
 					request.setAttribute("result", "success");
 				}

@@ -38,8 +38,14 @@ class UtenteDAOTest {
 		u = utenteDAO.checkLogin("emailerrata", null);
 		assertNull(u);
 		
+		u = utenteDAO.checkLogin("emailerrata", "midgar03");
+		assertNull(u);
+		
 		//password errata
 		u = utenteDAO.checkLogin("againsborough@yahoo.it", null);
+		assertNull(u);
+		
+		u = utenteDAO.checkLogin("againsborough@yahoo.it", "midgar04");
 		assertNull(u);
 	}
 	

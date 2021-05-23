@@ -65,17 +65,11 @@ public class AddGame extends HttpServlet {
 				
 				try {
 					
-						if(GiocoDAO.addGame(gioco))
-						{
-							request.setAttribute("aggiuntaGioco", "success");
-							RequestDispatcher dispatcher = request.getRequestDispatcher("/FindAll");
-							dispatcher.forward(request, response);
+						GiocoDAO.addGame(gioco);
+						request.setAttribute("aggiuntaGioco", "success");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/FindAll");
+						dispatcher.forward(request, response);
 							
-						}
-						else {
-							request.setAttribute("aggiuntaGioco", "fail");
-							response.setStatus(500);
-						}
 					
 				} catch (SQLException e) {
 					request.setAttribute("aggiuntaGioco", "errorSQL");
