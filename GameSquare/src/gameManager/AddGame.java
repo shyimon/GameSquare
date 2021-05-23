@@ -67,31 +67,34 @@ public class AddGame extends HttpServlet {
 					
 						if(GiocoDAO.addGame(gioco))
 						{
-		
-							RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/FindAll");
+							request.setAttribute("aggiuntaGioco", "success");
+							RequestDispatcher dispatcher = request.getRequestDispatcher("/FindAll");
 							dispatcher.forward(request, response);
 							
 						}
 						else {
+							request.setAttribute("aggiuntaGioco", "fail");
 							response.setStatus(500);
 						}
 					
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+					request.setAttribute("aggiuntaGioco", "errorSQL");
+					response.setStatus(500);
 					e.printStackTrace();
 				}
 			} else {
+				request.setAttribute("aggiuntaGioco", "existing");
 				response.setStatus(500);
 			}
 	} catch (SQLException e1) {
-			// TODO Auto-generated catch block
+			response.setStatus(500);
 			e1.printStackTrace();
 }
 		
 	}
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{	
 		doPost(request, response);
 	}

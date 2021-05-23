@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 
 import util.ConnectionPool;
-import util.Utilities;
 
 public class VotoDAO {
 	private static Connection con=null;

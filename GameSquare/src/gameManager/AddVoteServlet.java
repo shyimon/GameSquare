@@ -44,6 +44,7 @@ public class AddVoteServlet extends HttpServlet {
 			if(app!=null) {
 				if(VotoDAO.updateVote(username, Integer.parseInt(gameID), Integer.parseInt(vote_value))) {
 						System.out.println("Valutazione aggiornata");
+						request.setAttribute("result", "success");
 						
 				}
 			}
@@ -55,19 +56,21 @@ public class AddVoteServlet extends HttpServlet {
 				v.setValutazione(Integer.parseInt(vote_value));
 				if(VotoDAO.addVote(v))
 					System.out.println("Valutazione aggiunta");
+					request.setAttribute("result", "success");
 				}
 			
 			media = voteModel.calculateAverage(Integer.parseInt(gameID));
 			System.out.println("Media =" +media);
 			GiocoDAO.updateAverage(Integer.parseInt(gameID), media);
+			request.setAttribute("newAverage", media);
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			request.setAttribute("result", "fail");
 			e.printStackTrace();
 		}
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 				doPost(request, response);
 	}

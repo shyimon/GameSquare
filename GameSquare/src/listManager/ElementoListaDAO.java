@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import util.ConnectionPool;
-import util.Utilities;
 
 public class ElementoListaDAO {
 	private static Connection con=null;

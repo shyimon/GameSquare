@@ -32,19 +32,29 @@ public class DeleteVoteServlet extends HttpServlet {
 		String user = request.getParameter("username");
 		System.out.println("ricevuta richiesta eliminazione voto gioco id: "+gameID);
 		try {
-			if(VotoDAO.deleteVote(Integer.parseInt(gameID), user))
-				System.out.println("Voto eliminato");
-			else {
+			if(voteModel.getVote(Integer.parseInt(gameID), user) == null) { //eliminazione di un voto che non esiste
+				request.setAttribute("result", "fail");
 				response.setStatus(500);
+			} else {
+				
+				if(VotoDAO.deleteVote(Integer.parseInt(gameID), user)) {
+					System.out.println("Voto eliminato");
+					request.setAttribute("result", "success");
+				} else {
+					response.setStatus(500);
+				}
+				
 			}
 			float media = voteModel.calculateAverage(Integer.parseInt(gameID));
 			System.out.println("Media =" +media);
 			GiocoDAO.updateAverage(Integer.parseInt(gameID), media);
+			request.setAttribute("newAverage", media);
+			
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
+			request.setAttribute("result", "fail");
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			request.setAttribute("result", "fail");
 			e.printStackTrace();
 		}
 	}
@@ -52,7 +62,7 @@ public class DeleteVoteServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
