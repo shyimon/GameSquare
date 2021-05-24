@@ -23,13 +23,13 @@
 					if(correctEmail!=null) 
 					{
 					if(!correctEmail) %>
-					<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;"> Indirizzo e-mail errato.</h4>
+					<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;" id="email-errata"> Indirizzo e-mail errato.</h4>
 					<%			}
 	 	Boolean correctPassword = (Boolean) request.getAttribute("correctPassword");	
 					if(correctPassword!=null) 
 					{
 					if(!correctPassword) %>
-					<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;"> Password errata.</h4>
+					<i style="color: red" class="glyphicon glyphicon-remove"> </i><h4 style="color:red; display: inline-block;" id="password-errata"> Password errata.</h4>
 					<%	}
 	%>
 <div class="login-area">
