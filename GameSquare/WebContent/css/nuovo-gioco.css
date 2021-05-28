@@ -60,7 +60,7 @@
 		transition: 100ms ease all;
 	}
 	
-	#game_title, #publisher, #score, form textarea, form select  {
+	#game_title, #gamereq_title, #publisher, #score, form textarea, form select  {
 		border: 1px solid #999;
 		border-radius: 3px;
 		padding: 20px 10px 10px;
@@ -81,12 +81,12 @@
 		font-size: 0.65em;
 	}
 	
-	#game-year-label, #genre-label {
+	#game-year-label, #genre-label, label#game_genre {
 		top: 5px;
 		font-size: 0.65em;
 	}
 
-	#buttonaggiungi {
+	#buttonaggiungi, #buttonrequest {
         background: linear-gradient(0deg, rgba(34,48,195,1) 0%, rgba(45,119,253,1) 100%);
         box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
         width: 100%;
@@ -99,7 +99,7 @@
        	transition: all 0.3s;
     }
     
-    #buttonaggiungi:hover{
+    #buttonaggiungi:hover, #buttonrequest:hover{
 		background: linear-gradient(0deg, #73C5E7 0%, #467CC3 100%);
 	}
 }
