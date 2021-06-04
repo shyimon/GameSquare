@@ -1,5 +1,9 @@
 package gameManager;
 
+/**
+ * Questa classe rappresenta l'entità Gioco.
+ * @author Francesco Galasso
+ */
 public class Gioco {
 
 
@@ -17,6 +21,14 @@ public class Gioco {
 		
 	}
 	
+	/**
+	 * @param nome titolo del gioco
+	 * @param descrizione descrizione del gioco
+	 * @param publisher nome dell'editore che ha pubblicato il gioco
+	 * @param anno anno di uscita del gioco
+	 * @param genere genere del gioco
+	 * @return 
+	 */
 	public Gioco(String nome, String descrizione, String publisher, String anno, String genere) {
 		this.nome = nome;
 		this.descrizione = descrizione;
@@ -26,58 +38,137 @@ public class Gioco {
 
 	}
 	
-	
+	/**
+	 * @return idGioco id del gioco
+	 */
 	public int getIdGioco() {
 		return idGioco;
 	}
+	
+	/**
+	 * @param idGioco id da assegnare al gioco
+	 * @return 
+	 */
 	public void setIdGioco(int idGioco) {
 		this.idGioco = idGioco;
 	}
+	
+	/**
+	 * @return nome titolo del gioco
+	 */
 	public String getNome() {
 		return nome;
 	}
+	
+	/**
+	 * @param nome titolo da assegnare al gioco
+	 * @return 
+	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	/**
+	 * @return descrizione descrizione del gioco
+	 */
 	public String getDescrizione() {
 		return descrizione;
 	}
+	
+	/**
+	 * @param descrizione descrizione da assegnare al gioco
+	 * @return 
+	 */
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
+	
+	/**
+	 * @return publisher editore del gioco
+	 */
 	public String getPublisher() {
 		return publisher;
 	}
+	
+	/**
+	 * @param publisher editore da assegnare al gioco
+	 * @return 
+	 */
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
+	
+	/**
+	 * @return anno anno di uscita del gioco
+	 */
 	public String getAnno() {
 		return anno;
 	}
+	
+	/**
+	 * @param anno anno di uscita da assegnare al gioco
+	 * @return 
+	 */
 	public void setAnno(String anno) {
 		this.anno = anno;
 	}
+	
+	/**
+	 * @return genere genere del gioco
+	 */
 	public String getGenere() {
 		return genere;
 	}
+	
+	/**
+	 * @param genere tipologia da assegnare al gioco
+	 * @return 
+	 */
 	public void setGenere(String genere) {
 		this.genere = genere;
 	}
+	
+	/**
+	 * @return imgpath path del file dell'immagine del gioco
+	 */
 	public String getImgpath() {
 		return imgpath;
 	}
+	
+	/**
+	 * @param imgpath path del file dell'immagine da assegnare al gioco
+	 * @return 
+	 */
 	public void setImgpath(String imgpath) {
 		this.imgpath = imgpath;
 	}
+	
+	/**
+	 * @return punteggio punteggio del gioco
+	 */
 	public int getPunteggio() {
 		return punteggio;
 	}
+	
+	/**
+	 * @param punteggio punteggio da assegnare al gioco
+	 * @return 
+	 */
 	public void setPunteggio(int punteggio) {
 		this.punteggio = punteggio;
 	}
+	
+	/**
+	 * @return mediaVoti media delle valutazioni per il gioco
+	 */
 	public float getMediaVoti() {
 		return mediaVoti;
 	}
+	
+	/**
+	 * @param mediaVoti media dei voti da assegnare al gioco
+	 * @return 
+	 */
 	public void setMediaVoti(float mediaVoti) {
 		this.mediaVoti = mediaVoti;
 	}
