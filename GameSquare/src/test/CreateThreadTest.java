@@ -95,5 +95,18 @@ public class CreateThreadTest extends Mockito{
 		
 		
 	}
+	
+	//valori della request nulli
+	@Test
+	public void testCase_4() throws ServletException, IOException{
+			
+		try {
+			servlet.doGet(request, response);
+			fail("null");
+		} catch (Exception e) {
+				
+		}
+			
+	}
 
 }

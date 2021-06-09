@@ -9,6 +9,12 @@ import java.util.ArrayList;
 
 import util.*;
 
+
+/**
+ * Questa classe è un oggetto manager che si interfaccia con il database. Gestisce le query riguardanti l'oggetto GameThread.
+ * @author Francesco Galasso
+ *
+ */
 public class ThreadDAO {
 
 	private static Connection con=null;
@@ -17,7 +23,13 @@ public class ThreadDAO {
 	private static String viewThread;
 	private static String addThread;
 
-	
+	/**
+	 * 
+	 * @param idThread id del Thread da cercare
+	 * @postcondition thread->select(t|thread.id=id)
+	 * @return thread il thread cercato per id
+	 * @throws SQLException
+	 */
 	public GameThread viewThreadById(int idThread) throws SQLException
 	{
 		viewThread="SELECT * FROM thread WHERE id_thread=?";
@@ -59,6 +71,14 @@ public class ThreadDAO {
 		return threads.get(0);
 	}
 	
+	
+	/**
+	 * 
+	 * @param idGioco id del gioco su cui sono stati avviati i thread da cercare
+	 * @postcondition threads->select(t|thread.id_gioco=idGioco) AND threads->size()>=0
+	 * @return threads la lista dei thread avviati per un gioco
+	 * @throws SQLException
+	 */
 	public ArrayList<GameThread> viewThreadByGame(int idGioco) throws SQLException
 	{
 		viewThread="SELECT * FROM thread WHERE id_gioco=?";
@@ -99,37 +119,48 @@ public class ThreadDAO {
 		return threads;
 	}
 	
-
+	/**
+	 * 
+	 * @param thread nuovo GameThread da creare su un determinato gioco
+	 * @precondition thread!=null AND database.gioco->includes(select(g|gioco.id=thread.getIdGioco())) AND database.utente->includes (select(u|utente.username=thread.getUsernameUtente()))
+	 * @postcondition database.thread->includes(thread)
+	 * @return flag booleano che conferma l'esito dell'operazione
+	 * @throws SQLException
+	 */
 	public static boolean addThread(GameThread thread) throws SQLException 
 	{
 		addThread= "INSERT INTO thread(tipo_thread,titolo,testo,utente,id_gioco) values(?,?,?,?,?)";
 		boolean flag=false;
 
-		try 
-		{
-			con=ConnectionPool.getConnection();
-			statement=con.prepareStatement(addThread);
-			statement.setString(1,thread.getTipoThread());
-			statement.setString(2,thread.getTitolo());
-			statement.setString(3,thread.getTesto());
-			statement.setString(4,thread.getUsernameUtente());
-			statement.setInt(5,thread.getIdGioco());
-			flag=statement.executeUpdate()>0;
-			con.commit();
-		}
-		finally
-		{
-			try
+		if (thread==null)
+			throw new SQLException();
+		else {
+			try 
 			{
-				if(statement!=null)
-					statement.close();
+				con=ConnectionPool.getConnection();
+				statement=con.prepareStatement(addThread);
+				statement.setString(1,thread.getTipoThread());
+				statement.setString(2,thread.getTitolo());
+				statement.setString(3,thread.getTesto());
+				statement.setString(4,thread.getUsernameUtente());
+				statement.setInt(5,thread.getIdGioco());
+				flag=statement.executeUpdate()>0;
+				con.commit();
 			}
 			finally
 			{
-				ConnectionPool.rilasciaConnessione(con);
+				try
+				{
+					if(statement!=null)
+						statement.close();
+				}
+				finally
+				{
+					ConnectionPool.rilasciaConnessione(con);
+				}
 			}
+			return flag;
 		}
-		return flag;
 	}
 
 	

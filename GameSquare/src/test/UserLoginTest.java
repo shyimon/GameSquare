@@ -74,6 +74,15 @@ public class UserLoginTest extends Mockito {
 		assertEquals("AerithGain", (String) request.getSession().getAttribute("utente"));
 	}
 	
+	//Valori null
+	@Test
+	public void testCase_4() throws ServletException, IOException{
+
+		servlet.doGet(request, response);
+		
+		assertEquals("wrongLogin", (String) request.getAttribute("result"));
+		assertNull(request.getSession().getAttribute("utenteLoggato"));
+	}
 	
 	
 }

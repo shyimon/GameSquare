@@ -67,6 +67,14 @@ class ElementoListaDAOTest {
 			} catch (SQLException e) {
 			//success
 			}
+		
+		//inserimento di un elemento null
+		try {
+			ElementoListaDAO.addListElement(null);
+			fail("Valore null");
+		} catch (SQLException e) {
+		//success
+		}
 	}
 	
 	@Test
@@ -81,6 +89,10 @@ class ElementoListaDAOTest {
 		assertEquals(lista.size(), 0);
 		
 		//lista di un utente che non esiste
+		lista = elementoListaDAO.getUserList("NonEsisto");
+		assertEquals(lista.size(), 0);
+		
+		//lista di un utente null
 		lista = elementoListaDAO.getUserList(null);
 		assertEquals(lista.size(), 0);
 	}
@@ -104,11 +116,35 @@ class ElementoListaDAOTest {
 	
 	@Test
 	void TestDeleteListElement() throws SQLException {
-		//eliminazione corretta
+		//eliminazione di un elemento che non esiste
 		ArrayList<ElementoLista> prev = elementoListaDAO.getUserList("AerithGain");
-		ElementoListaDAO.deleteListElement(2, "AerithGain");
+		ElementoListaDAO.deleteListElement(7, "AerithGain");
 		ArrayList<ElementoLista> now = elementoListaDAO.getUserList("AerithGain");
+		assertEquals(now.size(), prev.size());
+		
+		
+		//eliminazione corretta
+		prev = elementoListaDAO.getUserList("AerithGain");
+		ElementoListaDAO.deleteListElement(2, "AerithGain");
+		now = elementoListaDAO.getUserList("AerithGain");
 		assertEquals(now.size(), prev.size()-1);
+		
+		
+		//eliminazione da un utente null
+		try {
+			ElementoListaDAO.deleteListElement(1, null);
+			fail("Utente null");
+		} catch(SQLException e){
+			//success
+		}
+		
+		//eliminazione da un gioco inesistente
+		try {
+			ElementoListaDAO.deleteListElement(-1, "Zagreus94");
+			fail("Gioco inesistente");
+		} catch(SQLException e){
+			//success
+		}
 	}
 	
 	@Test
@@ -125,6 +161,30 @@ class ElementoListaDAOTest {
 		ElementoListaDAO.updateCategory("Zagreus94", 2, "Completato");
 		elem = elementoListaDAO.getListElement("Zagreus94", 2);
 		assertNull(elem);
+		
+		//aggiornamento da un utente null
+		try {
+			ElementoListaDAO.updateCategory(null, 2, "Completato");
+			fail("Utente null");
+		} catch(SQLException e){
+			//success
+		}
+		
+		//aggiornamento da un gioco inesistente
+		try {
+			ElementoListaDAO.updateCategory("Zagreus94", -1, "Completato");
+			fail("Gioco inesistente");
+		} catch(SQLException e){
+			//success
+		}
+		
+		//aggiornamento con una categoria null
+		try {
+			ElementoListaDAO.updateCategory("AerithGain", 2, null);
+			fail("Categoria null");
+		} catch(SQLException e){
+			//success
+		}
 	}
 	
 	@Test
@@ -137,8 +197,12 @@ class ElementoListaDAOTest {
 		game=elementoListaDAO.getGameName(8);
 		assertEquals(game, null);
 		//il gioco non è presente nel DB
-		game=elementoListaDAO.getGameName(0);
-		assertEquals(game, null);
+		try {
+			game=elementoListaDAO.getGameName(0);
+			fail("Gioco non presente");
+		} catch (SQLException e) {
+			//success
+		}
 	}
 	
 	@Test
@@ -151,8 +215,13 @@ class ElementoListaDAOTest {
 		score=elementoListaDAO.getGameScore(8);
 		assertEquals(score, 0);
 		//il gioco non è presente nel DB
-		score=elementoListaDAO.getGameScore(0);
-		assertEquals(score, 0);
+		try {
+			score=elementoListaDAO.getGameScore(0);
+			fail("Gioco non presente");
+		} catch (SQLException e) {
+			//success
+		}
+		
 	}
 	
 	@Test
@@ -164,8 +233,24 @@ class ElementoListaDAOTest {
 		ElementoListaDAO.updateUserScore("ZackFair", 400);
 		assertEquals(userDAO.getScore("ZackFair"), 0);
 		
-		ElementoListaDAO.updateUserScore(null, 400);
-		assertEquals(userDAO.getScore(null), -1);
+		ElementoListaDAO.updateUserScore("NonEsisto", 400);
+		assertEquals(userDAO.getScore("NonEsisto"), -1);
+		
+		//utente null
+		try {
+			ElementoListaDAO.updateUserScore(null, 400);
+			fail("Utente null");
+		} catch (SQLException e) {
+			//success
+		}
+		
+		//punteggio<0
+		try {
+			ElementoListaDAO.updateUserScore("AerithGain", -1);
+			fail("Punteggio non valido");
+		} catch (SQLException e) {
+			//success
+		}
 	}
 	
 	@Test
@@ -179,6 +264,9 @@ class ElementoListaDAOTest {
 		assertEquals(count, 0);
 		//il gioco non esiste
 		count = elementoListaDAO.getCategoryStats(0, "In corso");
+		assertEquals(count, 0);
+		//la categoria non esiste
+		count = elementoListaDAO.getCategoryStats(1, null);
 		assertEquals(count, 0);
 	}
 }

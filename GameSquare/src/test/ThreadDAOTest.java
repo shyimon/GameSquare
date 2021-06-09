@@ -70,6 +70,14 @@ class ThreadDAOTest {
 		} catch (SQLException e) {
 		
 		}
+		
+		//inserimento di un oggetto null
+		try {
+			ThreadDAO.addThread(null);
+			fail("null");
+		} catch (SQLException e) {
+		
+		}
 	}
 	
 	
@@ -82,7 +90,7 @@ class ThreadDAOTest {
 		assertNotNull(t);
 		
 		//il thread non esiste
-		id = 99;
+		id = 0;
 		t= threadDAO.viewThreadById(id);
 		assertNull(t);
 		

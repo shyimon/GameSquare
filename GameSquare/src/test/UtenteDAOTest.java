@@ -9,6 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import gameManager.GiocoDAO;
 import userManager.*;
 import util.ConnectionPool;
 
@@ -35,18 +36,28 @@ class UtenteDAOTest {
 		assertNotNull(u);
 		
 		//email errata
-		u = utenteDAO.checkLogin("emailerrata", null);
-		assertNull(u);
-		
 		u = utenteDAO.checkLogin("emailerrata", "midgar03");
 		assertNull(u);
 		
 		//password errata
-		u = utenteDAO.checkLogin("againsborough@yahoo.it", null);
-		assertNull(u);
-		
 		u = utenteDAO.checkLogin("againsborough@yahoo.it", "midgar04");
 		assertNull(u);
+		
+		//password == null
+		try {
+			u = utenteDAO.checkLogin("againsborough@yahoo.it", null);
+			fail("password null");
+		}catch(SQLException e) {
+			//success
+		}
+		
+		//email == null
+		try {
+			u = utenteDAO.checkLogin(null, "pass");
+			fail("email null");
+		}catch(SQLException e) {
+			//success
+		}
 	}
 	
 
@@ -62,9 +73,13 @@ class UtenteDAOTest {
 		flag = utenteDAO.checkEmail("questaeunemail@errata.it");
 		assertEquals(flag, false);
 		
-		//email==null
-		flag = utenteDAO.checkEmail(null);
-		assertEquals(flag, false);
+		//email == null
+		try {
+			flag = utenteDAO.checkEmail(null);
+			fail("email null");
+		}catch(SQLException e) {
+			//success
+		}
 	}
 	
 	@Test
@@ -84,8 +99,28 @@ class UtenteDAOTest {
 		assertEquals(flag, false);
 		
 		//password == null
-		flag = utenteDAO.checkPassword("againsborough@yahoo.it", null);
-		assertEquals(flag, false);
+		try {
+			flag = utenteDAO.checkPassword("againsborough@yahoo.it", null);
+			fail("password null");
+		}catch(SQLException e) {
+			//success
+		}
+		
+		//email == null
+		try {
+			flag = utenteDAO.checkPassword(null, "pass");
+			fail("email null");
+		}catch(SQLException e) {
+			//success
+		}
+		
+		//email == null && password == null
+		try {
+			flag = utenteDAO.checkPassword(null, null);
+			fail("valori null");
+		}catch(SQLException e) {
+			//success
+		}
 	}
 	
 	@Test
@@ -96,8 +131,16 @@ class UtenteDAOTest {
 		assertEquals(score, 390);
 		
 		//utente inesistente
-		score=utenteDAO.getScore(null);
+		score=utenteDAO.getScore("NonEsisto");
 		assertEquals(score, -1);
+		
+		//utente null
+		try {
+			score=utenteDAO.getScore(null);
+			fail("Valore null");
+		} catch (SQLException e) {
+			//success
+		}
 	}
 	
 	@Test
