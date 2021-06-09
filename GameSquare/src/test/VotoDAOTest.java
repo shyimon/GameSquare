@@ -64,6 +64,13 @@ class VotoDAOTest {
 			} catch (SQLException e) {
 				// success
 			}
+		//voto null
+		try {
+			VotoDAO.addVote(null);
+			fail("Il voto non può essere null");
+		} catch (SQLException e) {
+			// success
+		}
 	}
 	
 	@Test
@@ -74,15 +81,25 @@ class VotoDAOTest {
 		//voto non esistente
 		voto = votoDAO.getVote(1, "Zagreus94");
 		assertNull(voto);
+		//id<=0
+		try {
 		voto = votoDAO.getVote(0, "AerithGain");
-		assertNull(voto);
-		voto = votoDAO.getVote(1, null);
-		assertNull(voto);
+		fail("ID non valido");
+		} catch (SQLException e) {
+			// success
+		}
+		//username==null
+		try {
+			voto = votoDAO.getVote(1, null);
+		fail("username null");
+		} catch (SQLException e) {
+			// success
+		}
 	}
 
 	@Test
 	void TestDeleteVote() throws SQLException {
-		//eliminazione elemento inesistente
+		//eliminazione elemento inesistente, il numero dei voti rimane lo stesso
 		ArrayList <Voto> prev = votoDAO.findAllVotes();
 		VotoDAO.deleteVote(8, "AerithGain");
 		ArrayList <Voto> next = votoDAO.findAllVotes();
@@ -93,6 +110,20 @@ class VotoDAOTest {
 		next = votoDAO.findAllVotes();
 		assertEquals(prev.size()-1, next.size());
 		
+		//id<=0
+		try {
+		VotoDAO.deleteVote(0, "AerithGain");
+		fail("ID non valido");
+		} catch (SQLException e) {
+			// success
+		}
+		//username==null
+		try {
+		VotoDAO.deleteVote(1, null);
+		fail("username null");
+		} catch (SQLException e) {
+			// success
+		}
 	}
 	
 	@Test
@@ -109,9 +140,31 @@ class VotoDAOTest {
 		assertEquals(prev.size(), next.size());
 		
 		//elemento inesistente
-		VotoDAO.updateVote(null, 0, 7);
+		VotoDAO.updateVote("AerithGain", 4, 8);
 		next = votoDAO.findAllVotes();
 		assertEquals(prev.size(), next.size());
+		
+		//id<=0
+		try {
+		VotoDAO.updateVote("AerithGain", 0, 7);
+		fail("ID non valido");
+		} catch (SQLException e) {
+			// success
+		}
+		//username==null
+		try {
+		VotoDAO.updateVote(null, 1, 7);
+		fail("username null");
+		} catch (SQLException e) {
+			// success
+		}
+		//valutazione non valida
+		try {
+		VotoDAO.updateVote("AerithGain", 1, -1);
+		fail("username null");
+		} catch (SQLException e) {
+			// success
+		}
 		
 	}
 	

@@ -81,6 +81,7 @@ public class AddGame extends HttpServlet {
 				response.setStatus(500);
 			}
 	} catch (SQLException e1) {
+			request.setAttribute("aggiuntaGioco", "error");
 			response.setStatus(500);
 			e1.printStackTrace();
 }

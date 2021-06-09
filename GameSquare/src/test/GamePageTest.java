@@ -48,16 +48,26 @@ public class GamePageTest extends Mockito{
 		
 	}
 	
-	//visualizzazione errata del gioco
+	//visualizzazione errata di un gioco che non esiste
 		@Test
 		public void testCase_2() throws ServletException, IOException{
 		
-			request.addParameter("id", "0");
+			request.addParameter("id", "69");
 
 			servlet.doPost(request, response);
 			assertEquals("errore", response.getContentAsString());
 			
 		}
 	
+	//parametro id non valido
+		@Test
+		public void testCase_3() throws ServletException, IOException{
+				
+			request.addParameter("id", "0");
+
+			servlet.doPost(request, response);
+			assertEquals("errore SQL", response.getContentAsString());
+					
+		}
 	
 }

@@ -47,6 +47,14 @@ class RichiestaGiocoDAOTest {
 			} catch (SQLException e) {
 				//success
 			}
+		
+		//richiesta null
+		try {
+			RichiestaGiocoDAO.addGameRequest(null);
+			fail("La richiesta è null");
+		} catch (SQLException e) {
+			//success
+		}
 	}
 	
 	@Test

@@ -7,7 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import util.ConnectionPool;
-
+/**
+ * Questa classe è un oggetto manager che si interfaccia con il database. Gestisce le query riguardanti l’oggetto RichiestaGioco (richiesta da parte di un utente per l'aggiunta di un nuovo gioco).
+ * @author Francesco Galasso
+ *
+ */
 public class RichiestaGiocoDAO {
 
 	private static Connection con=null;
@@ -17,41 +21,60 @@ public class RichiestaGiocoDAO {
 	private static String viewReq;
 	private static String deleteReq;
 
+	/**
+	 * 
+	 * @param req nuova richiesta gioco da aggiungere
+	 * @precondition req!=null AND database.utente->includes(u|utente.username=req.getUsernameUtente())
+	 * @postcondition database.richiesta_gioco-> includes(req)
+	 * @return flag booleano per stabilire l'esito dell'operazione
+	 * @throws SQLException
+	 */
 	public static boolean addGameRequest(RichiestaGioco req) throws SQLException 
 	{
+		
 		addReq= "INSERT INTO richiesta_gioco(utente,nome_gioco,fonte,publisher,anno,genere) values(?,?,?,?,?,?)";
 		boolean flag=false;
 
-		try 
-		{
-			con=ConnectionPool.getConnection();
-			statement=con.prepareStatement(addReq);
-			statement.setString(1,req.getUsernameUtente());
-			statement.setString(2,req.getNomeGioco());
-			statement.setString(3,req.getFonte());
-			statement.setString(4,req.getPublisher());
-			statement.setString(5,req.getAnno());
-			statement.setString(6,req.getGenere());
-			flag=statement.executeUpdate()>0;
-			con.commit();
+		if(req==null)
+			throw new SQLException();
+		else {
+				try 
+				{
+					con=ConnectionPool.getConnection();
+					statement=con.prepareStatement(addReq);
+					statement.setString(1,req.getUsernameUtente());
+					statement.setString(2,req.getNomeGioco());
+					statement.setString(3,req.getFonte());
+					statement.setString(4,req.getPublisher());
+					statement.setString(5,req.getAnno());
+					statement.setString(6,req.getGenere());
+					flag=statement.executeUpdate()>0;
+					con.commit();
+				}
+				finally
+				{
+					try
+					{
+						if(statement!=null)
+							statement.close();
+					}
+					finally
+					{
+						ConnectionPool.rilasciaConnessione(con);
+					}
+				}
+				return flag;
 		}
-		finally
-		{
-			try
-			{
-				if(statement!=null)
-					statement.close();
-			}
-			finally
-			{
-				ConnectionPool.rilasciaConnessione(con);
-			}
-		}
-		return flag;
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @param id id della richiesta gioco da cercare
+	 * @postcondition richiesta->select(r|richiesta_gioco.id=id) if database.richiesta_gioco->includes(r|richiesta_gioco.id=id), null altrimenti
+	 * @return richieste.get(0) primo e unico elemento della lista restituita, null se è vuota
+	 * @throws SQLException
+	 */
 	public RichiestaGioco viewRequestById(int id) throws SQLException
 	{
 		viewReq="SELECT * FROM richiesta_gioco WHERE id=?";
@@ -95,6 +118,13 @@ public class RichiestaGiocoDAO {
 			}
 	}
 	
+	
+	/**
+	 * 
+	 * @postcondition richieste->database.richiesta_gioco->select(r) and richieste->size()>=0
+	 * @return richieste ArrayList con tutte le richieste gioco salvate nel database
+	 * @throws SQLException
+	 */
 	public ArrayList<RichiestaGioco> getAllRequests() throws SQLException
 	{
 		viewReq="SELECT * FROM richiesta_gioco";
@@ -133,6 +163,14 @@ public class RichiestaGiocoDAO {
 		return richieste;
 	}
 	
+	/**
+	 * 
+	 * @param id id della richiesta da eliminare
+	 * @precondition database.richiesta_gioco->includes(select(r|richiesta_gioco.id=id)
+	 * @postcondition database.richiesta_gioco-> not includes(select(r|richiesta_gioco.id=id)
+	 * @return flag booleano per stabilire l'esito dell'operazione
+	 * @throws SQLException
+	 */
 	public static boolean deleteGameRequest(int id) throws SQLException
 	{
 		boolean flag=false;

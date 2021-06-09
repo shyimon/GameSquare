@@ -114,7 +114,7 @@ public class ElementoListaDAO {
 	 * @param username username dell'utente da cercare
 	 * @param gameid id del gioco aggiunto dall'utente
 	 * @postcondition elemento_lista->select(e|elemento_lista.utente=username and elemento_lista.id_gioco=gameid) if database.elemento_lista->includes(e|elemento_lista.utente=username and elemento_lista.id_gioco=gameid), null altrimenti
-	 * @return results.get(0) primo e unico elemento dalla lista cercata
+	 * @return results.get(0) primo e unico elemento dalla lista cercata, null se è vuota
 	 * @throws SQLException
 	 */
 	public ElementoLista getListElement(String username, int gameid) throws SQLException

@@ -100,6 +100,20 @@ public class AddGameTest extends Mockito{
 		
 		
 		servlet.doGet(request, response);
+		assertEquals("error", request.getAttribute("aggiuntaGioco"));
+		
+		
+	}
+	
+	@Test
+	public void testCase_2_1() throws ServletException, IOException{
+	
+		request.addParameter("game_title", "DOOM");
+		request.addParameter("publisher", "id Software");
+		request.addParameter("game_year", "1993");
+		request.addParameter("score", "100");
+		
+		servlet.doGet(request, response);
 		assertEquals("errorSQL", request.getAttribute("aggiuntaGioco"));
 		
 		

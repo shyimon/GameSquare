@@ -52,6 +52,7 @@ public class GamePageServlet extends HttpServlet {
 				
 				
 			} catch (SQLException e) {
+				response.getWriter().write("errore SQL");//test
 				e.printStackTrace();
 			}	
 		

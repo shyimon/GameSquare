@@ -54,9 +54,17 @@ class GiocoDAOTest {
 		assertNotNull(g);
 		
 		//il gioco non esiste
-		id = -1;
+		id = 69;
 		g= giocoDAO.findGameById(id);
 		assertNull(g);
+		
+		//il valore id non è valido
+		try {
+			g=giocoDAO.findGameById(0);
+			fail("Valore non valido");
+		} catch(SQLException e) {
+			//success
+		}
 		
 	}
 	
@@ -68,6 +76,9 @@ class GiocoDAOTest {
 		
 		games  = giocoDAO.findByPublisher("Sony");
 		assertEquals(games.size(), 1);
+		
+		games  = giocoDAO.findByPublisher("Chucklefish");
+		assertEquals(games.size(), 0);
 		
 		games  = giocoDAO.findByPublisher(null);
 		assertEquals(games.size(), 0);
@@ -82,6 +93,9 @@ class GiocoDAOTest {
 		games  = giocoDAO.findByGenre("Arcade");
 		assertEquals(games.size(), 1);
 		
+		games  = giocoDAO.findByGenre("Survival Horror");
+		assertEquals(games.size(), 0);
+		
 		games  = giocoDAO.findByGenre(null);
 		assertEquals(games.size(), 0);
 		
@@ -95,6 +109,22 @@ class GiocoDAOTest {
 		
 		flag = giocoDAO.checkExistingGame("DOOM", "id Software", "1993");
 		assertEquals(flag, false);
+		
+		try {
+			flag = giocoDAO.checkExistingGame(null, "id Software", "1993");
+		}catch(SQLException e) {
+			//success
+		}
+		try {
+			flag = giocoDAO.checkExistingGame("DOOM", null, "1993");
+		}catch(SQLException e) {
+			//success
+		}
+		try {
+			flag = giocoDAO.checkExistingGame("DOOM", "id Software", null);
+		}catch(SQLException e) {
+			//success
+		}
 	}
 	
 	@Test

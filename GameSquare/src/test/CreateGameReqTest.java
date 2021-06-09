@@ -77,9 +77,6 @@ public class CreateGameReqTest extends Mockito{
 	public void testCase_3() throws ServletException, IOException{
 	
 	
-		request.addParameter("game_genre", "Platform");
-		request.addParameter("game_year", "1994");
-		request.addParameter("username", "UtenteNonEsistente");
 		
 		servlet.doGet(request, response);
 		assertEquals("false", (String)request.getAttribute("richiestagioco"));
