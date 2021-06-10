@@ -19,7 +19,13 @@
 <br>
 
 
-	<% 	Boolean correctEmail = (Boolean) request.getAttribute("correctEmail");	
+	<% 
+				if(utenteLoggato!=null){
+					response.sendRedirect("index.jsp");
+					return;
+				}
+	
+		Boolean correctEmail = (Boolean) request.getAttribute("correctEmail");	
 					if(correctEmail!=null) 
 					{
 					if(!correctEmail) %>

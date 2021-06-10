@@ -34,7 +34,7 @@ public class UtenteDAO {
 		checkEmail="SELECT username FROM utente where email=?";
 		checkPassword="SELECT username FROM utente where email=? AND password=?";
 		showAccount="SELECT * FROM utente where email=?";
-		showTopUsers="SELECT * FROM utente ORDER BY punteggio DESC LIMIT 10";
+		showTopUsers="SELECT * FROM utente WHERE tipo <> 'manager' ORDER BY punteggio DESC LIMIT 10";
 		checkLogin="SELECT username,email,password,punteggio,tipo FROM utente where email=? AND password=?";
 	}
 	

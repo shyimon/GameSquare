@@ -21,7 +21,20 @@
 		<%@ include file="fragment/header.jsp" %>
 	</div>
 
-	
+		<%
+		
+			if(utenteLoggato==null)
+			{
+				response.sendRedirect("login-page.jsp");
+				return;
+			}else if((utenteLoggato.getTipo().equals("manager")))
+			{
+				response.sendRedirect("index.jsp");
+				return;
+			}
+		
+		%>
+		
 	<section class="utente-section">
 		<div id="info-section">
 			<div class="username">
