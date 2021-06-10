@@ -1,6 +1,7 @@
 package test;
 import org.mockito.Mockito;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -68,6 +69,19 @@ public class GamePageTest extends Mockito{
 			servlet.doPost(request, response);
 			assertEquals("errore SQL", response.getContentAsString());
 					
+		}
+		
+	//parametro id null
+		@Test
+		public void testCase_4() throws ServletException, IOException{
+					
+		try {
+				servlet.doPost(request, response);
+				fail("Valore null");
+			}catch(Exception e) {
+					//success
+			}
+							
 		}
 	
 }

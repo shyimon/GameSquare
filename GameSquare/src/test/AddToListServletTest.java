@@ -1,6 +1,7 @@
 package test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -136,4 +137,15 @@ public class AddToListServletTest extends Mockito {
 			assertEquals("notAdded", (String)request.getAttribute("result"));
 		}
 	
+	//Valori null
+	@Test
+	public void testCase_3() throws ServletException, IOException{
+		
+			try {
+			servlet.doPost(request, response);
+			fail("Valori null");
+			}catch(Exception e) {
+				//success
+			}
+		}
 }

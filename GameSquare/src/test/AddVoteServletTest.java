@@ -1,6 +1,7 @@
 package test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -94,4 +95,27 @@ public class AddVoteServletTest extends Mockito {
 			assertEquals("fail", request.getAttribute("result"));
 		}
 	
+	@Test
+	public void testCase_2_1() throws ServletException, IOException{
+		
+			request.addParameter("game_id", "1");
+			request.addParameter("vote_value", "9");
+			
+
+			servlet.doGet(request, response);
+			
+			assertEquals("fail", request.getAttribute("result"));
+		}
+	
+	//valori nulli
+	@Test
+	public void testCase_3() throws ServletException, IOException{
+	
+		try {
+			servlet.doGet(request, response);
+			fail("Valore nullo");
+		} catch (Exception e) {
+			//success
+		}
+	}
 }

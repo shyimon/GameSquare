@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Servlet implementation class CreateGameReq
+ * Questa classe è un control che si occupa di passare a RichiestaGiocoDAO i dati di una richiesta gioco da pubblicare.
  */
 @WebServlet("/CreateGameReq")
 public class CreateGameReq extends HttpServlet {
@@ -23,9 +23,16 @@ public class CreateGameReq extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    /**
+ 	 * @precondition request.getParameter(“gamereq_title”)!=null AND request.getParameter(“gamereq_source”)!=null AND request.getParameter(“publisher”)!=null AND request.getParameter(“game_genre”)!=null AND request.getParameter(“game_year”)!=null AND request.getParameter(“username”)!=null
+ 	 * @postcondition request.getAttribute("richiestagioco")!=null
+ 	 * @throws ServletException, IOException
+ 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		String title = null;
+    	request.removeAttribute("richiestagioco");
+		
+    	String title = null;
 		String source = null;
 		String publisher = null;
 		String genere = null;
@@ -70,13 +77,15 @@ public class CreateGameReq extends HttpServlet {
 				}
 			
 		} catch (SQLException e) {
-			request.setAttribute("richiestagioco", "false");
+			request.setAttribute("richiestagioco", "errorSQL");
 			e.printStackTrace();
 		}
 		
 	}
 
-	
+    /**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{	
 		doPost(request, response);

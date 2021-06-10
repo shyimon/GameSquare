@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class DeleteVoteServlet
+ * Questa classe è un control che si occupa di passare a VotoDAO i dati di un voto da rimuovere.
  */
 @WebServlet("/DeleteVote")
 public class DeleteVoteServlet extends HttpServlet {
@@ -24,9 +24,11 @@ public class DeleteVoteServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+ 	 * @precondition request.getParameter(“username”)!=null AND request.getParameter(“game_id”)!=null
+ 	 * @postcondition request.getAttribute("result")!=null
+ 	 * @throws ServletException, IOException
+ 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String gameID = request.getParameter("game_id");
 		String user = request.getParameter("username");
@@ -40,6 +42,7 @@ public class DeleteVoteServlet extends HttpServlet {
 				if(VotoDAO.deleteVote(Integer.parseInt(gameID), user)) {
 					System.out.println("Voto eliminato");
 					request.setAttribute("result", "success");
+					
 				} else {
 					response.setStatus(500);
 				}
@@ -49,6 +52,7 @@ public class DeleteVoteServlet extends HttpServlet {
 			System.out.println("Media =" +media);
 			GiocoDAO.updateAverage(Integer.parseInt(gameID), media);
 			request.setAttribute("newAverage", media);
+			
 			
 		} catch (NumberFormatException e) {
 			request.setAttribute("result", "fail");
@@ -60,7 +64,7 @@ public class DeleteVoteServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

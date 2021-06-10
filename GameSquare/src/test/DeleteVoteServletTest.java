@@ -1,5 +1,6 @@
 package test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -75,7 +76,14 @@ public class DeleteVoteServletTest extends Mockito {
 			assertEquals("fail", request.getAttribute("result"));
 	}
 	
-
+	//valori nulli
+	@Test
+	public void testCase_3() throws ServletException, IOException{
+	
+		servlet.doPost(request, response);
+		assertEquals("fail", request.getAttribute("result"));
+	
+	}
 	
 }
 

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ChangeCategoryServlet
+ * Questa classe è un control che si occupa di passare a ElementoListaDAO i dati di un Elemento Lista per cui cambiare la categoria.
  */
 @WebServlet("/ChangeCateg")
 public class ChangeCategoryServlet extends HttpServlet {
@@ -18,16 +18,16 @@ public class ChangeCategoryServlet extends HttpServlet {
        
 	static ElementoListaDAO model = new ElementoListaDAO();
 	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public ChangeCategoryServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+	 * @precondition request.getParameter(“username”)!=null AND request.getParameter(“game_id”)!=null AND request.getParameter(“category_value”)!=null AND request.getParameter(“user_category”)!=null AND request.getParameter(“score”)!=null AND request.getParameter(“usrScore”)!=null
+	 * @postcondition ElementoListaDAO:updateCategory(user, gameid, categoria)==true AND ElementoListaDAO:updateUserScore(user, punteggio)==true
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = null; 

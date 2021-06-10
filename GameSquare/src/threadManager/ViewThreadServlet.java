@@ -12,15 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ViewThreadServlet
+ * Questa classe è un control che si occupa della visualizzazione di un thread in base alle interazioni di un utente.
  */
 @WebServlet("/ViewThread")
 public class ViewThreadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public ViewThreadServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -28,9 +26,11 @@ public class ViewThreadServlet extends HttpServlet {
 
     static ThreadDAO threadModel = new ThreadDAO();
     
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+  	 * @precondition request.getParamter(“threadid”)!=null
+  	 * @postcondition dispatcher!=null
+  	 * @throws ServletException, IOException
+  	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 
@@ -60,7 +60,7 @@ public class ViewThreadServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

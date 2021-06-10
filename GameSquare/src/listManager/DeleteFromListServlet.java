@@ -10,24 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class DeleteFromListServlet
+ * Questa classe è un control che si occupa di passare a ElementoListaDAO i dati di un Elemento Lista da rimuovere.
  */
 @WebServlet("/DeleteFromList")
 public class DeleteFromListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	static ElementoListaDAO model = new ElementoListaDAO();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public DeleteFromListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+   	 * @precondition request.getParameter(“username”)!=null AND request.getParameter(“game_id”)!=null AND request.getParameter(“category_value”)!=null AND request.getParameter(“user_category”)!=null AND request.getParameter(“score”)!=null AND request.getParameter(“usrScore”)!=null
+   	 * @postcondition ElementoListaDAO:deleteListELement(gameid, user)==true ElementoListaDAO:updateUserScore(user, punteggio)==true
+   	 * @throws ServletException, IOException
+   	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = null; 
 		String gameID = null; 
@@ -71,7 +71,7 @@ public class DeleteFromListServlet extends HttpServlet {
 
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

@@ -2,6 +2,7 @@ package test;
 
 import org.mockito.Mockito;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -50,14 +51,26 @@ public class ViewThreadTest extends Mockito {
 	}
 	
 	//visualizzazione errata del thread
-		@Test
-		public void testCase_2() throws ServletException, IOException{
+	@Test
+	public void testCase_2() throws ServletException, IOException{
 		
-			request.addParameter("threadid", "0");
+		request.addParameter("threadid", "0");
 
-			servlet.doPost(request, response);
-			assertEquals("errore", response.getContentAsString());
+		servlet.doPost(request, response);
+		assertEquals("errore", response.getContentAsString());
 			
-		}
+	}
 	
+	//valore null
+	@Test
+	public void testCase_3() throws ServletException, IOException{
+		
+		try {
+		servlet.doPost(request, response);
+		fail("Valore null");
+		}catch(Exception e) {
+			//success
+		}
+			
+	}
 }

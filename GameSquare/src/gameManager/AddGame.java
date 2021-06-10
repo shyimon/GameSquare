@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Servlet implementation class AddGame
+ * Questa classe è un control che si occupa di passare a GiocoDAO i dati di un gioco da aggiungere.
  */
 @WebServlet("/AddGame")
 public class AddGame extends HttpServlet {
@@ -27,11 +27,14 @@ public class AddGame extends HttpServlet {
 
     static GiocoDAO gameModel = new GiocoDAO();
     
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+ 	 * @precondition request.getParameter(“game_title”)!=null AND request.getParameter(“publisher”)!=null AND request.getParameter(“game_genre”)!=null AND request.getParameter(game_year)!=null AND request.getParameter(“game_desc”)!=null AND request.getParameter(“score”)!null
+ 	 * @postcondition request.getAttribute("aggiuntaGioco")!=null
+ 	 * @throws ServletException, IOException
+ 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+    	request.removeAttribute("aggiuntaGioco");
 		String name = null;
 		String publisher = null;
 		String genere = null;

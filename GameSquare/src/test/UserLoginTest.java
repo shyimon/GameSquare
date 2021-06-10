@@ -45,7 +45,7 @@ public class UserLoginTest extends Mockito {
 
 		servlet.doGet(request, response);
 		
-		assertEquals("incorrectEmail", (String)request.getAttribute("result"));
+		assertEquals("incorrectEmail", (String)request.getAttribute("loginResult"));
 		assertNull(request.getSession().getAttribute("utenteLoggato"));
 	}
 	
@@ -58,7 +58,7 @@ public class UserLoginTest extends Mockito {
 
 		servlet.doGet(request, response);
 		
-		assertEquals("incorrectPass", (String)request.getAttribute("result"));
+		assertEquals("incorrectPass", (String)request.getAttribute("loginResult"));
 		assertNull(request.getSession().getAttribute("utenteLoggato"));
 	}
 	
@@ -70,7 +70,7 @@ public class UserLoginTest extends Mockito {
 
 		servlet.doGet(request, response);
 		
-		assertEquals("logged", (String) request.getAttribute("result"));
+		assertEquals("logged", (String) request.getAttribute("loginResult"));
 		assertEquals("AerithGain", (String) request.getSession().getAttribute("utente"));
 	}
 	
@@ -80,7 +80,7 @@ public class UserLoginTest extends Mockito {
 
 		servlet.doGet(request, response);
 		
-		assertEquals("wrongLogin", (String) request.getAttribute("result"));
+		assertEquals("wrongLogin", (String) request.getAttribute("loginResult"));
 		assertNull(request.getSession().getAttribute("utenteLoggato"));
 	}
 	

@@ -21,16 +21,16 @@ public class AddToListServlet extends HttpServlet {
        
 	
 	static ElementoListaDAO model = new ElementoListaDAO();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public AddToListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+	 * @precondition request.getParameter(“username”)!=null AND request.getParameter(“game_id”)!=null AND request.getParameter(“category_value”)!=null AND request.getParameter(“score”)!=null AND request.getParameter(“usrScore”)!=null
+	 * @postcondition ElementoListaDAO:addListElement(username)==true AND ElementoListaDAO:updateUserScore(user, punteggio)==true
+	 * @throws ServletException, IOException
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = null; 
@@ -70,7 +70,7 @@ public class AddToListServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

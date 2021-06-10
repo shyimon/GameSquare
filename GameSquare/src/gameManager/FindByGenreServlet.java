@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class FindByGenreServlet
+ * Questa classe è un control che si occupa di interfacciarsi con GiocoDAO per ottenere i giochi appartenenti a un genere selezionato dall’utente.
  */
 @WebServlet("/Genre")
 public class FindByGenreServlet extends HttpServlet {
@@ -28,9 +28,11 @@ public class FindByGenreServlet extends HttpServlet {
 
     static GiocoDAO gameModel = new GiocoDAO();
     
-   	/**
-   	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-   	 */
+    /**
+ 	 * @precondition request.getParameter("gen")!=null
+ 	 * @postcondition request.getAttribute("giochi")!=null AND dispatcher!=null
+ 	 * @throws ServletException, IOException
+ 	 */
    	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
    		
    	try {
@@ -52,10 +54,10 @@ public class FindByGenreServlet extends HttpServlet {
    	dispatcher.forward(request, response);
    	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+   	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

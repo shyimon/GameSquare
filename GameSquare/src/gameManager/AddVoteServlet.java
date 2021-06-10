@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AddVoteServlet
+ * Questa classe è un control che si occupa di passare a VotoDAO i dati di un voto da registrare.
  */
 @WebServlet("/AddVote")
 public class AddVoteServlet extends HttpServlet {
@@ -27,9 +27,11 @@ public class AddVoteServlet extends HttpServlet {
     }
 
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+ 	 * @precondition request.getParameter(“username”)!=null AND request.getParameter(“game_id”)!=null AND request.getParameter(“vote_value”)!=null
+ 	 * @postcondition request.getAttribute("result")!=null
+ 	 * @throws ServletException, IOException
+ 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = null; 
 		String gameID = null; 
@@ -44,7 +46,6 @@ public class AddVoteServlet extends HttpServlet {
 			if(app!=null) {
 				VotoDAO.updateVote(username, Integer.parseInt(gameID), Integer.parseInt(vote_value));
 						System.out.println("Valutazione aggiornata");
-						request.setAttribute("result", "success");
 				
 			}
 			else {
@@ -55,13 +56,13 @@ public class AddVoteServlet extends HttpServlet {
 				v.setValutazione(Integer.parseInt(vote_value));
 				VotoDAO.addVote(v);
 					System.out.println("Valutazione aggiunta");
-					request.setAttribute("result", "success");
 				}
 			
 			media = voteModel.calculateAverage(Integer.parseInt(gameID));
 			System.out.println("Media =" +media);
 			GiocoDAO.updateAverage(Integer.parseInt(gameID), media);
 			request.setAttribute("newAverage", media);
+			request.setAttribute("result", "success");
 			
 		} catch (SQLException e) {
 			request.setAttribute("result", "fail");
@@ -69,6 +70,9 @@ public class AddVoteServlet extends HttpServlet {
 		}
 	}
 	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 				doPost(request, response);

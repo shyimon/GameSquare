@@ -8,13 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class UserLogout
+ * Questa classe è un control che si occupa di gestire l’operazione di logout. 
+ * 
  */
 @WebServlet("/Logout")
 public class UserLogout extends HttpServlet
 {
 	private static final long serialVersionUID = 1042434985115718411L;
 
+	/**
+	 * @precondition Request.getSession(false).getAttribute(“utenteLoggato”)!=null AND Request.getSession(false).getAttribute(“utente”)!=null
+	 * @postcondition request.getSession().getAttribute(“utenteLoggato”)==null AND Request.getSession(false).getAttribute(“utente”)==null
+	 * @throws ServletException, IOException
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		
@@ -26,6 +32,9 @@ public class UserLogout extends HttpServlet
 		
 	}
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		doGet(request, response);

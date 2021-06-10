@@ -12,15 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class FindAllServlet
+ * Questa classe è un control che si occupa di prelevare l’intero catalogo da GiocoDAO.
  */
 @WebServlet("/FindAll")
 public class FindAllServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public FindAllServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -28,9 +26,11 @@ public class FindAllServlet extends HttpServlet {
 
     static GiocoDAO gameModel = new GiocoDAO();
     
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+ 	 *
+ 	 * @postcondition request.getAttribute("giochi")!=null
+ 	 * @throws ServletException, IOException
+ 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	try {
@@ -53,9 +53,9 @@ public class FindAllServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

@@ -67,7 +67,7 @@ public class CreateGameReqTest extends Mockito{
 		
 		//utente non esistente
 		servlet.doGet(request, response);
-		assertEquals("false", (String)request.getAttribute("richiestagioco"));
+		assertEquals("errorSQL", (String)request.getAttribute("richiestagioco"));
 		
 		
 	}
@@ -79,7 +79,7 @@ public class CreateGameReqTest extends Mockito{
 	
 		
 		servlet.doGet(request, response);
-		assertEquals("false", (String)request.getAttribute("richiestagioco"));
+		assertEquals("errorSQL", (String)request.getAttribute("richiestagioco"));
 		
 		
 	}

@@ -10,15 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AcceptRequestServlet
+ * Questa classe è un control che si occupa di gestire l’accettazione di una richiesta per un nuovo gioco, passa l’id della richiesta a RichiestaGiocoDAO, che ne ricava i dati, passandoli a GiocoDAO per aggiungere il titolo, e successivamente elimina la richiesta.
  */
 @WebServlet("/AcceptReq")
 public class AcceptRequestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public AcceptRequestServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -26,11 +24,14 @@ public class AcceptRequestServlet extends HttpServlet {
     
     static RichiestaGiocoDAO model = new RichiestaGiocoDAO();
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+ 	 * @precondition request.getParameter(“reqid”)!=null 
+ 	 * @postcondition request.getAttribute("result")!=null
+ 	 * @throws ServletException, IOException
+ 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		request.removeAttribute("result");
+		
 		try {
 		String reqID = request.getParameter("reqid");
 		if(model.viewRequestById(Integer.parseInt(reqID))==null) {
@@ -59,7 +60,7 @@ public class AcceptRequestServlet extends HttpServlet {
 		}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

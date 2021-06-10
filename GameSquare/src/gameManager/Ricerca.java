@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Servlet implementation class Ricerca
+ * Questa classe è un control che si occupa di gestire la ricerca per parola chiave di un gioco.
  */
 @WebServlet("/Cerca")
 public class Ricerca extends HttpServlet {
@@ -26,11 +26,13 @@ public class Ricerca extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+ 	 * @postcondition request.getAttribute("result")!=null
+ 	 * @throws ServletException, IOException
+ 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+    	request.removeAttribute("result");
 			String cerca = request.getParameter("cerca");
 			String redirectedPage = "";
 			
@@ -80,6 +82,7 @@ public class Ricerca extends HttpServlet {
 				redirectedPage = "/catalogo.jsp";
 				
 				} catch (Exception e) {
+					request.setAttribute("result", "error");
 					redirectedPage = "/catalogo.jsp";
 					e.printStackTrace();
 				}

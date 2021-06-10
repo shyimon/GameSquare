@@ -13,7 +13,8 @@ import javax.servlet.http.HttpSession;
 
 
 /**
- * Servlet implementation class UserLogin
+ * Questa classe è un control che si occupa di gestire l’operazione di login. 
+ * Passerà a UtenteDAO le credenziali immesse in input per verificarne la correttezza ed effettuare il login di conseguenza.
  */
 @WebServlet("/UserLogin")
 public class UserLogin extends HttpServlet {
@@ -25,9 +26,15 @@ public class UserLogin extends HttpServlet {
         super();
     }
 
+    /**
+	 * @precondition Request.getParamter(“user_email”)!=null AND Request.getParameter(“user_password”)!=null 
+	 * @postcondition request.getAttribute(“loginResult”)!=null
+	 * @throws ServletException, IOException
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.removeAttribute("login");
+		request.removeAttribute("loginResult");
 		
 		String user_email = request.getParameter("user_email");
 		String user_password = request.getParameter("user_password");
@@ -46,19 +53,19 @@ public class UserLogin extends HttpServlet {
 				if(correctEmail && correctPass) {
 					session.setAttribute("utenteLoggato", utenteLoggato);
 					session.setAttribute("utente", utenteLoggato.getUsername());
-					request.setAttribute("result", "logged");
+					request.setAttribute("loginResult", "logged");
 					redirectedPage = "/index.jsp";
 				}
 				else if (!correctEmail)
 				{
 					request.setAttribute("correctEmail", false);
-					request.setAttribute("result", "incorrectEmail");
+					request.setAttribute("loginResult", "incorrectEmail");
 					redirectedPage = "/login-page.jsp";
 				}
 				else if (!correctPass)
 				{
 					request.setAttribute("correctPassword", false);
-					request.setAttribute("result", "incorrectPass");
+					request.setAttribute("loginResult", "incorrectPass");
 					redirectedPage = "/login-page.jsp";
 				}
 				/*else
@@ -71,7 +78,7 @@ public class UserLogin extends HttpServlet {
 			}
 				 catch (Exception e) {
 					 System.out.println("Servlet error");
-					 request.setAttribute("result", "wrongLogin");
+					 request.setAttribute("loginResult", "wrongLogin");
 				e.printStackTrace();
 				}
 			}
@@ -80,6 +87,9 @@ public class UserLogin extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
     
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}

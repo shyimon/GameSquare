@@ -12,15 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class GamePageServlet
+ * Questa classe è un control che si occupa della visualizzazione di un gioco in base alle interazioni di un utente.
  */
 @WebServlet("/GamePage")
 public class GamePageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public GamePageServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -28,9 +26,11 @@ public class GamePageServlet extends HttpServlet {
 
     static GiocoDAO gameModel = new GiocoDAO();
     
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+ 	 * @precondition request.getParameter("id)!=null
+ 	 * @postcondition dispatcher!=null
+ 	 * @throws ServletException, IOException
+ 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 				request.removeAttribute("game");
@@ -60,7 +60,7 @@ public class GamePageServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

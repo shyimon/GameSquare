@@ -1,6 +1,7 @@
 package test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -54,6 +55,7 @@ public class ChangeCategoryServletTest extends Mockito {
 			assertEquals(message, response.getContentAsString());
 		}
 	
+	//inserimento errato, cambio di categoria per un elemento che non esiste
 	@Test
 	public void testCase_2() throws ServletException, IOException{
 		
@@ -71,6 +73,33 @@ public class ChangeCategoryServletTest extends Mockito {
 			assertEquals(500, response.getStatus());
 		}
 	
+	//eccezione SQL, un parametro della chiave non è specificato
+	@Test
+	public void testCase_2_1() throws ServletException, IOException{
+		
+			
+			request.addParameter("game_id", "4");
+			request.addParameter("category_value", "Acquistato");
+			request.addParameter("user_category", "Platinato");
+			request.addParameter("score", "100");
+			request.addParameter("usrScore", "390");
+		
 
+			servlet.doPost(request, response);
+			
+			assertEquals("Errore SQL", response.getContentAsString());
+		}
+	
+	//Valori null
+	@Test
+	public void testCase_3() throws ServletException, IOException{
+			
+		try {
+				servlet.doPost(request, response);
+				fail("Valori null");
+			}catch(Exception e) {
+				//success
+			}
+	}
 	
 }

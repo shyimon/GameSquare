@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Servlet implementation class CreateThread
+ * Questa classe è un control che si occupa di passare a ThreadDAO i dati di un thread da pubblicare.
  */
 @WebServlet("/CreateThread")
 public class CreateThread extends HttpServlet {
@@ -23,8 +23,14 @@ public class CreateThread extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    /**
+	 * @precondition request.getParameter(“thread_title”)!=null AND request.getParameter(“thread_type”)!=null AND request.getParameter(“thread_text”)!=null AND request.getParameter(“gameId”)!=null AND request.getParameter(“username”)!=null
+	 * @postcondition request.getAttribute("inserimentoThread")!=null
+	 * @throws ServletException, IOException
+	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+    	request.removeAttribute("inserimentoThread");
 		String title = null;
 		String type = null;
 		String text = null;
@@ -69,7 +75,9 @@ public class CreateThread extends HttpServlet {
 		
 	}
 
-	
+    /**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{	
 		doPost(request, response);
