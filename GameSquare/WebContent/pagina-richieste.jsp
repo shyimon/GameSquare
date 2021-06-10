@@ -31,9 +31,13 @@
 	
 		<%
 		
-			if(!(utenteLoggato.getTipo().equals("manager")))
+			if(utenteLoggato==null)
 			{
-				response.sendRedirect("home.jsp");
+				response.sendRedirect("login-page.jsp");
+				return;
+			}else if(!(utenteLoggato.getTipo().equals("manager")))
+			{
+				response.sendRedirect("index.jsp");
 				return;
 			}
 		

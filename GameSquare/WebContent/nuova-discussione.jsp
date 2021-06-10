@@ -37,6 +37,19 @@
 					<%@ include file="fragment/header.jsp" %>
 		</div>
 		
+		<%
+			if(utenteLoggato==null)
+			{
+				response.sendRedirect("login-page.jsp");
+				return;
+			}else if((utenteLoggato.getTipo().equals("manager"))||(utenteLoggato.getTipo().equals("user")))
+			{
+				response.sendRedirect("index.jsp");
+				return;
+			}
+		
+		%>
+		
 		<div class="container">
 			<form id="this-form">
 				<h1>Nuova discussione su <%=game.getNome()%></h1>

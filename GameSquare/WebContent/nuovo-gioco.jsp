@@ -31,6 +31,19 @@
 		<div class="header">
 			<%@ include file="fragment/header.jsp" %>
 		</div>
+		<%
+		
+			if(utenteLoggato==null)
+			{
+				response.sendRedirect("login-page.jsp");
+				return;
+			}else if((utenteLoggato.getTipo().equals("mod"))||(utenteLoggato.getTipo().equals("user")))
+			{
+				response.sendRedirect("nuova-richiesta-gioco.jsp");
+				return;
+			}
+		
+		%>
 		
 		<div class="container">
 			<form id="this-form">
