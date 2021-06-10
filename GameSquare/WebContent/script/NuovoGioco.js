@@ -1,3 +1,7 @@
+/**
+ * Questa funzione JQuery, associata al click del button, prende i parametri dal form di aggiunta del gioco e 
+ * verifica se hanno un formato corretto, invocando l'operazione della servlet in caso affermativo.
+ */
 $("#buttonaggiungi").on('click', function validate(){	
 		var game_title  = $('#game_title').val();
 		var publisher  = $('#publisher').val();

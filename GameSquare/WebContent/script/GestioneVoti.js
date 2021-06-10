@@ -1,8 +1,8 @@
 /**
- * 
+ * Questa funzione JQuery, associata al click di un button per confermare un voto sulla pagina di un gioco, 
+ * dopo aver fatto un controllo sulla validità del valore immesso, invoca la servlet AddVote per richiedere l'aggiunta 
+ * della valutazione specificata nel form.
  */
-
-//funzione jQuery per l'aggiunta di un voto a un determinato gioco, sulla rispettiva pagina
 $("#voteButton").on("click", function vote() {
 	var vote_value = $('#vote').val();
     if(vote_value === null)
@@ -41,7 +41,11 @@ $("#voteButton").on("click", function vote() {
 
 
 
-//funzione jQuery per la rimozione di un voto per un determinato gioco, sulla rispettiva pagina
+/**
+ * Questa funzione JQuery, associata al click di un button per rimuovere (se presente) un voto sulla pagina del rispettivo gioco, 
+ * invoca la servlet DeleteVote per richiedere la rimozione della valutazione esistente.
+ * 
+ */
     $('#deleteVote').on("click", function deleteVote() {
     	//alert(username + " vuole togliere il voto a " +game_id );
     				$.ajax({ //INVOCAZIONE AJAX

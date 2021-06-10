@@ -1,5 +1,10 @@
+//il tipo del thread inizialmente non è selezionato
 document.getElementById("thread_type").selectedIndex = -1;
 	
+   /**
+	 * Questa funzione, associata al click del button, prende i parametri dal form di creazione del thread e 
+ 	 * verifica se hanno un formato corretto, invocando l'operazione della servlet in caso affermativo.
+ 	 */
 	$("#buttoncrea").on('click', function validate(){	
 		var thread_title  = $('#thread_title').val();
 		var thread_type = $('#thread_type').val();

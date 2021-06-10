@@ -1,4 +1,8 @@
 
+/**
+ * Questa funzione JQuery, associata al click del button, prende i parametri dal form di richiesta del gioco e 
+ * verifica se hanno un formato corretto, invocando l'operazione della servlet in caso affermativo.
+ */
 $("#buttonrequest").on('click', function validate(){	
 	var gamereq_title  = $('#gamereq_title').val();
 	var gamereq_source = $('#gamereq_source').val();

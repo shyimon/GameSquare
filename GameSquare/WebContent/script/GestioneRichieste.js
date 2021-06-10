@@ -1,3 +1,7 @@
+/**
+ * Questa funzione JQuery, associata al click di ciascun button corrispondente a una richiesta gioco, si occupa di 
+ * invocare, a seguito di una conferma, la servlet RefuseRequest per richiedere l'operazione di rifiuto della richiesta.
+ */
 $("#request .refuseButton").each(function () {
     $(this).on("click", function refuseRequest() {
     	var reqid = this.value;
@@ -36,6 +40,10 @@ $("#request .refuseButton").each(function () {
 });
 
 
+/**
+ * Questa funzione JQuery, associata al click di ciascun button corrispondente a una richiesta gioco, si occupa di 
+ * invocare, a seguito di una conferma, la servlet AcceptRequest per richiedere l'operazione di accettazione della richiesta.
+ */
 $("#request .acceptButton").each(function () {
     $(this).on("click", function acceptRequest() {
     	var reqid = this.value;

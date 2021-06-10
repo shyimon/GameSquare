@@ -1,11 +1,16 @@
 /**
- * 
+ * il punteggio del gioco ed eventualmente il punteggio e la categoria corrispondenti all'utente
  */
 var score  = $('#score').text();
 var usrScore = $('#usrScore').text();
 var user_category = $('#userCategory').text();
 
-//funzione jQuery per l'aggiunta di un gioco a una determinata lista, sulla rispettiva pagina
+/**
+ * Questa funzione JQuery, associata al click del button di aggiunta alla lista, verifica prima se
+ * la categoria della lista non è stata già selezionata dall'utente, in caso negativo procede all'invocazione della
+ * servlet apposita: AddToList se l'utente non aveva già aggiunto quel gioco alla sua lista o ChangeCategory se
+ * aveva già aggiunto il gioco ma con una diversa categoria.
+ */
 $("#addButton").on("click", function addToList() {
 	var category_value = $('#category').val();
     //alert(username+" ha aggiunto alla lista di categoria "+category_value+" il gioco id "+game_id+" con un punteggio di "+score+" da un punteggio di "+usrScore);
@@ -62,7 +67,10 @@ $("#addButton").on("click", function addToList() {
 
 });
 
-//funzione jQuery per la rimozione di un determinato gioco dalla lista, sulla rispettiva pagina
+/**
+ * Questa funzione JQuery, associata al click del button di rimozione dalla lista (se esistente), si occupa di invocare
+ * la servlet DeleteFromList per richiedere l'operazione di rimozione.
+ */
     $('#deleteFromList').on("click", function deleteFromList() {
     	//alert(username + " vuole togliere dalla lista " +game_id+" che ha salvato come " +user_category+ " punteggio: "+usrScore +" "+score);
     				$.ajax({ //INVOCAZIONE AJAX
