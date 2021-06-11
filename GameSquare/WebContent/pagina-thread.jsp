@@ -23,7 +23,7 @@
 	</header>
 	<a href="GamePage?id=<%=bean.getIdGioco()%>"><b>--Torna alla pagina del gioco--</b></a>
 	<br>
-	<h2>Discussione [<%=bean.getTipoThread()%>]</h2>
+	<h2>- Discussione - <%=bean.getTipoThread()%></h2>
 	<h1><%=bean.getTitolo()%></h1>
 	<h5>Avviata da <%=bean.getUsernameUtente()%></h5>
 	
@@ -70,7 +70,7 @@
 				
 					
 						<div class="row justify-content-center">
-							<a href="ViewThread?threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
+							<a href="ViewThread?threadid=<%=tbean.getIdThread()%>"> <%=tbean.getTipoThread()%> - <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
 						</div>
 					</div>
 					<br>

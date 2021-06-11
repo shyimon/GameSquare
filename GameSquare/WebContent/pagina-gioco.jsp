@@ -52,6 +52,7 @@
 					<p id="stiletitle">Genere: <%=bean.getGenere()%></p>
 				</div>
 				
+			<% if(utenteLoggato==null || !(utenteLoggato.getTipo()).equals("manager")){ %>
 				<div class="post-gamecard">
 					<div class="VoteArea">
 						<% if(utenteLoggato!=null){ 
@@ -63,6 +64,7 @@
 						
 						<input type="hidden" id="usrValue" value="<%=utenteLoggato.getUsername()%>">
 						<% } %>
+						
 						<form>
 						<input type="hidden" id="gameIdValue" value="<%=bean.getIdGioco()%>">
 							<label for="vote">Il tuo voto:</label>
@@ -88,7 +90,7 @@
 						<b id="userCategory"> </b>
 						<%}
 					}%>
-	
+					
 					<form>
 						<label for="category">Scegli una categoria:</label>
 							<select id="category" name="category">
@@ -109,6 +111,7 @@
 					</form>
 				</div> 
 				</div>
+				<% } %>
 		   </div>
 		</div>
 			
@@ -130,7 +133,7 @@
 						<%}
 						else{
 						%>
-							<a class="discussione" href="ViewThread?threadid=<%=tbean.getIdThread()%>"> (<%=tbean.getTipoThread()%>) <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
+							<a class="discussione" href="ViewThread?threadid=<%=tbean.getIdThread()%>"> <%=tbean.getTipoThread()%> - <b><%=tbean.getTitolo()%></b> - scritta da <%=tbean.getUsernameUtente()%> </a>
 						
 						<% 	}
 						}

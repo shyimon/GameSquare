@@ -71,7 +71,7 @@
 							if(utenteLoggato!=null) {
 								if((utenteLoggato.getTipo()).equals("user")){ %>
 									<button class="nav-button"><a href="area-utente.jsp"><span class="glyphicon glyphicon-user men"></span><%=utenteLoggato.getUsername()%> </a></button>
-						<%} else{ %>
+						<%} else if ((utenteLoggato.getTipo()).equals("mod")||(utenteLoggato.getTipo()).equals("dev")){ %>
 									<button class="nav-button"><a href="area-utente.jsp"><%=utenteLoggato.getTipo()%>:<%=" "+utenteLoggato.getUsername()%></a></button>							
 						<%} %>
 						<%} else {%>
@@ -79,7 +79,7 @@
 						<%} 
 							if(utenteLoggato!=null) {
 							if(utenteLoggato.getTipo().equals("user") || utenteLoggato.getTipo().equals("mod")){%>
-								<button class="nav-button"><a href="nuova-richiesta-gioco.jsp">Aggiungi Gioco</a></button>
+								<button class="nav-button"><a href="nuova-richiesta-gioco.jsp">Richiedi Gioco</a></button>
 							<%} else if(utenteLoggato.getTipo().equals("manager")){%>
 							<button class="nav-button"><a href="pagina-richieste.jsp">Richieste Giochi</a></button>
 							<button class="nav-button"><a href="nuovo-gioco.jsp">Aggiungi Gioco</a></button>
