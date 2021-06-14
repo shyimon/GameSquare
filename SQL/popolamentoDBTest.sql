@@ -49,8 +49,8 @@ INSERT INTO voto values(9, 'AerithGain',1);
 INSERT INTO voto values(10, 'AerithGain',2);
 INSERT INTO voto values(10, 'AerithGain',3);
 INSERT INTO voto values(9, 'AerithGain',7);
-INSERT INTO voto values(8, 'CynthiaPT',1);
-INSERT INTO voto values(8, 'CynthiaPT',2);
+INSERT INTO voto values(8, 'DarioTW',1);
+INSERT INTO voto values(8, 'DarioTW',2);
 
 INSERT INTO elemento_lista values('AerithGain', 1, 'Platinato');
 INSERT INTO elemento_lista values('AerithGain', 2, 'In corso');

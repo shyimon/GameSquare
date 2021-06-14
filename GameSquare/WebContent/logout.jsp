@@ -11,7 +11,7 @@
     </script>
    </head>
    
-   <body>
+   <body style="text-align: center;">
  
       <h5>Operazione di logout completata.</h5>
 		<a href="index.jsp">torna alla home</a>

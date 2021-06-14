@@ -42,10 +42,6 @@
 			{
 				response.sendRedirect("login-page.jsp");
 				return;
-			}else if((utenteLoggato.getTipo().equals("manager"))||(utenteLoggato.getTipo().equals("user")))
-			{
-				response.sendRedirect("index.jsp");
-				return;
 			}
 		
 		%>
