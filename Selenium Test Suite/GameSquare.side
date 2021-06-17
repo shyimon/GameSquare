@@ -1,0 +1,2570 @@
+{
+  "id": "3f60f750-798a-4657-9e06-97ed8dc17d11",
+  "version": "2.0",
+  "name": "GameSquare",
+  "url": "http://localhost:8080/GameSquare/pagina-richieste.jsp",
+  "tests": [{
+    "id": "0fc2cdda-d8f6-4d60-8fa6-92b02966d057",
+    "name": "TC_2.1_1",
+    "commands": [{
+      "id": "f1f5127d-a9b4-4b30-b35d-94a383552480",
+      "comment": "",
+      "command": "open",
+      "target": "/GameSquare/login-page.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ddd3e76-a616-41ab-8a18-dec7a2f2db2c",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b21e745f-9485-44fd-a9b9-1ea2da333646",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "dixierocker@gmail.com"
+    }, {
+      "id": "49a7aaa9-b738-4f2b-b963-11c5b718f84c",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4c35c84-439e-4938-9cdc-8aa329dc974f",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=user_password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-password']/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "unima01"
+    }, {
+      "id": "34db2ec8-9968-4c1b-a9bd-d730734dc8de",
+      "comment": "",
+      "command": "click",
+      "target": "name=Submit",
+      "targets": [
+        ["name=Submit", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='Submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/input", "xpath:idRelative"],
+        ["xpath=//fieldset/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58e8dcfd-c53f-451a-b2ba-9ed2c4025760",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=email-errata",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0b3da7db-b9f6-4af3-aee4-cd9d662143f7",
+    "name": "TC_2.1_2",
+    "commands": [{
+      "id": "f760ce68-dfb0-41c0-a525-d00a9141179d",
+      "comment": "",
+      "command": "open",
+      "target": "/GameSquare/login-page.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a89db85-240e-48e3-91a6-52432c4b269a",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f389530b-4c0c-4012-8e4c-b2829a715e43",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "pkblackandwhite@gmail.com"
+    }, {
+      "id": "f9038f1d-ac02-43f7-aadc-836bf5f929e4",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "902b1fd3-23e1-465d-8183-81691f3e7b91",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=user_password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-password']/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "eskere"
+    }, {
+      "id": "6c895efd-1074-4476-bd52-6f6adee1f342",
+      "comment": "",
+      "command": "click",
+      "target": "name=Submit",
+      "targets": [
+        ["name=Submit", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='Submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/input", "xpath:idRelative"],
+        ["xpath=//fieldset/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6541acc-6fe2-41cd-a357-8dba60782a49",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=password-errata",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "692bb9af-c980-4d80-a38d-6cec79ce9813",
+    "name": "TC_2.1_3",
+    "commands": [{
+      "id": "b8cacdc6-16c8-4480-96d4-1d325d132d81",
+      "comment": "",
+      "command": "open",
+      "target": "/GameSquare/login-page.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b7f14e3-4ea0-4bac-8994-2243783acc70",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e265637d-a006-4ae4-b1b8-fa747855d087",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "pkblackandwhite@gmail.com"
+    }, {
+      "id": "2cc6b9d2-d16c-4c3f-936f-d55407100c7c",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7144346-be8e-4d00-8f0f-a96af5ab9e37",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=user_password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-password']/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "unima01"
+    }, {
+      "id": "f8afb98b-569b-4ac2-84e1-59bb8756e4cd",
+      "comment": "",
+      "command": "click",
+      "target": "name=Submit",
+      "targets": [
+        ["name=Submit", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='Submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/input", "xpath:idRelative"],
+        ["xpath=//fieldset/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae4e8ae8-21db-4545-8987-5b5b825e46b0",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Home",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "525ea13e-ff6f-464a-bfff-e564090af20e",
+    "name": "TC_2.2_2",
+    "commands": [{
+      "id": "fe024a17-8542-4fd0-9afc-9501d53acd7c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b6fa7614-c2aa-4bdf-9717-d7626257b369",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=LOGOUT",
+      "targets": [
+        ["linkText=LOGOUT", "linkText"],
+        ["css=.nav-button:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'LOGOUT')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/GameSquare/Logout')]", "xpath:href"],
+        ["xpath=//button[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'LOGOUT')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "31a95cd3-d5db-4799-9382-c48f4e9e078f",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Logout completato",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a9bead26-5989-4081-92e0-f56282758ee0",
+    "name": "TC_2.3_1",
+    "commands": [{
+      "id": "8d210e82-72c5-45d5-9ccb-6ad1b48b3d2e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57322b99-f28a-460f-960c-1411afaf34b5",
+      "comment": "",
+      "command": "click",
+      "target": "name=cerca",
+      "targets": [
+        ["name=cerca", "name"],
+        ["css=.searchTerm", "css:finder"],
+        ["xpath=//input[@name='cerca']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbarForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "167f978b-924b-4879-a442-fe603e45367b",
+      "comment": "",
+      "command": "type",
+      "target": "name=cerca",
+      "targets": [
+        ["name=cerca", "name"],
+        ["css=.searchTerm", "css:finder"],
+        ["xpath=//input[@name='cerca']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbarForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "isaas"
+    }, {
+      "id": "c536cccf-509c-44fe-aa79-a0658266c4c1",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=cerca",
+      "targets": [
+        ["name=cerca", "name"],
+        ["css=.searchTerm", "css:finder"],
+        ["xpath=//input[@name='cerca']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbarForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "34010afe-d7df-41b9-b766-936dec44b201",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.row:nth-child(1) > h4",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "15620a36-c880-483d-9a2b-7663f62890b5",
+    "name": "TC_2.3_2",
+    "commands": [{
+      "id": "0c77e378-7673-47a4-9152-cf65c29c4f11",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c574baad-4dae-47b6-b936-9b11f0cfd60e",
+      "comment": "",
+      "command": "click",
+      "target": "name=cerca",
+      "targets": [
+        ["name=cerca", "name"],
+        ["css=.searchTerm", "css:finder"],
+        ["xpath=//input[@name='cerca']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbarForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfa5e00a-f759-45e3-b813-d442555cf65c",
+      "comment": "",
+      "command": "type",
+      "target": "name=cerca",
+      "targets": [
+        ["name=cerca", "name"],
+        ["css=.searchTerm", "css:finder"],
+        ["xpath=//input[@name='cerca']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbarForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "isaac"
+    }, {
+      "id": "acb1c182-291f-4b72-a260-bc2267f9722e",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=cerca",
+      "targets": [
+        ["name=cerca", "name"],
+        ["css=.searchTerm", "css:finder"],
+        ["xpath=//input[@name='cerca']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbarForm']/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "52946764-425c-4726-8b59-e95239b94f26",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=The Binding of Isaac: Repentance",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d81d5926-caac-4995-b43e-740b4a9c4c35",
+    "name": "TC_2.4_2",
+    "commands": [{
+      "id": "363ce699-bd06-45d5-b374-8c289efce94b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/GamePage?id=3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91cff6c3-4476-441c-822b-edb6a82a3018",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c23d5042-6a60-4dba-b0e8-184105f3943d",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Completato"
+    }, {
+      "id": "2761a4e3-eea2-46e2-a5a5-7f0574809a4a",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e04c360-cad6-44b9-84e0-b3ee6fc60aa7",
+      "comment": "",
+      "command": "click",
+      "target": "id=addButton",
+      "targets": [
+        ["id=addButton", "id"],
+        ["css=#addButton", "css:finder"],
+        ["xpath=//input[@id='addButton']", "xpath:attributes"],
+        ["xpath=//div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78f22acb-8ba5-4109-a73d-e678d63ef78c",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea9655cf-cd2a-42a8-a25d-de2e756ac9fd",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Platinato"
+    }, {
+      "id": "3002715b-8005-4377-a7eb-70ce6864c39d",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3c7db57-d321-4408-88cf-c17e5d18fe35",
+      "comment": "",
+      "command": "click",
+      "target": "id=addButton",
+      "targets": [
+        ["id=addButton", "id"],
+        ["css=#addButton", "css:finder"],
+        ["xpath=//input[@id='addButton']", "xpath:attributes"],
+        ["xpath=//div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e88c00be-4041-4ebb-b7f1-5f527f4ceac8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/GamePage?id=3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01fbf78d-ce19-4cc7-8f1a-376395e0ea4b",
+      "comment": "",
+      "command": "pause",
+      "target": "1500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1f0525d-0a7d-4936-bae8-12cb8b12009d",
+      "comment": "",
+      "command": "assertNotText",
+      "target": "id=userCategory",
+      "targets": [],
+      "value": "Completato"
+    }]
+  }, {
+    "id": "3a8328ce-1876-48b4-bfc5-c7280004b337",
+    "name": "TC_2.4_3",
+    "commands": [{
+      "id": "f6df06c1-e1c9-4173-a2dc-d35acc3fb241",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/GamePage?id=3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "372ca098-3d99-4c7a-b535-9dd73825a81b",
+      "comment": "",
+      "command": "click",
+      "target": "id=deleteFromList",
+      "targets": [
+        ["id=deleteFromList", "id"],
+        ["css=#deleteFromList", "css:finder"],
+        ["xpath=//input[@id='deleteFromList']", "xpath:attributes"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "770074ed-4aaf-4f0c-ae59-9b5f6bae9ded",
+      "comment": "",
+      "command": "pause",
+      "target": "500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e9a4c35-1c49-481e-8037-537e466d9efb",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9329931e-8b78-42eb-966f-10b517e11a82",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=In corso"
+    }, {
+      "id": "dc134855-2d41-4be1-a2ad-5f9e5062ea1f",
+      "comment": "",
+      "command": "click",
+      "target": "id=addButton",
+      "targets": [
+        ["id=addButton", "id"],
+        ["css=#addButton", "css:finder"],
+        ["xpath=//input[@id='addButton']", "xpath:attributes"],
+        ["xpath=//div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfe917b2-a857-40e2-80d4-45a91b5fccb9",
+      "comment": "",
+      "command": "pause",
+      "target": "1500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ac69b4e-a7f8-4dd0-8305-47c94e041db4",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=userCategory",
+      "targets": [],
+      "value": "In corso"
+    }]
+  }, {
+    "id": "a754e27d-7afc-4e72-a33f-605f7c0d6062",
+    "name": "TC_2.4_1",
+    "commands": [{
+      "id": "da2c13a6-7738-468f-8b95-aa0eca56374c",
+      "comment": "",
+      "command": "open",
+      "target": "/GameSquare/login-page.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76ef7681-89ef-4216-8342-a03f56c75753",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=user_email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-username']/input", "xpath:idRelative"],
+        ["xpath=//p/input", "xpath:position"]
+      ],
+      "value": "pkblackandwhite@gmail.com"
+    }, {
+      "id": "7d0f4310-8e90-420b-9dc7-0b4a08a8dd29",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=user_password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//p[@id='login-form-password']/input", "xpath:idRelative"],
+        ["xpath=//p[2]/input", "xpath:position"]
+      ],
+      "value": "unima01"
+    }, {
+      "id": "a3daff2d-87b9-4e8b-bf3f-612ce33310ed",
+      "comment": "",
+      "command": "click",
+      "target": "name=Submit",
+      "targets": [
+        ["name=Submit", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='Submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/input", "xpath:idRelative"],
+        ["xpath=//fieldset/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca5bd099-8bcd-45aa-a37c-0a18aa1d7a4a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/GamePage?id=3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3556f674-ffa7-4ee5-805e-b9a0b24c9895",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6376c440-56a0-40a0-b443-dfadf0e83514",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Platinato"
+    }, {
+      "id": "86382aec-3a55-4478-b5e8-2e0f32c4c93c",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "943d2914-bfc7-430a-97df-34f0bfbb9d4d",
+      "comment": "",
+      "command": "click",
+      "target": "id=addButton",
+      "targets": [
+        ["id=addButton", "id"],
+        ["css=#addButton", "css:finder"],
+        ["xpath=//input[@id='addButton']", "xpath:attributes"],
+        ["xpath=//div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42ac9590-0a79-4072-801b-94e504f70197",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4738a2a3-4209-473d-b16d-44cacc53ca30",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Platinato"
+    }, {
+      "id": "8d1a0d11-988e-4e2e-a316-772d7c9acefd",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=category", "name"],
+        ["css=#category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[2]/form/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d97d5d2-4b83-4331-8405-f5b664afb546",
+      "comment": "",
+      "command": "click",
+      "target": "id=addButton",
+      "targets": [
+        ["id=addButton", "id"],
+        ["css=#addButton", "css:finder"],
+        ["xpath=//input[@id='addButton']", "xpath:attributes"],
+        ["xpath=//div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6dcf6e0b-c5ce-4859-93d3-1be7b6f8e6af",
+      "comment": "",
+      "command": "pause",
+      "target": "1500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bc313df-4a27-448a-8f3d-ff01046a85a7",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=userCategory",
+      "targets": [],
+      "value": "Platinato"
+    }]
+  }, {
+    "id": "36517054-6f15-4261-8733-ff508c2bb57f",
+    "name": "TC_2.5_3",
+    "commands": [{
+      "id": "be9d3c49-63ab-4864-acc3-88cfb1871a73",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/GamePage?id=7",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "43227682-b2ec-4f42-ae79-c21d94b65228",
+      "comment": "",
+      "command": "click",
+      "target": "id=vote",
+      "targets": [
+        ["id=vote", "id"],
+        ["name=vote", "name"],
+        ["css=#vote", "css:finder"],
+        ["xpath=//select[@id='vote']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e99a0fb-de09-4541-bef6-4e295431eaf0",
+      "comment": "",
+      "command": "select",
+      "target": "id=vote",
+      "targets": [],
+      "value": "label=9"
+    }, {
+      "id": "80b60cfc-c122-48e7-a027-cff227296375",
+      "comment": "",
+      "command": "click",
+      "target": "id=vote",
+      "targets": [
+        ["id=vote", "id"],
+        ["name=vote", "name"],
+        ["css=#vote", "css:finder"],
+        ["xpath=//select[@id='vote']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3376ef94-f9c3-4789-be9e-a72b72194946",
+      "comment": "",
+      "command": "click",
+      "target": "id=voteButton",
+      "targets": [
+        ["id=voteButton", "id"],
+        ["css=#voteButton", "css:finder"],
+        ["xpath=//input[@id='voteButton']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c9ea626-1764-4e89-9714-577321daa36c",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=voteButton",
+      "targets": [
+        ["id=voteButton", "id"],
+        ["css=#voteButton", "css:finder"],
+        ["xpath=//input[@id='voteButton']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bd393fb-1a62-4c68-8aa5-67b50363e998",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.num-voto",
+      "targets": [],
+      "value": "9"
+    }]
+  }, {
+    "id": "454362dc-4ec5-4187-b6cc-18864b2c3ef6",
+    "name": "TC_2.6_1",
+    "commands": [{
+      "id": "4bc080e5-8e7d-4e83-bcbc-ed6c7f4da717",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/nuova-discussione.jsp?gameid=7",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e42a6946-6789-491b-b13a-a468ba4dde47",
+      "comment": "",
+      "command": "click",
+      "target": "id=thread_type",
+      "targets": [
+        ["id=thread_type", "id"],
+        ["name=thread_type", "name"],
+        ["css=#thread_type", "css:finder"],
+        ["xpath=//select[@id='thread_type']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fff2b2b9-dbe9-4ac5-957c-87baa9f5a64b",
+      "comment": "",
+      "command": "select",
+      "target": "id=thread_type",
+      "targets": [],
+      "value": "label=Suggerimenti"
+    }, {
+      "id": "d8ea76ba-8ee1-4696-9d04-96536f29311b",
+      "comment": "",
+      "command": "click",
+      "target": "id=thread_type",
+      "targets": [
+        ["id=thread_type", "id"],
+        ["name=thread_type", "name"],
+        ["css=#thread_type", "css:finder"],
+        ["xpath=//select[@id='thread_type']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fec618e-080f-4167-95c7-d60860e7a4a4",
+      "comment": "",
+      "command": "click",
+      "target": "id=thread_text",
+      "targets": [
+        ["id=thread_text", "id"],
+        ["name=thread_text", "name"],
+        ["css=#thread_text", "css:finder"],
+        ["xpath=//textarea[@id='thread_text']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92e85a30-adb7-4a71-af4d-396a51d5175d",
+      "comment": "",
+      "command": "type",
+      "target": "id=thread_text",
+      "targets": [
+        ["id=thread_text", "id"],
+        ["name=thread_text", "name"],
+        ["css=#thread_text", "css:finder"],
+        ["xpath=//textarea[@id='thread_text']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Descrizione valida"
+    }, {
+      "id": "81236428-ebb3-4d82-acf8-f6adcdb4cfef",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttoncrea",
+      "targets": [
+        ["id=buttoncrea", "id"],
+        ["css=#buttoncrea", "css:finder"],
+        ["xpath=//input[@id='buttoncrea']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29c1d1ed-c516-4dfa-9a1d-032816703d99",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Nuova Discussione",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a12390db-d17b-4873-94fa-c4e05bfffd43",
+    "name": "TC_2.6_2/3/4/5",
+    "commands": [{
+      "id": "d83596a6-592a-4a72-875a-88cecdd8fc67",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/nuova-discussione.jsp?gameid=7",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9b2c9f3-4d02-4678-bf6a-b41e4b69fbe4",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='input-box']/label",
+      "targets": [
+        ["xpath=//div[@id='input-box']/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Inserire un titolo*')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec988437-e3a8-4903-86c1-2afd826cbafe",
+      "comment": "",
+      "command": "type",
+      "target": "id=thread_title",
+      "targets": [
+        ["id=thread_title", "id"],
+        ["name=thread_title", "name"],
+        ["css=#thread_title", "css:finder"],
+        ["xpath=//input[@id='thread_title']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/input", "xpath:idRelative"],
+        ["xpath=//body/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "Titolo valido"
+    }, {
+      "id": "8df14303-f407-4adf-9a65-db1cd7d88a4b",
+      "comment": "",
+      "command": "click",
+      "target": "id=thread_type",
+      "targets": [
+        ["id=thread_type", "id"],
+        ["name=thread_type", "name"],
+        ["css=#thread_type", "css:finder"],
+        ["xpath=//select[@id='thread_type']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e7aa835-34b4-45b2-b09b-5983c7c6aa8c",
+      "comment": "",
+      "command": "select",
+      "target": "id=thread_type",
+      "targets": [],
+      "value": "label=Suggerimenti"
+    }, {
+      "id": "de2d1c1b-c041-4023-b6cb-cd8d3b51913a",
+      "comment": "",
+      "command": "click",
+      "target": "id=thread_type",
+      "targets": [
+        ["id=thread_type", "id"],
+        ["name=thread_type", "name"],
+        ["css=#thread_type", "css:finder"],
+        ["xpath=//select[@id='thread_type']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bdd258f-af1e-46b6-a89e-7821230ac802",
+      "comment": "",
+      "command": "click",
+      "target": "id=text-label",
+      "targets": [
+        ["id=text-label", "id"],
+        ["css=#text-label", "css:finder"],
+        ["xpath=//label[@id='text-label']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/label)[3]", "xpath:idRelative"],
+        ["xpath=//div[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Inserire un testo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "96baf24a-4622-4e5c-abba-22e7e6b09dbc",
+      "comment": "",
+      "command": "type",
+      "target": "id=thread_text",
+      "targets": [
+        ["id=thread_text", "id"],
+        ["name=thread_text", "name"],
+        ["css=#thread_text", "css:finder"],
+        ["xpath=//textarea[@id='thread_text']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Discussione valida"
+    }, {
+      "id": "a490ba2e-3a29-4066-ab02-67c515975427",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttoncrea",
+      "targets": [
+        ["id=buttoncrea", "id"],
+        ["css=#buttoncrea", "css:finder"],
+        ["xpath=//input[@id='buttoncrea']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "838ac9dc-ff8b-4c17-8eca-ee12eb709bdf",
+      "comment": "",
+      "command": "pause",
+      "target": "4000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5d41dee-1c01-48b9-9965-fd84d270f528",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Hades",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d9ccdae6-9f74-478a-a6ab-4d1375f3ef8a",
+    "name": "TC_2.7_1",
+    "commands": [{
+      "id": "21bb3b1d-3367-438f-a310-286a2fbf9b6d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fabdfc4f-8aa2-432c-854e-d0a35a6f6594",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuovo-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1418fe1-8488-476d-a9a8-fc217d973e9d",
+      "comment": "",
+      "command": "click",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28d5b954-dd6f-4c5a-ba2d-e996845c24a9",
+      "comment": "",
+      "command": "type",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "id Software"
+    }, {
+      "id": "0c97a74e-19f4-4339-ab5d-bda8d6aa7ed1",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd4b2fc4-80cc-4905-9953-c3c08ba0fc89",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=Sparatutto"
+    }, {
+      "id": "c42a400f-4d91-446f-a201-cbe730e74885",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2d64420-f732-4c9d-a902-f7053d68328a",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c890e7c-f6d8-4f24-8a1e-75976bafa25e",
+      "comment": "",
+      "command": "type",
+      "target": "id=score",
+      "targets": [
+        ["id=score", "id"],
+        ["name=score", "name"],
+        ["css=#score", "css:finder"],
+        ["xpath=//input[@id='score']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "70"
+    }, {
+      "id": "d1863853-df91-4137-85c3-53c654523ca9",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e9c77c8-8709-404e-a488-e37f8118cce6",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=2016"
+    }, {
+      "id": "8fe28cfa-66d3-4c96-afe2-651626b94d9a",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50e719b1-e64c-43af-b830-735326912e06",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ead92414-50e8-4f6e-9ecd-bdf198c79b86",
+      "comment": "",
+      "command": "type",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Un bel gioco"
+    }, {
+      "id": "042d5588-2cec-49cb-b620-62c7a6bc76d1",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonaggiungi",
+      "targets": [
+        ["id=buttonaggiungi", "id"],
+        ["css=#buttonaggiungi", "css:finder"],
+        ["xpath=//input[@id='buttonaggiungi']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[4]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26c51cda-9d00-4ea7-afa6-76de0608e22f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cce5a16-1262-4067-a4ab-b5207069e2eb",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Aggiunta di un nuovo gioco",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c2d75869-007f-40b0-b35a-963f57f561ea",
+    "name": "TC_2.7_2",
+    "commands": [{
+      "id": "555e6848-9291-4128-8636-4f1faf67dd66",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ebccf1b-414b-48a5-982e-b9939bb16c03",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuovo-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41d94d46-ea02-4cfc-96f1-58237e26ff77",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_title",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc1999c5-2c87-4372-9a4b-81fa5a51f9ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=game_title",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "DOOM"
+    }, {
+      "id": "9082b32a-5e66-4db0-b163-17b7c573cbcc",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97983843-4b86-458c-a15b-472b595165bf",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=Sparatutto"
+    }, {
+      "id": "c83791c0-6538-43f0-9f8f-d225f2131fba",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "462c1eb9-858a-48e5-abb1-9c55073ac53c",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91f7a3c3-9f46-42e1-b6b6-129cae0ec83b",
+      "comment": "",
+      "command": "type",
+      "target": "id=score",
+      "targets": [
+        ["id=score", "id"],
+        ["name=score", "name"],
+        ["css=#score", "css:finder"],
+        ["xpath=//input[@id='score']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "70"
+    }, {
+      "id": "168dac51-e65b-4d59-a8a2-b8e906019285",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "40749d6d-d906-4723-b098-eaa9ee6fe1db",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=2016"
+    }, {
+      "id": "1b1f50db-63d7-4bad-b1b2-77256aa39646",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90151ea3-1b7a-491a-a6a2-69d322c85d63",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d964e61c-c3a3-420a-bde3-d64fb4138345",
+      "comment": "",
+      "command": "type",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Un bel gioco"
+    }, {
+      "id": "dfabe07c-eb26-4c94-a6cc-33c02dad6b8b",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonaggiungi",
+      "targets": [
+        ["id=buttonaggiungi", "id"],
+        ["css=#buttonaggiungi", "css:finder"],
+        ["xpath=//input[@id='buttonaggiungi']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[4]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "971420d8-80b7-4031-9aba-65ef804e0e86",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-confirm",
+      "targets": [
+        ["css=.swal2-confirm", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[3]/div/div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce52ba9c-a9c6-4796-9725-3bb3b5f05f87",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Aggiunta di un nuovo gioco",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0b09a1db-b917-4f2f-8154-b80039322719",
+    "name": "TC_2.7_6",
+    "commands": [{
+      "id": "cf36c4fb-9815-41eb-beb5-83895f1ac693",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "18e84901-2bce-46a3-a01b-1cf2a5c96c23",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuovo-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "70b49929-7e83-496d-bc67-ca6d278a20bd",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_title",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6f4c92a-d2ee-45d8-9ff6-d6bfcbd1a888",
+      "comment": "",
+      "command": "type",
+      "target": "id=game_title",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "DOOM"
+    }, {
+      "id": "f9896009-86ce-4d48-bfaa-fa8b71180b4b",
+      "comment": "",
+      "command": "click",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bad12d8c-fec6-4395-bec8-9096bd8dfc6b",
+      "comment": "",
+      "command": "type",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "id Software"
+    }, {
+      "id": "1b7a8f3d-957c-45ec-9a14-52b6754b5420",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b36baca7-bae6-43e6-84f3-40a92b0b9715",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=Sparatutto"
+    }, {
+      "id": "2bb1a835-d50d-4d87-afe8-6d4e20fb1834",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "46cd9f84-fca3-4d11-8268-6d813ba2ff74",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "186a190d-c21b-485e-bc01-5ac4e80fd67a",
+      "comment": "",
+      "command": "type",
+      "target": "id=score",
+      "targets": [
+        ["id=score", "id"],
+        ["name=score", "name"],
+        ["css=#score", "css:finder"],
+        ["xpath=//input[@id='score']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "70"
+    }, {
+      "id": "9b25e346-a8c4-4923-bed0-ad93e0f50b70",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "996905ee-98f2-4ed6-8ebc-09d8ff0aad6f",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=2016"
+    }, {
+      "id": "dbcf1eed-6b8c-48d5-860a-de2a31e9d5d9",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "46851a8b-8c5f-4111-892c-19612e87c9b5",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f40fd635-8cbd-465b-8a8e-5cebb5ffea10",
+      "comment": "",
+      "command": "type",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Un bel gioco"
+    }, {
+      "id": "050079be-e927-4aae-8a00-96ec2c6d906b",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonaggiungi",
+      "targets": [
+        ["id=buttonaggiungi", "id"],
+        ["css=#buttonaggiungi", "css:finder"],
+        ["xpath=//input[@id='buttonaggiungi']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[4]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b97b6dc-920b-4968-9d3c-8c89eb8018cd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.swal2-container",
+      "targets": [
+        ["css=.swal2-container", "css:finder"],
+        ["xpath=//body/div[3]", "xpath:position"],
+        ["xpath=//div[contains(.,'Il gioco Ã¨ giÃ  presente!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c285350-6786-4a33-9f95-ba1e01149520",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Aggiunta di un nuovo gioco",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "688afeb6-7cea-49e8-80be-636817f1b96f",
+    "name": "TC_2.7_7",
+    "commands": [{
+      "id": "060e0295-48a1-4ce0-b837-3652bc5c8a77",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "789402fb-956c-4df3-8071-5f249728e872",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuovo-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "94ec2273-1c9a-4007-a21f-bd5e4bfb51f3",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_title",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f349b985-00e9-49b5-ad2d-a339edbdd44c",
+      "comment": "",
+      "command": "type",
+      "target": "id=game_title",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "DOOM"
+    }, {
+      "id": "e97ea76c-b48f-4f9d-a509-d3f7f9fe90d6",
+      "comment": "",
+      "command": "click",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "185470f1-ff16-43e7-b1eb-3a1153be0af7",
+      "comment": "",
+      "command": "type",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "id Software"
+    }, {
+      "id": "91e38d71-dce1-46f8-89ae-8ac2724972c3",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92a79938-d95c-4b39-b621-d0f302fa5b64",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=Sparatutto"
+    }, {
+      "id": "f9a3cdce-fcf8-4000-819f-8e64e9fd2e65",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["css=#game_genre", "css:finder"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51b4430f-a293-4b58-9703-ea02e63a0657",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9887dac5-efbc-40e0-afc7-5ecdadf5ab44",
+      "comment": "",
+      "command": "type",
+      "target": "id=score",
+      "targets": [
+        ["id=score", "id"],
+        ["name=score", "name"],
+        ["css=#score", "css:finder"],
+        ["xpath=//input[@id='score']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "70"
+    }, {
+      "id": "ea3cb315-efeb-45e2-b207-b31087d2b980",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1ba9822-c0c1-47f3-bd65-15f9b9b2e591",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=1997"
+    }, {
+      "id": "7c24ca22-cb24-4352-a326-2a0cf3dd72d1",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "286fe2d3-16a4-4852-8de7-003676d0ea89",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f5f9cc4-5efa-4e14-bf9e-ac5b65a8bc6e",
+      "comment": "",
+      "command": "type",
+      "target": "id=game_desc",
+      "targets": [
+        ["id=game_desc", "id"],
+        ["name=game_desc", "name"],
+        ["css=#game_desc", "css:finder"],
+        ["xpath=//textarea[@id='game_desc']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Un bel gioco"
+    }, {
+      "id": "0a8e0287-2294-4668-9b22-9086f7714c6d",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonaggiungi",
+      "targets": [
+        ["id=buttonaggiungi", "id"],
+        ["css=#buttonaggiungi", "css:finder"],
+        ["xpath=//input[@id='buttonaggiungi']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[4]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a28af75-c073-4fa8-8301-962c47f29cf8",
+      "comment": "",
+      "command": "pause",
+      "target": "3500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48de6bee-02d8-4e3f-b5a7-4d1b672f99b5",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Giochi",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "033c93c0-4122-4808-9478-115e7b97e452",
+    "name": "TC_2.5_1",
+    "commands": [{
+      "id": "8501640e-28e1-4081-952b-0e75ecc62c6c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/GamePage?id=3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63239e96-c5e8-4119-b1f9-0d013beeb295",
+      "comment": "",
+      "command": "click",
+      "target": "id=vote",
+      "targets": [
+        ["id=vote", "id"],
+        ["name=vote", "name"],
+        ["css=#vote", "css:finder"],
+        ["xpath=//select[@id='vote']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9e49e49-107b-44ce-aea8-b6eac2f99d14",
+      "comment": "",
+      "command": "select",
+      "target": "id=vote",
+      "targets": [],
+      "value": "label=10"
+    }, {
+      "id": "92b734de-6e6d-489d-bac4-a88eba596dfc",
+      "comment": "",
+      "command": "click",
+      "target": "id=vote",
+      "targets": [
+        ["id=vote", "id"],
+        ["name=vote", "name"],
+        ["css=#vote", "css:finder"],
+        ["xpath=//select[@id='vote']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "823cefd5-4934-48da-99ac-6d32721408fa",
+      "comment": "",
+      "command": "click",
+      "target": "id=reindirizzamento-login",
+      "targets": [
+        ["id=reindirizzamento-login", "id"],
+        ["linkText=Valuta", "linkText"],
+        ["css=.VoteArea #reindirizzamento-login", "css:finder"],
+        ["xpath=//a[contains(text(),'Valuta')]", "xpath:link"],
+        ["xpath=//a[@id='reindirizzamento-login']", "xpath:attributes"],
+        ["xpath=(//a[contains(@href, 'login-page.jsp')])[4]", "xpath:href"],
+        ["xpath=//form/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Valuta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "311024bf-df03-4b0d-bc22-d6cafacff114",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Login",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f27b03d5-e961-4e13-b96c-7a658088a581",
+    "name": "TC_2.8_1",
+    "commands": [{
+      "id": "f52216ef-a135-4c80-8cb6-c10a74772d3f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de374f9c-70d2-42de-9c13-f14d02042f0b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuova-richiesta-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76fead96-2fa4-40c2-aa9d-2ee5326b6c24",
+      "comment": "",
+      "command": "type",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Mason Lindroth"
+    }, {
+      "id": "1bf4c7ce-f340-49e1-a50f-a1ea564aacff",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a226c57a-9abb-47cf-bc25-3f6be54472b7",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=2015"
+    }, {
+      "id": "3be1507b-01ac-402c-b4bd-6150c00c93d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8470c05-fcb0-479a-981f-ff39468ac152",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=RPG"
+    }, {
+      "id": "ddf67c26-1ddf-4f24-93ba-de9e9ba10438",
+      "comment": "",
+      "command": "click",
+      "target": "id=gamereq_source",
+      "targets": [
+        ["id=gamereq_source", "id"],
+        ["name=gamereq_source", "name"],
+        ["css=#gamereq_source", "css:finder"],
+        ["xpath=//textarea[@id='gamereq_source']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2e6d7ef-9002-41de-b8b3-db87e01517ad",
+      "comment": "",
+      "command": "type",
+      "target": "id=gamereq_source",
+      "targets": [
+        ["id=gamereq_source", "id"],
+        ["name=gamereq_source", "name"],
+        ["css=#gamereq_source", "css:finder"],
+        ["xpath=//textarea[@id='gamereq_source']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "https://en.wikipedia.org/wiki/Hylics_(video_game)"
+    }, {
+      "id": "2f90af05-f45f-4b9c-9068-4dd46f37246b",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonrequest",
+      "targets": [
+        ["id=buttonrequest", "id"],
+        ["css=#buttonrequest", "css:finder"],
+        ["xpath=//input[@id='buttonrequest']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0508f6b0-43da-4a09-9fb7-b26b1d67ba65",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Richiedi un nuovo gioco",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "583cad24-efe0-4b15-bccf-68d5e045892b",
+    "name": "TC_2.8_2",
+    "commands": [{
+      "id": "34f569ba-f730-40d3-aa25-de60cb55e45f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f758fc9-ed8e-49b4-8e1f-7e51032eb74c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuova-richiesta-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ca2b2ae-fe21-4348-b1ca-1c3058eb7e91",
+      "comment": "",
+      "command": "type",
+      "target": "id=gamereq_title",
+      "targets": [
+        ["id=gamereq_title", "id"],
+        ["name=gamereq_title", "name"],
+        ["css=#gamereq_title", "css:finder"],
+        ["xpath=//input[@id='gamereq_title']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/input", "xpath:idRelative"],
+        ["xpath=//body/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "Hylics"
+    }, {
+      "id": "d4f03655-0f3b-44b8-bf22-5bc9b590c8d2",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce9d96f3-f5ae-460a-ab20-bb218f70f41b",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=2015"
+    }, {
+      "id": "8d471e6c-0efd-4285-887f-e7f4fd9fca3f",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3901d2e-dbb4-4997-87e6-f6906edeeb5e",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=RPG"
+    }, {
+      "id": "aa921b03-3bc3-448f-801b-2340c12d2bfd",
+      "comment": "",
+      "command": "click",
+      "target": "id=gamereq_source",
+      "targets": [
+        ["id=gamereq_source", "id"],
+        ["name=gamereq_source", "name"],
+        ["css=#gamereq_source", "css:finder"],
+        ["xpath=//textarea[@id='gamereq_source']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6921964-5c41-4b9e-9e13-b3ff13a181fc",
+      "comment": "",
+      "command": "type",
+      "target": "id=gamereq_source",
+      "targets": [
+        ["id=gamereq_source", "id"],
+        ["name=gamereq_source", "name"],
+        ["css=#gamereq_source", "css:finder"],
+        ["xpath=//textarea[@id='gamereq_source']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "https://en.wikipedia.org/wiki/Hylics_(video_game)"
+    }, {
+      "id": "05089201-dc76-4ea1-b77d-ac04dda28114",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonrequest",
+      "targets": [
+        ["id=buttonrequest", "id"],
+        ["css=#buttonrequest", "css:finder"],
+        ["xpath=//input[@id='buttonrequest']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab63bae0-e2e7-40c8-91e3-f9b6626c142b",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Richiedi un nuovo gioco",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "34291d1a-6d5f-446f-8766-fd11814af67d",
+    "name": "TC_2.8_3",
+    "commands": [{
+      "id": "29b44370-2451-4d73-9957-2305c799f255",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e2f27b3-bc05-44e4-aa82-a95884779270",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuova-richiesta-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7fd451a-daed-4759-b103-b05c6e86eae5",
+      "comment": "",
+      "command": "type",
+      "target": "id=gamereq_title",
+      "targets": [
+        ["id=gamereq_title", "id"],
+        ["name=gamereq_title", "name"],
+        ["css=#gamereq_title", "css:finder"],
+        ["xpath=//input[@id='gamereq_title']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/input", "xpath:idRelative"],
+        ["xpath=//body/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "Hylics"
+    }, {
+      "id": "cab44210-7907-4efb-8e9e-cafed0d09a5d",
+      "comment": "",
+      "command": "type",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Mason Lindroth"
+    }, {
+      "id": "ef13c060-1669-4be6-89e6-a5763b6ca767",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4f4dc71-ce14-40cf-bb59-b825f34f9826",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=2015"
+    }, {
+      "id": "42efa782-d491-46bc-9614-b8291755b376",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9ca3d5d-db9b-44be-b077-800661fa78a9",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=RPG"
+    }, {
+      "id": "c62c870c-7b1a-40ce-91fd-f7be46b3c881",
+      "comment": "",
+      "command": "type",
+      "target": "id=gamereq_source",
+      "targets": [
+        ["id=gamereq_source", "id"],
+        ["name=gamereq_source", "name"],
+        ["css=#gamereq_source", "css:finder"],
+        ["xpath=//textarea[@id='gamereq_source']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Fonte di dubbia provenienza"
+    }, {
+      "id": "538cd812-2cbe-4949-9188-f614e2a7e191",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonrequest",
+      "targets": [
+        ["id=buttonrequest", "id"],
+        ["css=#buttonrequest", "css:finder"],
+        ["xpath=//input[@id='buttonrequest']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f0eee50-b73b-4b6a-8381-afd6e70e9716",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Richiedi un nuovo gioco",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "bbf2834a-04ad-4d22-8f9f-c895782e182e",
+    "name": "TC_2.8_5",
+    "commands": [{
+      "id": "4a187ae9-d9a4-4963-ab07-fec3ff6bdf42",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5426dfe1-303f-4395-93c0-01463de1aabf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Aggiungi Gioco",
+      "targets": [
+        ["linkText=Aggiungi Gioco", "linkText"],
+        ["css=.nav-items-right > .nav-button:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Aggiungi Gioco')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'nuova-richiesta-gioco.jsp')]", "xpath:href"],
+        ["xpath=//div[4]/button[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Aggiungi Gioco')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7b835fb-6fa6-45e6-ab9a-dcf7b80605e3",
+      "comment": "",
+      "command": "type",
+      "target": "id=gamereq_title",
+      "targets": [
+        ["id=gamereq_title", "id"],
+        ["name=gamereq_title", "name"],
+        ["css=#gamereq_title", "css:finder"],
+        ["xpath=//input[@id='gamereq_title']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/input", "xpath:idRelative"],
+        ["xpath=//body/div[2]/form/div/input", "xpath:position"]
+      ],
+      "value": "Hylics"
+    }, {
+      "id": "aea71d2d-13d8-4dbb-b6e5-728e8ed233b1",
+      "comment": "",
+      "command": "type",
+      "target": "id=publisher",
+      "targets": [
+        ["id=publisher", "id"],
+        ["name=publisher", "name"],
+        ["css=#publisher", "css:finder"],
+        ["xpath=//input[@id='publisher']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Mason Lindroth"
+    }, {
+      "id": "16eb05a9-440d-4ac9-884f-35c6d15b7176",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_year",
+      "targets": [
+        ["id=game_year", "id"],
+        ["name=game_year", "name"],
+        ["css=#game_year", "css:finder"],
+        ["xpath=//select[@id='game_year']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4eeb19e-6ed5-497a-9cd7-580d6f666ff1",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_year",
+      "targets": [],
+      "value": "label=2015"
+    }, {
+      "id": "4eb6f9e1-ffe6-4572-a137-67f1cd3b5bad",
+      "comment": "",
+      "command": "click",
+      "target": "id=game_genre",
+      "targets": [
+        ["id=game_genre", "id"],
+        ["name=game_genre", "name"],
+        ["xpath=//select[@id='game_genre']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/select)[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "481bb667-2755-4306-915b-e11eaa7324bb",
+      "comment": "",
+      "command": "select",
+      "target": "id=game_genre",
+      "targets": [],
+      "value": "label=RPG"
+    }, {
+      "id": "f7882075-594b-455d-9283-e9c5913ac58a",
+      "comment": "",
+      "command": "type",
+      "target": "id=gamereq_source",
+      "targets": [
+        ["id=gamereq_source", "id"],
+        ["name=gamereq_source", "name"],
+        ["css=#gamereq_source", "css:finder"],
+        ["xpath=//textarea[@id='gamereq_source']", "xpath:attributes"],
+        ["xpath=//div[@id='input-box']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "https://en.wikipedia.org/wiki/Hylics_(video_game)"
+    }, {
+      "id": "8d3d0064-531f-4c0b-ad42-695ac2ccf735",
+      "comment": "",
+      "command": "click",
+      "target": "id=buttonrequest",
+      "targets": [
+        ["id=buttonrequest", "id"],
+        ["css=#buttonrequest", "css:finder"],
+        ["xpath=//input[@id='buttonrequest']", "xpath:attributes"],
+        ["xpath=(//div[@id='input-box']/input)[3]", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcefa331-9637-457e-9d65-76b3cd7f7720",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/GameSquare/FindAll",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79d3b33f-57e4-4c0d-b5e6-a1ee8c66a14a",
+      "comment": "",
+      "command": "pause",
+      "target": "4000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c71a05f9-5828-47cb-9758-0f1be3b8eddc",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "GameSquare - Giochi",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8654f298-cfa6-4936-8cde-3b43cc4d7494",
+    "name": "Login",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0fc2cdda-d8f6-4d60-8fa6-92b02966d057", "0b3da7db-b9f6-4af3-aee4-cd9d662143f7", "692bb9af-c980-4d80-a38d-6cec79ce9813"]
+  }, {
+    "id": "51b87d6f-f5c0-419e-b526-9d75a7e8da8c",
+    "name": "Logout",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["525ea13e-ff6f-464a-bfff-e564090af20e"]
+  }, {
+    "id": "b63e8a91-4528-490a-854f-840a96d5ace8",
+    "name": "SearchByKeyword",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a9bead26-5989-4081-92e0-f56282758ee0", "15620a36-c880-483d-9a2b-7663f62890b5"]
+  }, {
+    "id": "b3e8d621-c7bb-44a9-96d8-534e4b598394",
+    "name": "AddGameToList",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d81d5926-caac-4995-b43e-740b4a9c4c35", "3a8328ce-1876-48b4-bfc5-c7280004b337", "a754e27d-7afc-4e72-a33f-605f7c0d6062"]
+  }, {
+    "id": "0472299b-9c5c-406a-99d0-fa1168f1dd0c",
+    "name": "VoteGame",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["36517054-6f15-4261-8733-ff508c2bb57f"]
+  }, {
+    "id": "2d7f53f8-5b3d-464a-bfd0-0ac983b63459",
+    "name": "AddThread",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["454362dc-4ec5-4187-b6cc-18864b2c3ef6", "a12390db-d17b-4873-94fa-c4e05bfffd43"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/GameSquare/", "http://localhost:8080/GameSquare/GamePage?id=3", "http://localhost:8080/GameSquare/GamePage?id=4", "http://localhost:8080/GameSquare/GamePage?id=7", "http://localhost:8080/GameSquare/nuova-discussione.jsp?gameid=7", "http://localhost:8080/GameSquare", "http://localhost:8080/GameSquare/pagina-richieste.jsp"],
+  "plugins": []
+}
