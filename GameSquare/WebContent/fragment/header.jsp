@@ -59,7 +59,7 @@
 			<div class="nav-items-left">
 				<button class="nav-button"><a href="/GameSquare/">Home</a></button>
 				<button class="nav-button"><a href="FindAll">Catalogo</a></button>
-				<button class="nav-button"><a href="/GameSquare/Aiuto">Aiuto</a></button>
+				<button class="nav-button"><a href="#">Aiuto</a></button>
 			</div>
 			
 			<div class="nav-items-right">

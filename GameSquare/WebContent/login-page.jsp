@@ -61,11 +61,11 @@
 		</div>
 	
 		<div id="registrati">
-			<a href="registrazione.jsp">Non hai un account? Registrati!</a>
+			<a href="#">Non hai un account? Registrati!</a>
 		</div>
 		
 		<div id="recupero-password">
-			<a href="recupero-password.jsp">Hai dimenticato la password?</a>
+			<a href="#">Hai dimenticato la password?</a>
 		</div>
 	</div>
 </div>
